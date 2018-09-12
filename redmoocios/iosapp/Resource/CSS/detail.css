@@ -1,0 +1,160 @@
+html {
+    -webkit-text-size-adjust: none;
+}
+/* 设置HTML5元素为块 */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    font-size: 1em;
+    font-family: Arial;
+    margin: 10px 10px 60px 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+main {
+    line-height: 1.5;
+}
+
+span {
+    font-family: Arial !important;
+}
+
+a {
+    text-decoration: none;
+    word-break: break-all;
+}
+
+audio {
+    width: 90%;
+    display: block;
+    margin: 10px auto 10px auto;
+}
+
+
+img,table {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ol {
+    padding-left: 25px;
+}
+
+pre {
+    font-size: 9pt;
+    font-family: Courier New, Arial;
+    border: 1px solid #ddd;
+    border-left: 5px solid #6CE26C;
+    background: #f6f6f6;
+    padding: 5px;
+}
+
+.more_about {
+    color: red;
+}
+
+.more_about a {
+    font-weight: bold;
+}
+
+#title_div {
+    margin-bottom: 30px;
+}
+
+#title_div b {
+    font-size: 20px;
+    word-break: normal;
+    text-align: center;
+}
+
+
+#pub_info {
+    font-size: 14px;
+    color: #707070;
+}
+
+.news_info {
+    font-size: 14px;
+    color: #707070;
+    text-align : left;
+    padding-top: 5px;
+}
+.news_file {
+    border:1px solid #cad8e1;
+    background-color:#f5f7fa;
+    border-radius:2px;
+    padding:5px;
+    width:150px;
+    margin:0 auto;
+}
+
+.news_fileImg {
+    background-image:url(wj.png);
+    width:80px;
+    height:80px;
+    margin: 0 auto;
+}
+
+.title_info{
+    font-size: 24px;
+    word-break: normal;
+    font-weight: bold;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.author {
+    color: #087221;
+    font-weight: bold;
+}
+
+
+/*** night mode ***/
+
+.night {
+    background-color: #2B2B2B;
+    color: #CCC;
+}
+
+.night span {
+    background-color: #2B2B2B !important;
+    color: #CCC !important;
+}
+
+.night a {
+    color: #15A230;
+}
+
+.night pre {
+    background-color: #2B2B2B !important;
+    color: #CCC !important;
+}
+
+/*.img_cate{*/
+/*    margin-top: 6px;*/
+/*    background:url("eye_icon.png") left no-repeat;*/
+/*    background-size:contain;*/
+/*    width:15px;*/
+/*    height:15px;*/
+/*}*/
+
+.link_datetime{
+    background:url("time_icon.png") left no-repeat;
+    background-size:contain;
+    padding: 4px 0 4px 22px;
+}
+
+.link_browsers{
+    margin-left:15px;
+    background:url("eye_icon.png") left no-repeat;
+    background-size:contain;
+    padding: 4px 0 4px 22px;
+}
+
+

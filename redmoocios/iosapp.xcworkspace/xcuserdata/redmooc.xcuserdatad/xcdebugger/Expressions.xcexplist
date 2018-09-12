@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[GFKDTabBarController didSelectedIndex:]:GFKDTabBarController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "segmentVC.navigationItem.rightBarButtonItem">
+            </PersistentString>
+            <PersistentString
+               value = "segmentVC">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RATreeView(Private) expandCellForTreeNode:expandChildren:withRowAnimation:]:RATreeView+Private.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsImagesViewController viewWillAppear:]:NewsImagesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_photoScrollView.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__41-[PlayerDetailViewController viewDidLoad]_block_invoke:PlayerDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_bottomBarVC.operationBar">
+            </PersistentString>
+            <PersistentString
+               value = "_bottomBarVC.operationBar.items">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[Config getUsersInformation]:Config.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "userName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CommentListViewController initWithType:]:CommentListViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__38-[LoginViewController anonymousChick:]_block_invoke:LoginViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsImagesViewController setImgWithIndex:]:NewsImagesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "photoImgView.image">
+            </PersistentString>
+            <PersistentString
+               value = "self.photoScrollView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PointsRuleViewController tableView:cellForRowAtIndexPath:]:PointsRuleViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "raTreeView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__39-[ColumnViewController getNotUserNodes]_block_invoke:ColumnViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ZWCollectionViewFlowLayout layoutAttributesForElementsInRect:]:ZWCollectionViewFlowLayout.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.collectionView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GFKDTabBarController viewDidLoad]:GFKDTabBarController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[NSUserDefaults standardUserDefaults] objectForKey:@&quot;nodeDic&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TakeDetailsViewController viewDidLoad]:TakeDetailsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[Config getOwnID]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PGCategoryView initWithFrame:]:PGCategoryView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "image.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AddTakeViewController didUpdateUserHeading:]:AddTakeViewController.mm">
+      </ContextState>
+      <ContextState
+         contextName = "-[PlayerDetailViewController tableView:numberOfRowsInSection:]:PlayerDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.commmentOjbs">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMenuViewController hiddenViewNav]:SXMenuViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.parentViewController">
+            </PersistentString>
+            <PersistentString
+               value = "NavBarFrame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMainViewController initWithTitle:andSubTitles:andControllers:underTabbar:]:SXMainViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController tableView:didSelectRowAtIndexPath:]:NewsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[PointsRuleViewController treeView:numberOfChildrenOfItem:]:PointsRuleViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((UITableView *)raTreeView.subviews[0]).contentSize.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CommentsViewController tableView:cellForRowAtIndexPath:]:CommentsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.objects">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMainViewController addController]:SXMainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.bigScrollView.subviews">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__42-[NewsDetailViewController fileShowChick:]_block_invoke:NewsDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "filePath">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TakeTableViewCell zanImageView:]:TakeTableViewCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController pushMsgShow:]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "msgType == @&quot;3&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "[msgType intValue]">
+            </PersistentString>
+            <PersistentString
+               value = "notification.object == oldNotification.object">
+            </PersistentString>
+            <PersistentString
+               value = "[dict[@&quot;msgType&quot;] intValue]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMainViewController scrollViewDidEndScrollingAnimation:]:SXMainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "newsVc.view.frame.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.bounds">
+            </PersistentString>
+            <PersistentString
+               value = "newsVc.view.superview">
+            </PersistentString>
+            <PersistentString
+               value = "newsVc.view">
+            </PersistentString>
+            <PersistentString
+               value = "self.bigScrollView.frame.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsImagesViewController scrollViewDidEndDecelerating:]:NewsImagesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.imageView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController tableView:cellForRowAtIndexPath:]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_AdvObjectsDict">
+            </PersistentString>
+            <PersistentString
+               value = "news.dataDict[@&quot;description&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LikeStudyViewController tableView:heightForRowAtIndexPath:]:LikeStudyViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_hotCellHeight">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__40-[DiscoverViewController getDiscoveItem]_block_invoke:DiscoverViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_serviceArray.count">
+            </PersistentString>
+            <PersistentString
+               value = "serviceDic.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RadioViewController collectionView:cellForItemAtIndexPath:]:RadioViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cellIdentifier">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.item">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CatagoryNewsViewController tableView:didSelectRowAtIndexPath:]:CatagoryNewsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[NewsCell heightForRow:]:NewsCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "(375-16)*150/360.0">
+            </PersistentString>
+            <PersistentString
+               value = "KNBR_SCREEN_W">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ThreeCell ImageViewClick:]:ThreeCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "recognizer.view.tag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[TakeTableViewCell configView]():TakeTableViewCell.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "entity.images">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AddTakeViewController onClickReverseGeocode]:AddTakeViewController.mm">
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMenuViewController viewDidLoad]:SXMenuViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__32-[AppDelegate requestImageData:]_block_invoke_2:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "responseObject[@&quot;result&quot;][@&quot;uiConfig&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "responseObject[@&quot;result&quot;][@&quot;floatAd&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GFKDContentViewController pushMsgShow:]:GFKDContentViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_newsVc.viewPager.controllers">
+            </PersistentString>
+            <PersistentString
+               value = "_newsVc.viewPager.currentIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__29-[ZGViewController getZGItem]_block_invoke:ZGViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NYSegmentedControl moveSelectedSegmentIndicatorToSegmentAtIndex:animated:]:NYSegmentedControl.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.selectedSegmentIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TakesViewController parseDICT:]:TakesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.objects">
+            </PersistentString>
+            <PersistentString
+               value = "dict[@&quot;result&quot;][@&quot;data&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController adClick:]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PGCategoryView setFrame:]:PGCategoryView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "img.image.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__80-[SwipableViewController initWithTitle:andSubTitles:andControllers:underTabbar:]_block_invoke:SwipableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "button.center.x">
+            </PersistentString>
+            <PersistentString
+               value = "weakTitleBar.frame.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "button.tag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__52-[NewsDetailAuditBarViewController AuditInfoIsToEnd]_block_invoke:NewsDetailAuditBarViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RadioViewController initCollectionView]:RadioViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsImagesViewController viewForZoomingInScrollView:]:NewsImagesViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__39-[NewsDetailViewController viewDidLoad]_block_invoke:NewsDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_HTML">
+            </PersistentString>
+            <PersistentString
+               value = "_newsDetailObj.infoLevel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__39-[SXMainViewController getNotUserNodes]_block_invoke:SXMainViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate application:didReceiveRemoteNotification:fetchCompletionHandler:]:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "application.applicationState">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[UITableView(Video) handleScrollPlay]:UITableView+Video.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "playingCell">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PointsRuleViewController tableView:heightForRowAtIndexPath:]:PointsRuleViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "raTreeView.subviews">
+            </PersistentString>
+            <PersistentString
+               value = "raTreeView.frame.size.height">
+            </PersistentString>
+            <PersistentString
+               value = "((UITableView *)raTreeView.subviews[0]).contentSize">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMenuViewController viewWillDisappear:]:SXMenuViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "floatView.isHidden">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsDetailViewController tableView:heightForRowAtIndexPath:]:NewsDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView.frame.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsDetailBarViewController viewDidLoad]:NewsDetailBarViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_newsDetailsVC.newsDetailObj">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__34-[TakeTableViewCell sayStarWithID]_block_invoke:TakeTableViewCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[UIView(HAMUtils) detectScrollsToTopViews]:UIView+HAMUtils.m">
+      </ContextState>
+      <ContextState
+         contextName = "__53-[GFKDObjsViewController fetchObjectsOnPage:refresh:]_block_invoke.190:GFKDObjsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMainViewController updateNodes:]:SXMainViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ZGViewController viewDidLoad]:ZGViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[user objectForKey:@&quot;ZG_DataArray&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__25-[OperationBar setLayout]_block_invoke:OperationBar.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "image.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__32-[RadioViewController loadRadio]_block_invoke:RadioViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_collectionView.mj_header">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsDetailViewController fileShowChick:]:NewsDetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[GFKDTabBarController showTabVC:]:GFKDTabBarController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "(UINavigationController *)self">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__43-[TakeDetailsViewController getTakeDetails]_block_invoke:TakeDetailsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__39-[AddTakeViewController requestAddTake]_block_invoke:AddTakeViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[GFKDObjsViewController fetchObjectsOnPage:refresh:]:GFKDObjsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.generateURL(page)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TakeTableViewCell configView]:TakeTableViewCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = " ((NSNull *)entity.address != [NSNull null]) ">
+            </PersistentString>
+            <PersistentString
+               value = "entity.images[i]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GFKDTabBarController AD_UIConfigChange]:GFKDTabBarController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((AppDelegate *)[UIApplication sharedApplication].delegate).floatAD">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[VideoDetailViewController keyboardWasShown:]:VideoDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LSPlayerView playOrPause:]:LSPlayerView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.playerMaskView.playButton.selected">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CYWebViewController viewWillAppear:]:CYWebViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController.navigationBar">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMainViewController loadControllerVC]:SXMainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "vc.view.frame">
+            </PersistentString>
+            <PersistentString
+               value = "self.bigScrollView.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ImageViewerController setImageViewWithModel]:ImageViewerController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.scrollView.width * _currentIndex">
+            </PersistentString>
+            <PersistentString
+               value = "[NSURL URLWithString:_photoSet[i]]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__42-[LikeClassroomViewController loadNodeMsg]_block_invoke:LikeClassroomViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController viewWillAppear:]:NewsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__54-[NewsDetailBarViewController setBlockForOperationBar]_block_invoke.213:NewsDetailBarViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "weakSelf.newsDetailsVC.newsDetailObj">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LSPlayerView handleScrollOffsetWithDict:]:LSPlayerView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.indexSection">
+            </PersistentString>
+            <PersistentString
+               value = "self.indexRow">
+            </PersistentString>
+            <PersistentString
+               value = "self.tempSuperView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ReplyCommentCell setContentWithComment:]:ReplyCommentCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "comment.creator.length">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsCell setNewsModel:]:NewsCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.imgIcon.frame">
+            </PersistentString>
+            <PersistentString
+               value = "self.imgIcon.frame.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "self.NewsModel">
+            </PersistentString>
+            <PersistentString
+               value = "[NewsModel.dataDict[@&quot;description&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AudioViewController showVideo:]:AudioViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[TakeTableViewCell heightWithEntity:isDetail:]:TakeTableViewCell.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "entity.address">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMainViewController viewDidLoad]:SXMainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.bigScrollView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DiscoverViewController collectionView:cellForItemAtIndexPath:]:DiscoverViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMainViewController setScrollToTopWithTableViewIndex:]:SXMainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.childViewControllers[index].tableView">
+            </PersistentString>
+            <PersistentString
+               value = "self.childViewControllers">
+            </PersistentString>
+            <PersistentString
+               value = "self.needScrollToTopPage.tableView">
+            </PersistentString>
+            <PersistentString
+               value = "self.needScrollToTopPage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController parseDICT:]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "dict[@&quot;msg_code&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsDetailViewController webViewDidFinishLoad:]:NewsDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[webView stringByEvaluatingJavaScriptFromString:@&quot;document.getElementsByTagName(&apos;img&apos;)[0].src&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MyBasicInfoViewController tableView:viewForHeaderInSection:]:MyBasicInfoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "CGRectGetHeight(_gradeLabel.frame)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__42-[MyBasicInfoViewController getPointsInfo]_block_invoke:MyBasicInfoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[NSNumber numberWithFloat:123.00]">
+            </PersistentString>
+            <PersistentString
+               value = "_gradeLabel.frame.origin.x">
+            </PersistentString>
+            <PersistentString
+               value = "_gradeLabel.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate applicationWillEnterForeground:]:AppDelegate.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[PointsRuleViewController treeView:cellForItem:]:PointsRuleViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((UITableView *)raTreeView.subviews[0]).contentSize.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate application:didFinishLaunchingWithOptions:]:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[Config getToken]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__42-[PointsRuleViewController getPointsLevel]_block_invoke:PointsRuleViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "main:main.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[HXTagsView collectionView:cellForItemAtIndexPath:]:HXTagsView.m">
+      </ContextState>
+      <ContextState
+         contextName = "__57-[AppDelegate application:didFinishLaunchingWithOptions:]_block_invoke.189:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[Config getToken]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AddTakeViewController didUpdateBMKUserLocation:]:AddTakeViewController.mm">
+      </ContextState>
+      <ContextState
+         contextName = "-[GFKDTabBarController showTopNodes:]:GFKDTabBarController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__50-[NewsDetailAuditBarViewController AuditInfoToEnd]_block_invoke:NewsDetailAuditBarViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[GFKDTabBarController configVC]:GFKDTabBarController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((AppDelegate *)[UIApplication sharedApplication].delegate)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate showMainViewController]:AppDelegate.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[PointsRuleViewController numberOfSectionsInTableView:]:PointsRuleViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[RadioViewController viewDidLoad]:RadioViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MyBasicInfoViewController getPointsInfo]:MyBasicInfoViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ColumnViewController deleteItemWithIndexPath:]:ColumnViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.parentView.smallScrollView.subviews">
+            </PersistentString>
+            <PersistentString
+               value = "self.parentView.bigScrollView.subviews[1]">
+            </PersistentString>
+            <PersistentString
+               value = "self.parentView.bigScrollView.subviews">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMainViewController getUserNodes]:SXMainViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[Utils showLinkViewController:WithNowVC:]:Utils.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "VC.bottomBarVC">
+            </PersistentString>
+            <PersistentString
+               value = "VC.navigationController">
+            </PersistentString>
+            <PersistentString
+               value = "[model.enabled intValue]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsDetailViewController tableView:cellForRowAtIndexPath:]:NewsDetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[UserDetailsViewController tapPortrait]:UserDetailsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__40-[DiscoverViewController getDiscoveItem]_block_invoke.57:DiscoverViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMainViewController addLable]:SXMainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.smallScrollView.subviews.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMainViewController getNotUserNodes]:SXMainViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[UIViewController(WHReturntop) scrollViewWillBeginDragging:]:UIViewController+WHReturntop.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.Top.startContentOffsetY">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.contentOffset.y">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__34-[TakeTableViewCell sayDiggWithID]_block_invoke:TakeTableViewCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[UserInfoViewController imagePickerController:didFinishPickingMediaWithInfo:]:UserInfoViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsCell videoChick:]:NewsCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.indexPath">
+            </PersistentString>
+            <PersistentString
+               value = "self.superview">
+            </PersistentString>
+            <PersistentString
+               value = "self.imgIcon.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MyCollectsViewController tableView:cellForRowAtIndexPath:]:MyCollectsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "CGRectMake(8, 10, cell.contentView.bounds.size.width-16, 40)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMenuViewController addMoreButton]:SXMenuViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.bounds.size.height">
+            </PersistentString>
+            <PersistentString
+               value = "self.smallScrollView.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__35-[GFKDTabBarController loadTOPList]_block_invoke:GFKDTabBarController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[array isEqualToArray:mutableArray]">
+            </PersistentString>
+            <PersistentString
+               value = "array[2]">
+            </PersistentString>
+            <PersistentString
+               value = "mutableArray[2]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DiscoverViewController collectionView:numberOfItemsInSection:]:DiscoverViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_serviceArray[section]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate application:didFailToRegisterForRemoteNotificationsWithError:]:AppDelegate.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[TakeTableViewCell configView]:TakeTableViewCell.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "kNBR_SCREEN_W - (43 + 10 * 3 + 150)">
+            </PersistentString>
+            <PersistentString
+               value = "nikeNameLable.frame">
+            </PersistentString>
+            <PersistentString
+               value = "entity.longitude">
+            </PersistentString>
+            <PersistentString
+               value = "[entity.latitude doubleValue]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[XHLaunchAd skipButton]:XHLaunchAd.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_noDataDuration">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MyBasicInfoViewController viewDidLoad]:MyBasicInfoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[HomeAdCell click:]:HomeAdCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "ad.url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__40-[UserInfoViewController updatePortrait]_block_invoke.266:UserInfoViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMenuViewController addLable]:SXMenuViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[TakeTableViewCell sayStarWithID]:TakeTableViewCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[LikeBookViewController tableView:cellForRowAtIndexPath:]:LikeBookViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AddTakeViewController requestAddTake]:AddTakeViewController.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "commentInpuTextView.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsDetailViewController webView:shouldStartLoadWithRequest:navigationType:]:NewsDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "request.URL">
+            </PersistentString>
+            <PersistentString
+               value = "[webView stringByEvaluatingJavaScriptFromString:@&quot;document.documentElement.innerHTML&quot;];">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CYWebViewController hideTitlebarWithStr:]:CYWebViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[UIApplication sharedApplication]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PointsRuleViewController treeView:child:ofItem:]:PointsRuleViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((UITableView *)raTreeView.subviews[0]).contentSize.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsDetailBarViewController FXSliderTapGestureValue:]:NewsDetailBarViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_newsDetailsVC.HTML">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SXMenuViewController image_ADChick:]:SXMenuViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((AppDelegate *)[UIApplication sharedApplication].delegate).floatAD">
+            </PersistentString>
+            <PersistentString
+               value = "(floatADView *)sender">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__39-[AddTakeViewController requestAddTake]_block_invoke_2:AddTakeViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[DiscoverViewController createCollectionView]:DiscoverViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsDetailBarViewController initWithNewsID:]:NewsDetailBarViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[userDefaults objectForKey:kSliderSelect]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

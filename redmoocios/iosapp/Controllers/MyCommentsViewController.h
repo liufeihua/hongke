@@ -1,0 +1,15 @@
+//
+//  MyCommentsViewController.h
+//  iosapp
+//
+//  Created by redmooc on 16/3/24.
+//  Copyright © 2016年 redmooc. All rights reserved.
+//
+
+#import "SwipableViewController.h"
+
+@interface MyCommentsViewController : SwipableViewController
+
+- (instancetype)init;
+
+@end

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "__38-[NewsDetailViewController getComment]_block_invoke:NewsDetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__28-[LoginViewController login]_block_invoke:LoginViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[responseObject.rootElement firstChildWithTag:@&quot;meg_code&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "responseObject[@&quot;result&quot;][@&quot;data&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "responseObject[@&quot;result&quot;][@&quot;token&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__53-[GFKDObjsViewController fetchObjectsOnPage:refresh:]_block_invoke190:GFKDObjsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[Utils convertRichTextToRawText:]:Utils.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "textView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[VideoDetailViewController addVideo]:VideoDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_commentView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController initWithNewsListType:cateId:isSpecial:]:NewsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController tableView:cellForRowAtIndexPath:]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.objects[indexPath.row]">
+            </PersistentString>
+            <PersistentString
+               value = "news">
+            </PersistentString>
+            <PersistentString
+               value = "_AdvObjectsDict">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[JxbAdPageView setAds:]:JxbAdPageView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[PhotoSetController setImageViewWithModel:]:PhotoSetController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__59-[NewsViewController initWithNewsListType:cateId:isHasAdv:]_block_invoke:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[NSString stringWithFormat:@&quot;%@%@?cateId=%d&amp;attrType=0&amp;hasPic=0&amp;pageNumber=%lu&amp;%@&amp;isSpecial=0&amp;token=%@&quot;,GFKDAPI_PREFIX,GFKDAPI_NEWS_LIST,weakSelf.cateId,(unsigned long)page,GFKDAPI_PAGESIZE,token]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CommentsViewController tableView:cellForRowAtIndexPath:]:CommentsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "main:main.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.objects">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SearchSNSViewController tableView:didSelectRowAtIndexPath:]:SearchSNSViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsDetailViewController initWithNewsID:]:NewsDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[NSString stringWithFormat:@&quot;%@%@?articleId=%d&amp;pageNumber=%lu&amp;%@&amp;token=%@&quot;,GFKDAPI_PREFIX,GFKDAPI_NEWS_COMMENT,weakSelf.newsID,(long)page,GFKDAPI_PAGESIZE,token]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsDetailViewController tableView:cellForRowAtIndexPath:]:NewsDetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController tableView:numberOfRowsInSection:]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.objects">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SearchArticleViewController parseDICT:]:SearchArticleViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SearchSNSViewController tableView:heightForRowAtIndexPath:]:SearchSNSViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[VideoDetailViewController tableView:numberOfRowsInSection:]:VideoDetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__60-[NewsViewController initWithNewsListType:cateId:isSpecial:]_block_invoke:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.generateURL">
+            </PersistentString>
+            <PersistentString
+               value = "[NSString stringWithFormat:@&quot;%@%@?pageNumber=%lu&amp;%@&amp;token=%@&amp;attr=recommend&quot;,GFKDAPI_PREFIX,GFKDAPI_HOMENEWS_LIST,(unsigned long)page,GFKDAPI_PAGESIZE,token]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SideMenuViewController tableView:viewForHeaderInSection:]:SideMenuViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController parseDICT:]:NewsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SearchArticleResultViewController parseDICT:]:SearchArticleResultViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SearchSNSViewController tableView:cellForRowAtIndexPath:]:SearchSNSViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsDetailBarViewController sendContent]:NewsDetailBarViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__80-[SwipableViewController initWithTitle:andSubTitles:andControllers:underTabbar:]_block_invoke71:SwipableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_titleBar">
+            </PersistentString>
+            <PersistentString
+               value = "_viewPager">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginViewController reNewUserWithDict:]:LoginViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController tableView:didSelectRowAtIndexPath:]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "token">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AFHTTPRequestOperationManager HTTPRequestOperationWithHTTPMethod:URLString:parameters:success:failure:]:AFHTTPRequestOperationManager.m">
+      </ContextState>
+      <ContextState
+         contextName = "__42-[NewsDetailBarViewController sendContent]_block_invoke:NewsDetailBarViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[Utils convertRichTextToRawText:self.editingBar.editView]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PhotoSetController setContentWithIndex:]:PhotoSetController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__39-[NewsImagesViewController viewDidLoad]_block_invoke:NewsImagesViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsImagesViewController setContentWithIndex:]:NewsImagesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageObj.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__33-[PhotoSetController viewDidLoad]_block_invoke:PhotoSetController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController showVideoController:]:NewsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[PhotoSetController setLabelWithModel:]:PhotoSetController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[GFKDObjsViewController fetchObjectsOnPage:refresh:]:GFKDObjsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.generateURL(page)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GFKDContentViewController showTopNodes:]:GFKDContentViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SideMenuViewController tableView:cellForRowAtIndexPath:]:SideMenuViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "tagView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[Utils emojiDict]:Utils.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "emojiDict[112]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__54-[NewsDetailBarViewController setBlockForOperationBar]_block_invoke_2:NewsDetailBarViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsCell setNewsModel:]:NewsCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[Utils attributedTimeStringFormStr:NewsModel.dates]">
+            </PersistentString>
+            <PersistentString
+               value = "NewsModel.listTitle">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__39-[NewsDetailViewController viewDidLoad]_block_invoke:NewsDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_newsDetailObj.content">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TitleBarView onClick:]:TitleBarView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = " _titleButtons[_currentIndex].frame.origin">
+            </PersistentString>
+            <PersistentString
+               value = "self.contentSize.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__39-[VideoDetailViewController getComment]_block_invoke:VideoDetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SideMenuViewController setContentViewController:]:SideMenuViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((UIViewController *)self.sideMenuViewController.contentViewController)">
+            </PersistentString>
+            <PersistentString
+               value = "self.sideMenuViewController.contentViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate makeLaunchView]:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.window.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GFKDObjsViewController scrollViewDidEndDragging:willDecelerate:]:GFKDObjsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "scrollView.contentOffset.y">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.contentSize.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GFKDContentViewController addNavigationItemForViewController:]:GFKDContentViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "logoImage.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController initWithNewsListType:cateId:isHasAdv:isSpecial:]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_dict">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SearchArticleResultViewController tableView:didSelectRowAtIndexPath:]:SearchArticleResultViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.parentViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GFKDContentViewController pushSearchViewController]:GFKDContentViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsImagesViewController setImgWithIndex:]:NewsImagesViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsCell setLayoutPhoto]:NewsCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "kNBR_SCREEN_W">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsImagesViewController setLabelWithModel:]:NewsImagesViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__53-[GFKDObjsViewController fetchObjectsOnPage:refresh:]_block_invoke:GFKDObjsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "responseObject[@&quot;result&quot;][@&quot;data&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "responseObject">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController tableView:heightForRowAtIndexPath:]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.objects">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.section">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[Utils emojiStringFromRawString:]:Utils.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "emoji[emojiName]">
+            </PersistentString>
+            <PersistentString
+               value = "[emojiName hasPrefix:@&quot;[&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

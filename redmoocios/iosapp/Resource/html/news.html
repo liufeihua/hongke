@@ -1,0 +1,56 @@
+{{< html/base }}
+    {{$ body }}
+    
+    <div id="title_div">
+    <div class="title_info">
+        {{title}}
+    </div>
+    <div class="news_info" style="padding-left:3px;">
+        {{# header}}
+        <a style="text-decoration:underline;" onclick="location.href='myweb:NoticeClick'">{{{header}}}</a>
+        {{/header}}
+    </div>
+    <div class="news_info">
+        <span class="link_datetime"> {{dateTime}}</span>
+        <span class="link_browsers"> {{browsers}}</span>
+    </div>
+    
+    </div>
+    
+    <main>{{{content}}}</main>
+    
+    {{# fileName }}
+    <div class="news_file">
+    <a onclick="location.href='myweb:fileShowClick:'+'{{file}}'" >
+        <div class="news_fileImg" style="margin: 0 auto;">
+         
+        </div>
+<!--        <button onclick="location.href='myweb:fileShowClick:'+'{{file}}'">文件查看</button>-->
+    </a>
+    <div class="news_info" style="color:#000">
+        文件名:{{fileName}}
+    </div>
+    <div class="news_info">
+        文件大小:{{fileLength}}
+    </div>
+    </div>
+    {{/}}
+
+    
+    
+    <div class="news_info">
+        {{# footer}}
+          {{{footer}}}
+        {{/}}
+    </div>
+    
+    <div class="news_info">
+        <a onclick="location.href='myweb:ReportClick'">投诉</a>
+    </div>
+    
+<!--    <div class="news_info" style="text-align:center;">-->
+<!--        <a style="text-decoration:underline;" onclick="location.href='myweb:NoticeClick'">用稿通知单</a>-->
+<!--    </div>-->
+
+    {{/}}
+{{/}}

@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "d6f8a465-1753-4f96-8ecd-651bacf6abc2++505",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "d6f8a465-1753-4f96-8ecd-651bacf6abc2++505" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "d6f8a465-1753-4f96-8ecd-651bacf6abc2++505" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5CF83969-2A45-4B50-976C-3EC8AD135953",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "d6f8a465-1753-4f96-8ecd-651bacf6abc2++505" : "redmooc\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "iosapp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "redmoocios\/iosapp.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/192.168.1.30:20080\/svn\/redmooc",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "d6f8a465-1753-4f96-8ecd-651bacf6abc2++505"
+    }
+  ]
+}

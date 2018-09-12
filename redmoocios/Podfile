@@ -1,0 +1,21 @@
+platform :ios, '8.0'
+target "iosapp" do
+
+pod 'AFOnoResponseSerializer'
+pod 'SDWebImage'
+pod 'SSKeychain'
+pod 'ReactiveCocoa'
+pod 'MBProgressHUD'
+pod 'RESideMenu'
+pod 'Reachability'
+pod 'TTTAttributedLabel'
+pod 'GRMustache'
+pod 'MJRefresh'
+pod 'DateTools'
+pod 'Base64nl', '~> 1.2'
+pod 'UMengAnalytics'
+pod 'UMengSocial', '~> 4.4'
+pod 'Masonry'
+
+pod 'MobileVLCKit'
+end

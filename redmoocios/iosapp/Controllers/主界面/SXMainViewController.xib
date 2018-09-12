@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SXMainViewController">
+            <connections>
+                <outlet property="bigScrollView" destination="2I6-q2-kXd" id="UWW-kX-Viw"/>
+                <outlet property="smallScrollView" destination="ImP-wl-gni" id="hZr-o4-FL5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Xlg-uF-UQF">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImP-wl-gni">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="qaR-iG-8jN"/>
+                    </constraints>
+                </scrollView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2I6-q2-kXd">
+                    <rect key="frame" x="0.0" y="40" width="600" height="560"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="2I6-q2-kXd" secondAttribute="bottom" id="Lm7-XB-D1Q"/>
+                <constraint firstItem="2I6-q2-kXd" firstAttribute="top" secondItem="ImP-wl-gni" secondAttribute="bottom" id="fth-4d-Hhj"/>
+                <constraint firstItem="2I6-q2-kXd" firstAttribute="leading" secondItem="Xlg-uF-UQF" secondAttribute="leading" id="gxa-ot-Fhj"/>
+                <constraint firstAttribute="trailing" secondItem="2I6-q2-kXd" secondAttribute="trailing" id="kke-hz-1Wx"/>
+                <constraint firstAttribute="trailing" secondItem="ImP-wl-gni" secondAttribute="trailing" id="n7t-hz-10w"/>
+                <constraint firstItem="ImP-wl-gni" firstAttribute="top" secondItem="Xlg-uF-UQF" secondAttribute="top" id="tUa-lw-mfz"/>
+                <constraint firstItem="ImP-wl-gni" firstAttribute="leading" secondItem="Xlg-uF-UQF" secondAttribute="leading" id="ywS-5t-acx"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
