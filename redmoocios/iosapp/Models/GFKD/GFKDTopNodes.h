@@ -42,4 +42,6 @@
 @property (nonatomic, assign) NSNumber *isfixed;
 //"twoColumn":0,"isfixed":0
 
+@property (nonatomic, assign) NSNumber *showType;
+
 @end

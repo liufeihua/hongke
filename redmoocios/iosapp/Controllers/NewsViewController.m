@@ -169,8 +169,10 @@ static NSString *kNewsCellID = @"NewsCell";
     
     if ((_isHasAdv && indexPath.section == 1) || (!_isHasAdv)) {
         GFKDNews *news = self.objects[indexPath.row];
+        if ([news.cateId intValue]== 365) { //思想场  显示样式  showType = 5
+            news.showType = [NSNumber numberWithInt:5];
+        }
         NSString *ID = [NewsCell idForRow:news];
-
         UINib *nib = [UINib nibWithNibName:ID bundle:nil];
         [tableView registerNib:nib forCellReuseIdentifier:ID ];
        // NewsCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
@@ -208,7 +210,9 @@ static NSString *kNewsCellID = @"NewsCell";
 {
     if ((_isHasAdv && indexPath.section == 1) || (!_isHasAdv)) {
         GFKDNews *news = self.objects[indexPath.row];
-        
+        if ([news.cateId intValue]== 365) { //思想场  显示样式  showType = 5
+            news.showType = [NSNumber numberWithInt:5];
+        }
         return [NewsCell heightForRow:news];
     }else{
         return 220*kNBR_SCREEN_W/470;

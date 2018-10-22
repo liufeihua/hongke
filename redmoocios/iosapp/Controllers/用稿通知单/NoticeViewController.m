@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *label_content;
 @property (weak, nonatomic) IBOutlet UIButton *btn_download;
 @property (weak, nonatomic) IBOutlet UIImageView *image_notice;
+@property (weak, nonatomic) IBOutlet UILabel *label_date;
 
 @end
 
@@ -23,10 +24,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *dateStr = [NSString stringWithFormat:@"%@年%@月%@日",[_news_time substringWithRange:NSMakeRange(0,4)],[_news_time substringWithRange:NSMakeRange(5,2)],[_news_time substringWithRange:NSMakeRange(8,2)]];
     _label_author.text = [NSString stringWithFormat:@"%@：",_news_author];
-    NSString *content=  [@"        " stringByAppendingString:[NSString stringWithFormat:@"你撰写的稿件《%@》一文，经编委审核，予以发表。",_news_title]];
+    NSString *content=  [@"        " stringByAppendingString:[NSString stringWithFormat:@"你的作品《%@》%@刊发于红客《%@》栏目，系红客优秀原创稿件，根据学校规定，纳入单位和个人年度用稿统计。",_news_title,dateStr,_news_node]];
     _label_content.attributedText = [self getAttributedStringWithString:content lineSpace:5];
-    
+    _label_date.text = dateStr;
 }
 
 -(NSAttributedString *)getAttributedStringWithString:(NSString *)string lineSpace:(CGFloat)lineSpace {
@@ -50,7 +52,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self.view.layer renderInContext:context];
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
-    img = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(img.CGImage, CGRectMake(0, 0, kNBR_SCREEN_W*[UIScreen mainScreen].scale, (kNBR_SCREEN_H-60)*[UIScreen mainScreen].scale))];
+    img = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(img.CGImage, CGRectMake(0, 64, kNBR_SCREEN_W*[UIScreen mainScreen].scale, (kNBR_SCREEN_H-64-60)*[UIScreen mainScreen].scale))];
     UIGraphicsEndImageContext();
     return img;
 }

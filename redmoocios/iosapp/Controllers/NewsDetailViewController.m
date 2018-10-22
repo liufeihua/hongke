@@ -193,21 +193,21 @@ static NSString *kNewsCommentCellID = @"NewsCommentCell";
     [(MJRefreshBackStateFooter *)self.tableView.mj_footer setTitle:@"释放关闭当前页" forState:MJRefreshStatePulling];
     [(MJRefreshBackStateFooter *)self.tableView.mj_footer setTitle:@"" forState:MJRefreshStateRefreshing];
 
-//    self.bottomBarVC.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back"] style:(UIBarButtonItemStyleDone) target:self action:@selector(back)];
+    self.bottomBarVC.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back"] style:(UIBarButtonItemStyleDone) target:self action:@selector(back)];
 }
 
--(void)viewDidDisappear:(BOOL)animated
+
+-(void)back
 {
     //    但是如果按了返回键，不希望出现这种效果，那么还需要处理一下，在pop/push到新的界面的时候，代理置空
     self.bottomBarVC.navigationController.delegate = nil;
+    [self.bottomBarVC.navigationController popViewControllerAnimated:YES];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    NewsDetailCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     
+    //媒体打开窗口被隐藏  如“新闻60秒”有音频，在退出时，关闭音频播放
+     [cell.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]]];
 }
-//-(void)back
-//{
-//    //    但是如果按了返回键，不希望出现这种效果，那么还需要处理一下，在pop/push到新的界面的时候，代理置空
-//    self.bottomBarVC.navigationController.delegate = nil;
-//    [self.bottomBarVC.navigationController popViewControllerAnimated:YES];
-//}
 
 -(nullable id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
@@ -702,8 +702,10 @@ static NSString *kNewsCommentCellID = @"NewsCommentCell";
     if ([requestString hasPrefix:@"myweb:NoticeClick"]) {
         NoticeViewController *noticeVC = [NoticeViewController new];
         noticeVC.hidesBottomBarWhenPushed = YES;
-        noticeVC.news_author = _newsDetailObj.author;
+        noticeVC.news_author = _newsDetailObj.author; //newsDetailObj.shareUrl
         noticeVC.news_title = _newsDetailObj.title;
+        noticeVC.news_time = [_newsDetailObj.dates substringToIndex:10];
+        noticeVC.news_node = _newsDetailObj.categroy;
         [self.bottomBarVC.navigationController pushViewController:noticeVC animated:YES];
         
         return NO;

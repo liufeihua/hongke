@@ -65,6 +65,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *img_tuigao;
 
+@property (weak, nonatomic) IBOutlet UIImageView *topicImageView;
 
 - (void) closeVedio;
 

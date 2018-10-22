@@ -10,8 +10,12 @@
 #import "Utils.h"
 #import "OSCAPI.h"
 #import "LSPlayerView.h"
+#import <Masonry.h>
 
 #import <SDWebImage/UIImageView+WebCache.h>
+
+#define kTopicImageArray @[@"bg_topic_1",@"bg_topic_2",@"bg_topic_3",@"bg_topic_4",@"bg_topic_5"]
+
 
 @interface NewsCell ()
 {
@@ -23,7 +27,12 @@
 @implementation NewsCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
+//    if (ratio_W_H != nil) {
+//        ratio_W_H = [NSLayoutConstraint constraintWithItem:ratio_W_H.firstItem
+//                                                 attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:ratio_W_H.secondItem attribute:NSLayoutAttributeHeight multiplier:1 constant:ratio_W_H.constant];
+//    }
 }
 
 //- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -43,6 +52,24 @@
     _NewsModel = NewsModel;
     self.backgroundColor = [UIColor themeColor];    
     [self.imgIcon sd_setImageWithURL:NewsModel.image placeholderImage:[UIImage imageNamed:@"item_default"]];
+   
+//    if ([NewsModel.showType intValue] == 4) {
+//
+//        CGSize imageSize = [Utils getImageSizeWithURL:NewsModel.image];
+//        CGFloat width = imageSize.width;
+//        CGFloat height = imageSize.height;
+//        
+//        if (width != 0 && height !=0) { //url存在问题  图片不存在的情况
+//            CGFloat newHeight = self.imgIcon.frame.size.width*height/width;
+//            NSLog(@"newHeight:%f = %@",newHeight,NewsModel.image);
+//            [self.imgIcon mas_makeConstraints:^(MASConstraintMaker *make) {
+//                make.height.mas_equalTo(newHeight);
+//                
+//            }];
+//        }
+//        
+//        
+//    }
     NSString *titleStr;
     if (NewsModel.listTitle == nil||[NewsModel.listTitle  isEqual: @""]) {
         titleStr = NewsModel.title;
@@ -54,6 +81,14 @@
     
     self.lblTitle.numberOfLines = 3;
     self.lblSubtitle.text = @"";
+    
+    if ([self.NewsModel.showType intValue]== 5) {
+        self.lblTitle.numberOfLines = 1;
+        //NSLog(@"%@",NewsModel.dataDict[@"description"]);
+        self.lblSubtitle.text = NewsModel.dataDict[@"description"];
+        unsigned long imageType = self.NewsModel.title.length % [kTopicImageArray count];
+        self.topicImageView.image = [UIImage imageNamed:kTopicImageArray[imageType]];
+    }
 //    self.lblSubtitle.text = NewsModel.dataDict[@"description"];
 //    if ([NewsModel.dataDict[@"description"]  isEqual: @""]) {
 //        self.lblTitle.numberOfLines = 3;
@@ -149,9 +184,12 @@
    }else if (([NewsModel.hasVideo intValue] == 1) || ([NewsModel.showType intValue] == 4)){
        //大图   图比例为 360/150   8+titleHeight+8+图高＋8+12+8=44+titleHeight+图高
        //return 197+titleHeight;//232;
-       return 44 + titleHeight + kNBR_SCREEN_W*152/359;
+       return 44 + titleHeight + kNBR_SCREEN_W*150/360;
    }else if ([NewsModel.showType intValue] == 3){
        return 209+titleHeight;//228
+   }else if ([NewsModel.showType intValue] == 5){
+       CGFloat subTitleHeight = [NewsModel.dataDict[@"description"] boundingRectWithSize:CGSizeMake(kNBR_SCREEN_W-35*2, 0) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attrs context:nil].size.height;
+       return 100+subTitleHeight;
    }else{
         return 87;
    }
@@ -163,7 +201,10 @@
     /* 1|左图右文章标题、摘要
     2|三张图片并排
     3|左一大图右两小图
-    4|大图展现 */
+    4|大图展现
+    5|话题展现形式  后台未改，暂时将红讯中思想场自动改为该形式
+     */
+    
     //NSLog(@"showType:@%@",[NewsModel.showType stringValue]);
     //if (([NewsModel.hasImages intValue] == 1) || ([NewsModel.showType intValue] == 2)){
     if ([NewsModel.showType intValue] == 2){
@@ -172,6 +213,8 @@
         return @"bigImageCell";
     }else if ([NewsModel.showType intValue] == 3){
         return @"ImagesLeftCell";
+    }else if ([NewsModel.showType intValue] == 5){
+        return @"topicCell";
     }else {
         return @"NewsCell";
     }

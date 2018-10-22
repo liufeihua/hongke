@@ -4,7 +4,7 @@
 //  iosapp
 //
 //  Created by chenhaoxiang on 14-10-13.
-//  Copyright (c) 2014年 oschina. All rights reserved.
+//  Copyright (c) 2014年 hongke. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

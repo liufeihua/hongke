@@ -22,10 +22,11 @@ WMPlayer *wmPlayer;
 #pragma public method
 - (void)handleScrollingCellOutScreen{
     if (self.playingCell  && [self playingCellIsOutScreen]) {
-        NSLog(@"移动到屏幕外，停止播放视频");
-        //NewsCell *videoCell = self.playingCell;
+        //NSLog(@"移动到屏幕外，停止播放视频");
+        NewsCell *videoCell = self.playingCell;
         if (wmPlayer) {
             [self releaseWMPlayer];
+            [videoCell.VideoImg setHidden:NO];
         }
     }
     
@@ -35,10 +36,12 @@ WMPlayer *wmPlayer;
 - (void)handleScrollPlay{
     NewsCell *cell = (NewsCell *)[self getMinCenterCell];
     if (cell && ![self.playingCell isEqual:cell]) {
-        NSLog(@"当前的 cell 存在,是%ld",cell.indexPathRow);
+        //NSLog(@"当前的 cell 存在,是%ld",cell.indexPathRow);
         
         if ([cell.NewsModel.hasVideo intValue] == 1){
             if (wmPlayer) {
+                [cell.VideoImg.superview bringSubviewToFront:cell.VideoImg];
+                [cell.VideoImg setHidden:NO];
                 [self releaseWMPlayer];
             }
             
@@ -66,9 +69,10 @@ WMPlayer *wmPlayer;
                         [wmPlayer play];
                         
                         
-                        cell.VideoImg.hidden = YES;
+                        //cell.VideoImg.hidden = YES;
                         [cell.imgIcon addSubview:wmPlayer];
                         [cell.imgIcon bringSubviewToFront:wmPlayer];
+                        [cell.VideoImg bringSubviewToFront:wmPlayer];
                     }
                 }
             }

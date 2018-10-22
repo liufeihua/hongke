@@ -12,5 +12,6 @@
 
 @property (nonatomic,copy) NSString *news_author;
 @property (nonatomic,copy) NSString *news_title;
-
+@property (nonatomic,copy) NSString *news_time;
+@property (nonatomic,copy) NSString *news_node;
 @end

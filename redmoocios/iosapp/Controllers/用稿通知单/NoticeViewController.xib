@@ -15,6 +15,7 @@
                 <outlet property="image_notice" destination="ZGg-GP-RJ9" id="ku2-Ya-lEy"/>
                 <outlet property="label_author" destination="bsF-Is-bIH" id="Wvr-Iv-3vY"/>
                 <outlet property="label_content" destination="NQy-fb-FBf" id="05B-ed-2oX"/>
+                <outlet property="label_date" destination="z1e-7a-5tN" id="H9K-Kp-w23"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,27 +24,24 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZGg-GP-RJ9">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notice_bg" translatesAutoresizingMaskIntoConstraints="NO" id="ZGg-GP-RJ9">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="用稿通知单" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuH-r8-Rph">
-                    <rect key="frame" x="129" y="87" width="155" height="54"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用稿通知单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuH-r8-Rph">
+                    <rect key="frame" x="20" y="100" width="335" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="XXXX:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsF-Is-bIH">
-                    <rect key="frame" x="44" y="149" width="268" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXX:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsF-Is-bIH">
+                    <rect key="frame" x="20" y="144" width="335" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="你撰写的稿件《ＸＸＸＸ》一文，经编委审核，予以发表。" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQy-fb-FBf">
-                    <rect key="frame" x="44" y="199" width="288" height="75"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你的作品《ＸＸＸＸ》2018年10月1日刊发于红客《XX》栏目，系红客优秀原创稿件，根据学校规定，纳入单位和个人年度用稿统计。" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQy-fb-FBf">
+                    <rect key="frame" x="20" y="174.5" width="335" height="81.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -66,25 +64,60 @@
                         <action selector="touchUp_download:" destination="-1" eventType="touchUpInside" id="0os-86-JeO"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="seal" translatesAutoresizingMaskIntoConstraints="NO" id="tKN-SZ-mfd">
-                    <rect key="frame" x="261" y="362" width="60" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notice_seal" translatesAutoresizingMaskIntoConstraints="NO" id="IhB-TV-R5j">
+                    <rect key="frame" x="175" y="286" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="iMb-nf-6ix"/>
+                        <constraint firstAttribute="width" constant="150" id="zhg-Jj-CL4"/>
+                    </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="教研保障中心新闻文化室" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UN9-f4-kQd">
+                    <rect key="frame" x="144" y="355" width="191" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaN-hn-D4M">
+                    <rect key="frame" x="235" y="447" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="二零一八年八月十日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1e-7a-5tN" userLabel="Label date">
+                    <rect key="frame" x="179" y="404" width="156" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="ZGg-GP-RJ9" secondAttribute="bottom" constant="60" id="KbY-Na-ahE"/>
+                <constraint firstItem="bsF-Is-bIH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="0Cl-W3-p3H"/>
+                <constraint firstItem="IhB-TV-R5j" firstAttribute="top" secondItem="NQy-fb-FBf" secondAttribute="bottom" constant="30" id="4tv-Ua-BKg"/>
+                <constraint firstAttribute="bottom" secondItem="E6s-WB-bdw" secondAttribute="bottom" constant="10" id="53K-si-nmN"/>
+                <constraint firstAttribute="trailing" secondItem="ZuH-r8-Rph" secondAttribute="trailing" constant="20" id="AS2-Mg-v3R"/>
+                <constraint firstAttribute="bottom" secondItem="ZGg-GP-RJ9" secondAttribute="bottom" id="KbY-Na-ahE"/>
                 <constraint firstItem="E6s-WB-bdw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="LUg-FW-7Pk"/>
+                <constraint firstAttribute="trailing" secondItem="bsF-Is-bIH" secondAttribute="trailing" constant="20" id="OYG-o5-YNC"/>
+                <constraint firstAttribute="trailing" secondItem="z1e-7a-5tN" secondAttribute="trailing" constant="40" id="Tv5-j8-dkk"/>
+                <constraint firstItem="NQy-fb-FBf" firstAttribute="top" secondItem="bsF-Is-bIH" secondAttribute="bottom" constant="10" id="VhE-9H-aSH"/>
+                <constraint firstItem="NQy-fb-FBf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="WNA-4m-0J7"/>
                 <constraint firstAttribute="trailing" secondItem="ZGg-GP-RJ9" secondAttribute="trailing" id="ZBr-7o-MKp"/>
+                <constraint firstAttribute="trailing" secondItem="UN9-f4-kQd" secondAttribute="trailing" constant="40" id="ZsG-3x-gB4"/>
+                <constraint firstItem="ZuH-r8-Rph" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="clz-pi-pkQ"/>
                 <constraint firstItem="ZGg-GP-RJ9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jC1-vr-cut"/>
-                <constraint firstItem="E6s-WB-bdw" firstAttribute="top" secondItem="ZGg-GP-RJ9" secondAttribute="bottom" constant="10" id="mcN-W3-MNu"/>
+                <constraint firstAttribute="trailing" secondItem="NQy-fb-FBf" secondAttribute="trailing" constant="20" id="lEG-6L-3f4"/>
                 <constraint firstAttribute="trailing" secondItem="E6s-WB-bdw" secondAttribute="trailing" constant="16" id="mdi-l4-ocq"/>
-                <constraint firstItem="ZGg-GP-RJ9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="q84-xz-qWY"/>
+                <constraint firstItem="UN9-f4-kQd" firstAttribute="top" secondItem="NQy-fb-FBf" secondAttribute="bottom" constant="99" id="neA-wN-mVQ"/>
+                <constraint firstItem="ZGg-GP-RJ9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="q84-xz-qWY"/>
+                <constraint firstItem="ZuH-r8-Rph" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="wMk-5g-baU"/>
+                <constraint firstItem="bsF-Is-bIH" firstAttribute="top" secondItem="ZuH-r8-Rph" secondAttribute="bottom" constant="20" id="whu-R0-rBe"/>
+                <constraint firstItem="z1e-7a-5tN" firstAttribute="top" secondItem="UN9-f4-kQd" secondAttribute="bottom" constant="28" id="xRn-5h-HEo"/>
+                <constraint firstAttribute="trailing" secondItem="IhB-TV-R5j" secondAttribute="trailing" constant="50" id="zTf-gW-9q3"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="70.5"/>
         </view>
     </objects>
     <resources>
-        <image name="seal" width="120" height="120"/>
+        <image name="notice_bg" width="480" height="800"/>
+        <image name="notice_seal" width="200" height="200"/>
     </resources>
 </document>

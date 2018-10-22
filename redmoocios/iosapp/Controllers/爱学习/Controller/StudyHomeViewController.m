@@ -110,7 +110,7 @@ static int towSmallRow = 2;
                  [Utils showHttpErrorWithCode:(int)invalidToken withMessage:errorMessage];
                  
                  return;
-                 
+                
              }
              [dataArray_study removeAllObjects];
              NSArray *array = responseObject[@"result"][@"data"];

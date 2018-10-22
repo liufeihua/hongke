@@ -346,6 +346,7 @@
 		E79C1E2A1D1157D500A3957D /* XHViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = E79C1E1C1D1157D500A3957D /* XHViewState.m */; };
 		E79C1E2B1D1157D500A3957D /* XHZoomingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E79C1E1E1D1157D500A3957D /* XHZoomingImageView.m */; };
 		E79DFDEF21475A7600C83E6C /* popTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E79DFDEE21475A7600C83E6C /* popTransition.m */; };
+		E79DFDF2214B9CE300C83E6C /* topicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79DFDF1214B9CE300C83E6C /* topicCell.xib */; };
 		E7A5C1A11CEEABAB009ECC9A /* PointsRuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A5C1A01CEEABAB009ECC9A /* PointsRuleViewController.m */; };
 		E7A5C1A41CEEB9D2009ECC9A /* GFKDPointsRule.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A5C1A31CEEB9D2009ECC9A /* GFKDPointsRule.m */; };
 		E7A5C1AD1CEF004C009ECC9A /* ChildTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A5C1A61CEF004C009ECC9A /* ChildTableViewCell.m */; };
@@ -356,6 +357,14 @@
 		E7A5C1B41CEF0258009ECC9A /* DetailButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A5C1B31CEF0258009ECC9A /* DetailButton.m */; };
 		E7A9EC0D1CA3DBF100DFB2BE /* GFKDMyCollect.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A9EC0C1CA3DBF100DFB2BE /* GFKDMyCollect.m */; };
 		E7A9EC101CA3DCA100DFB2BE /* MyCollectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A9EC0F1CA3DCA100DFB2BE /* MyCollectsViewController.m */; };
+		E7B735F2217581B70002B0C3 /* StudySchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B735F1217581B70002B0C3 /* StudySchoolViewController.m */; };
+		E7B735F52175875A0002B0C3 /* NodeBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B735F42175875A0002B0C3 /* NodeBaseCell.m */; };
+		E7B735F92175CAE20002B0C3 /* NodeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B735F82175CAE20002B0C3 /* NodeTwoCell.xib */; };
+		E7B735FB2175D1560002B0C3 /* NodeThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B735FA2175D1560002B0C3 /* NodeThreeCell.xib */; };
+		E7B735FE2176CCA60002B0C3 /* StudyMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B735FD2176CCA60002B0C3 /* StudyMoreViewController.m */; };
+		E7B736002176DBF50002B0C3 /* NodeFourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B735FF2176DBF50002B0C3 /* NodeFourCell.xib */; };
+		E7B73602217821890002B0C3 /* NodeNCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B73601217821890002B0C3 /* NodeNCell.xib */; };
+		E7B736052178387F0002B0C3 /* CALayer+MZXibConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B736042178387F0002B0C3 /* CALayer+MZXibConfig.m */; };
 		E7BEE2D81DEE8C5800BBAF4A /* LSYChapterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BEE2D71DEE8C5800BBAF4A /* LSYChapterModel.m */; };
 		E7C13FC31DD1C5BF00D857F7 /* bg_back_white.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C13F581DD1C5BF00D857F7 /* bg_back_white.png */; };
 		E7C13FC41DD1C5BF00D857F7 /* bg_back_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C13F591DD1C5BF00D857F7 /* bg_back_white@2x.png */; };
@@ -1062,6 +1071,7 @@
 		E79C1E1E1D1157D500A3957D /* XHZoomingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XHZoomingImageView.m; path = XHImageViewer/XHZoomingImageView.m; sourceTree = "<group>"; };
 		E79DFDED21475A7500C83E6C /* popTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = popTransition.h; sourceTree = "<group>"; };
 		E79DFDEE21475A7600C83E6C /* popTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = popTransition.m; sourceTree = "<group>"; };
+		E79DFDF1214B9CE300C83E6C /* topicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = topicCell.xib; sourceTree = "<group>"; };
 		E7A5C19F1CEEABAB009ECC9A /* PointsRuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointsRuleViewController.h; sourceTree = "<group>"; };
 		E7A5C1A01CEEABAB009ECC9A /* PointsRuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointsRuleViewController.m; sourceTree = "<group>"; };
 		E7A5C1A21CEEB9D2009ECC9A /* GFKDPointsRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GFKDPointsRule.h; path = GFKD/GFKDPointsRule.h; sourceTree = "<group>"; };
@@ -1080,6 +1090,18 @@
 		E7A9EC0C1CA3DBF100DFB2BE /* GFKDMyCollect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GFKDMyCollect.m; path = GFKD/GFKDMyCollect.m; sourceTree = "<group>"; };
 		E7A9EC0E1CA3DCA100DFB2BE /* MyCollectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectsViewController.h; sourceTree = "<group>"; };
 		E7A9EC0F1CA3DCA100DFB2BE /* MyCollectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectsViewController.m; sourceTree = "<group>"; };
+		E7B735F0217581B70002B0C3 /* StudySchoolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StudySchoolViewController.h; path = "读书荟/StudySchoolViewController.h"; sourceTree = "<group>"; };
+		E7B735F1217581B70002B0C3 /* StudySchoolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = StudySchoolViewController.m; path = "读书荟/StudySchoolViewController.m"; sourceTree = "<group>"; };
+		E7B735F32175875A0002B0C3 /* NodeBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NodeBaseCell.h; path = "读书荟/cell/NodeBaseCell.h"; sourceTree = "<group>"; };
+		E7B735F42175875A0002B0C3 /* NodeBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NodeBaseCell.m; path = "读书荟/cell/NodeBaseCell.m"; sourceTree = "<group>"; };
+		E7B735F82175CAE20002B0C3 /* NodeTwoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NodeTwoCell.xib; path = "读书荟/cell/NodeTwoCell.xib"; sourceTree = "<group>"; };
+		E7B735FA2175D1560002B0C3 /* NodeThreeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NodeThreeCell.xib; sourceTree = "<group>"; };
+		E7B735FC2176CCA60002B0C3 /* StudyMoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StudyMoreViewController.h; path = "读书荟/StudyMoreViewController.h"; sourceTree = "<group>"; };
+		E7B735FD2176CCA60002B0C3 /* StudyMoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = StudyMoreViewController.m; path = "读书荟/StudyMoreViewController.m"; sourceTree = "<group>"; };
+		E7B735FF2176DBF50002B0C3 /* NodeFourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NodeFourCell.xib; path = "读书荟/cell/NodeFourCell.xib"; sourceTree = "<group>"; };
+		E7B73601217821890002B0C3 /* NodeNCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NodeNCell.xib; path = "读书荟/cell/NodeNCell.xib"; sourceTree = "<group>"; };
+		E7B736032178387F0002B0C3 /* CALayer+MZXibConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+MZXibConfig.h"; sourceTree = "<group>"; };
+		E7B736042178387F0002B0C3 /* CALayer+MZXibConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+MZXibConfig.m"; sourceTree = "<group>"; };
 		E7BEE2D71DEE8C5800BBAF4A /* LSYChapterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYChapterModel.m; sourceTree = "<group>"; };
 		E7C13F581DD1C5BF00D857F7 /* bg_back_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_back_white.png; sourceTree = "<group>"; };
 		E7C13F591DD1C5BF00D857F7 /* bg_back_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_back_white@2x.png"; sourceTree = "<group>"; };
@@ -1612,6 +1634,7 @@
 				E74C669B1CEB1A09000ADC5E /* NewsDetailAuditBarViewController.m */,
 				E78F820F1DBD9F9000280A40 /* NewsSegmentedViewController.h */,
 				E78F82101DBD9F9000280A40 /* NewsSegmentedViewController.m */,
+				E79DFDF1214B9CE300C83E6C /* topicCell.xib */,
 			);
 			name = "新闻";
 			sourceTree = "<group>";
@@ -1890,6 +1913,7 @@
 		C54689FD1BD1F02300D49223 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E7B735EF21757E3F0002B0C3 /* 读书荟 */,
 				E72028F01EE6865A0012BB29 /* 爱学习 */,
 				E751B39D1DC18F6000337C6C /* 直通车 */,
 				E7646DDB1DBF51B600FF70B6 /* E政工 */,
@@ -2106,6 +2130,8 @@
 				E721EA9C1ECBE8140066771A /* UIColor+WHE.m */,
 				E721EA9D1ECBE8140066771A /* UIImage+CYButtonIcon.h */,
 				E721EA9E1ECBE8140066771A /* UIImage+CYButtonIcon.m */,
+				E7B736032178387F0002B0C3 /* CALayer+MZXibConfig.h */,
+				E7B736042178387F0002B0C3 /* CALayer+MZXibConfig.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -2770,6 +2796,31 @@
 			name = "我的收藏";
 			sourceTree = "<group>";
 		};
+		E7B735EF21757E3F0002B0C3 /* 读书荟 */ = {
+			isa = PBXGroup;
+			children = (
+				E7B735F6217587620002B0C3 /* Cell */,
+				E7B735F0217581B70002B0C3 /* StudySchoolViewController.h */,
+				E7B735F1217581B70002B0C3 /* StudySchoolViewController.m */,
+				E7B735FC2176CCA60002B0C3 /* StudyMoreViewController.h */,
+				E7B735FD2176CCA60002B0C3 /* StudyMoreViewController.m */,
+			);
+			name = "读书荟";
+			sourceTree = "<group>";
+		};
+		E7B735F6217587620002B0C3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E7B735F32175875A0002B0C3 /* NodeBaseCell.h */,
+				E7B735F42175875A0002B0C3 /* NodeBaseCell.m */,
+				E7B735F82175CAE20002B0C3 /* NodeTwoCell.xib */,
+				E7B735FA2175D1560002B0C3 /* NodeThreeCell.xib */,
+				E7B735FF2176DBF50002B0C3 /* NodeFourCell.xib */,
+				E7B73601217821890002B0C3 /* NodeNCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		E7C13EB61DD1BB4D00D857F7 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
@@ -3169,6 +3220,7 @@
 				E7C13FC81DD1C5BF00D857F7 /* reader_more@2x.png in Resources */,
 				251B2E651C05ACC700E3DAAB /* VideoDetailViewController.xib in Resources */,
 				E73535BA1C9FA169003381BF /* LSPlayerMaskView.xib in Resources */,
+				E7B735FB2175D1560002B0C3 /* NodeThreeCell.xib in Resources */,
 				38CC81EC1AE6517E00CC4F6F /* emojiToText.plist in Resources */,
 				E734FBEC1D2BA80500FE8325 /* columnDelete.png in Resources */,
 				E7C13FC31DD1C5BF00D857F7 /* bg_back_white.png in Resources */,
@@ -3178,6 +3230,7 @@
 				E7F41A001D814843001F4F15 /* MyCenterViewController.xib in Resources */,
 				E7F909F81DCB3F9700648219 /* ztc_bg_1.jpg in Resources */,
 				E72F03411CA37E6E00B9335D /* MyCommentCell.xib in Resources */,
+				E79DFDF2214B9CE300C83E6C /* topicCell.xib in Resources */,
 				E751B5B61CA1023100DA89B6 /* PlayerDetailViewController.xib in Resources */,
 				E7C13FCE1DD1C5BF00D857F7 /* bt_tjcp_no@2x.png in Resources */,
 				E7F244AB1D138A79003FABD5 /* ImagesPicker.xcassets in Resources */,
@@ -3188,6 +3241,7 @@
 				E7C13FC71DD1C5BF00D857F7 /* reader_cover@2x.png in Resources */,
 				C5B1231E1B316830000B29D2 /* js in Resources */,
 				E7A5C1B01CEF004C009ECC9A /* FatherTableViewCell.xib in Resources */,
+				E7B736002176DBF50002B0C3 /* NodeFourCell.xib in Resources */,
 				2559B2BD1C0D95FF00441B35 /* emojiBase.plist in Resources */,
 				E746FA231E02386100BA6BA1 /* FontChooseView.xib in Resources */,
 				E7132EFD1C7EEBD000783309 /* LaunchScreen.xib in Resources */,
@@ -3196,6 +3250,7 @@
 				C5B1231D1B316830000B29D2 /* html in Resources */,
 				C5A89C3C1B09C59400798B1C /* FontAwesome.ttf in Resources */,
 				C5E56F411B56AAAF0059924C /* News.storyboard in Resources */,
+				E7B73602217821890002B0C3 /* NodeNCell.xib in Resources */,
 				E7666C831DF1143E00837653 /* SearchWebView.js in Resources */,
 				E73535BD1C9FA169003381BF /* play_back_full.png in Resources */,
 				E7132EED1C7EDE9900783309 /* Launch Screen.storyboard in Resources */,
@@ -3209,6 +3264,7 @@
 				E721EAB01ECBE8140066771A /* backBtn.png in Resources */,
 				E7C13FC61DD1C5BF00D857F7 /* r_drag-dot@2x.png in Resources */,
 				E76AB7011D62D1C5003D8192 /* FourCollectionCell.xib in Resources */,
+				E7B735F92175CAE20002B0C3 /* NodeTwoCell.xib in Resources */,
 				E74666C31DD40F5900B8A53B /* re_product_pan_b@2x.png in Resources */,
 				E7C13FC51DD1C5BF00D857F7 /* ic_add.png in Resources */,
 				251C18131BFC5A7100ADCD23 /* ImagesCell.xib in Resources */,
@@ -3279,6 +3335,7 @@
 			files = (
 				251B9DC01C0EE5A6004F85D9 /* IQKeyboardManager.m in Sources */,
 				C5A89C391B09C34B00798B1C /* UIFont+FontAwesome.m in Sources */,
+				E7B735FE2176CCA60002B0C3 /* StudyMoreViewController.m in Sources */,
 				E7C13FE81DD1C5BF00D857F7 /* CXMLElement_CreationExtensions.m in Sources */,
 				E74071231C97DF4100E80E0E /* ReaderContentTile.m in Sources */,
 				251B9DC41C0EE5A6004F85D9 /* IQToolbar.m in Sources */,
@@ -3345,6 +3402,7 @@
 				E74071271C97DF4100E80E0E /* ReaderMainPagebar.m in Sources */,
 				E7453F8B1DC03B2D00E00E4E /* HeadTableViewCell.m in Sources */,
 				E751B5E21CA130D700DA89B6 /* UpdatePwdViewController.m in Sources */,
+				E7B735F52175875A0002B0C3 /* NodeBaseCell.m in Sources */,
 				00EDF60F19EFF4B300A5C842 /* Utils.m in Sources */,
 				E7132EFB1C7EE06600783309 /* LaunchScreenViewController.m in Sources */,
 				00FF954819F2BF8B002F4737 /* LastCell.m in Sources */,
@@ -3359,6 +3417,7 @@
 				E7F2447F1D138498003FABD5 /* AddTakeViewController.mm in Sources */,
 				0004918E19F8FFE9001F3A36 /* HorizonalTableViewController.m in Sources */,
 				251C37CC1C0424AB00FAFC19 /* SearchArticleResultViewController.m in Sources */,
+				E7B736052178387F0002B0C3 /* CALayer+MZXibConfig.m in Sources */,
 				E75572F41D829EDA009F5403 /* XHLaunchAd.m in Sources */,
 				C5E5E6B41B5CCBCE009EBD8E /* UIScrollView+ScalableCover.m in Sources */,
 				6662BAD01B8C5EBD00D6A9BC /* NSString+pinyin.m in Sources */,
@@ -3425,6 +3484,7 @@
 				E7C13FD11DD1C5BF00D857F7 /* LSYMenuView.m in Sources */,
 				251B9DC31C0EE5A6004F85D9 /* IQTitleBarButtonItem.m in Sources */,
 				E7006E812133EE9500302866 /* XHYScrollingNavBarViewController.m in Sources */,
+				E7B735F2217581B70002B0C3 /* StudySchoolViewController.m in Sources */,
 				E746FA431E02423000BA6BA1 /* TYShowAlertView.m in Sources */,
 				E7C13FD51DD1C5BF00D857F7 /* LSYNoteModel.m in Sources */,
 				E7666C761DF1143E00837653 /* EPUBFontViewController.m in Sources */,

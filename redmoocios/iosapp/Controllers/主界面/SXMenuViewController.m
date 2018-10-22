@@ -272,7 +272,7 @@
     
     if(recognizer.direction==UISwipeGestureRecognizerDirectionDown) {
         
-        NSLog(@"swipe down");
+        //NSLog(@"swipe down");
         //显示
 //        [UIView animateWithDuration:0.3 animations:^{
 //                [self.smallScrollView setFrame:CGRectMake(0, 0, self.view.bounds.size.width, _tagsHeight)];
@@ -283,7 +283,7 @@
     }
     if(recognizer.direction==UISwipeGestureRecognizerDirectionUp) {
         
-        NSLog(@"swipe up");
+        //NSLog(@"swipe up");
         //隐藏
 //        [UIView animateWithDuration:0.3 animations:^{
 //            CGFloat height = 0;
