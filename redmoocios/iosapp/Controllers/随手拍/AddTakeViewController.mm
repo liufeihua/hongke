@@ -133,10 +133,16 @@ const NSInteger CommitImageViewWidthCount     = 5;
            return;
         }
         [locService stopUserLocationService];
-        [self.navigationController popViewControllerAnimated:YES];
-        if ([self.delegate respondsToSelector:@selector(GiveisAdd:)]) {
-            [self.delegate GiveisAdd:YES];
+        if (_infoType == 3) {
+            //进入模板选择
+            
+        }else{
+            [self.navigationController popViewControllerAnimated:YES];
+            if ([self.delegate respondsToSelector:@selector(GiveisAdd:)]) {
+                [self.delegate GiveisAdd:YES];
+            }
         }
+        
     
     [HUD hide:YES afterDelay:1];
     

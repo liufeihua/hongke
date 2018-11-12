@@ -104,4 +104,7 @@
 
 @property (nonatomic, assign) NSString *footer;
 
+
+@property (nonatomic, assign) NSString *author;
+
 @end

@@ -103,16 +103,22 @@
         if (_image) {
             _imageView.image = _image;
         } else {
-            if (![[SDWebImageManager sharedManager] cachedImageExistsForURL:_imageURL]) {
-                _HUD = [Utils createHUD];
-                _HUD.mode = MBProgressHUDModeAnnularDeterminate;
-                [_HUD addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)]];
-            }
-            
+//            if (![[SDWebImageManager sharedManager] cachedImageExistsForURL:_imageURL]) {
+//                _HUD = [Utils createHUD];
+//                _HUD.mode = MBProgressHUDModeAnnularDeterminate;
+//                [_HUD addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)]];
+//            }
+            [[SDWebImageManager sharedManager] cachedImageExistsForURL:_imageURL completion:^(BOOL isInCache) {
+                if (!isInCache){
+                    _HUD = [Utils createHUD];
+                    _HUD.mode = MBProgressHUDModeAnnularDeterminate;
+                    [_HUD addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)]];
+                }
+            }];
             [_imageView sd_setImageWithURL:_imageURL
                           placeholderImage:nil
                                    options:SDWebImageProgressiveDownload | SDWebImageContinueInBackground
-                                  progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                  progress:^(NSInteger receivedSize, NSInteger expectedSize,NSURL * targetURL) {
                                       _HUD.progress = (CGFloat)receivedSize / (CGFloat)expectedSize;
                                   }
                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {

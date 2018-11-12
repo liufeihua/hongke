@@ -31,6 +31,21 @@
 #define kRectW_N kWindowW/2.0
 #define kRectH_N kRectW_N*3/4.0      //W:H=4:3
 
+#define kRectW_four_1Ratio1 (kWindowW - 50)/4
+#define kRectH_four_1Ratio1 kRectW_four*1/1.0      //W:H=1:1
+
+#define kRectH_one  75
+#define kRectH_oneTitle  25
+
+//typeId
+//0:两列样式(图片宽高比1:1)
+//1:三列样式(图片宽高比4:3)
+//2:四列样式(图片宽高比3:4)
+//3:滑动样式(图片宽高比4:3)
+//4:四列样式(图片宽高比1:1)
+//5:左图右标题(图片宽高比4:3)
+//6:左标题右作者(无图片)
+
 @implementation NodeBaseCell
 {
     NSMutableArray *dataArray_childNode;
@@ -38,7 +53,7 @@
 
 - (void) setNode:(GFKDTopNodes *)node{
     _node = node;
-    [self loadChildNodeList:node.number];
+    [self loadChildNodeList:node.cateId];
 }
 
 - (void)awakeFromNib {
@@ -54,6 +69,12 @@
     _label1.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap_1_label = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_1)];
     [_label1 addGestureRecognizer:singleTap_1_label];
+    _label_subTitle_1.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap_1_label_sub = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_1)];
+    [_label_subTitle_1 addGestureRecognizer:singleTap_1_label_sub];
+    _label_author_1.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap_1_author = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_1)];
+    [_label_author_1 addGestureRecognizer:singleTap_1_author];
     
     _image2.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap_2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_2)];
@@ -61,6 +82,12 @@
     _label2.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap_2_label = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_2)];
     [_label2 addGestureRecognizer:singleTap_2_label];
+    _label_subTitle_2.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap_2_label_sub = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_2)];
+    [_label_subTitle_2 addGestureRecognizer:singleTap_2_label_sub];
+    _label_author_2.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap_2_author = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_2)];
+    [_label_author_2 addGestureRecognizer:singleTap_2_author];
     
     _image3.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap_3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_3)];
@@ -68,6 +95,12 @@
     _label3.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap_3_label = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_3)];
     [_label3 addGestureRecognizer:singleTap_3_label];
+    _label_subTitle_3.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap_3_label_sub = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_3)];
+    [_label_subTitle_3 addGestureRecognizer:singleTap_3_label_sub];
+    _label_author_3.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap_3_author = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_3)];
+    [_label_author_3 addGestureRecognizer:singleTap_3_author];
     
     _image4.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap_4 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_4)];
@@ -75,7 +108,17 @@
     _label4.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap_4_label = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_4)];
     [_label4 addGestureRecognizer:singleTap_4_label];
+    _label_author_4.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap_4_author = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_4)];
+    [_label_author_4 addGestureRecognizer:singleTap_4_author];
     
+    _label5.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap_5_label = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_5)];
+    [_label5 addGestureRecognizer:singleTap_5_label];
+    
+    _label_author_5.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap_5_author = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_5)];
+    [_label_author_5 addGestureRecognizer:singleTap_5_author];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -85,7 +128,10 @@
 }
 
 + (CGFloat)heightForRow:(GFKDTopNodes *)node{
-    switch ([node.showType intValue]) {
+    if ([node.typeId isKindOfClass:[NSNull class]]){
+        node.typeId = [NSNumber numberWithInt:0];
+    }
+    switch ([node.typeId intValue]) {
         case 0:
         {
             return 102;
@@ -106,17 +152,35 @@
             return kRectH_N+15+20+5+10;
         }
             break;
+        case 4:
+        {
+            return kRectH_four_1Ratio1+10+20+10+10;
+        }
+            break;
+        case 5:
+        {
+            return kRectH_one*3+6*10;
+        }
+            break;
+        case 6:
+        {
+            return kRectH_oneTitle*5+6*10;
+        }
+            break;
             
         default:
         {
-            return 0;
+            return kRectH_three+10+40+10+10;;
         }
             break;
     }
 }
 
 + (NSString *)idForRow:(GFKDTopNodes *)node{
-    switch ([node.showType intValue]) {
+    if ([node.typeId isKindOfClass:[NSNull class]]){
+        node.typeId = [NSNumber numberWithInt:0];
+    }
+    switch ([node.typeId intValue]) {
         case 0:
         {
             return @"NodeTwoCell";
@@ -137,23 +201,38 @@
             return @"NodeNCell";
         }
             break;
+        case 4:
+        {
+            return @"NodeFour_1ratio1Cell";
+        }
+            break;
+        case 5:
+        {
+            return @"NodeOneCell";
+        }
+            break;
+        case 6:
+        {
+            return @"NodeOneTitleCell";
+        }
+            break;
             
         default:
         {
-            return @"";
+            return @"NodeThreeCell";
         }
             break;
     }
 }
 
 
-- (void) loadChildNodeList:(NSString *)number
+- (void) loadChildNodeList:(NSNumber *)parentId
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
     
     [manager GET:[NSString stringWithFormat:@"%@/m-nodeList.htx", GFKDAPI_HTTPS_PREFIX]
       parameters:@{@"token":[Config getToken],
-                   @"number":number}
+                   @"parentId":parentId}
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
              NSString *errorMessage = responseObject[@"reason"];
@@ -189,6 +268,10 @@
                      [self.image4 sd_setImageWithURL:node.smallImage placeholderImage:[UIImage imageNamed:@"item_default"]];
                      self.label4.text = node.cateName;
                  }
+                 if (i == 5) {
+//                     [self.image5 sd_setImageWithURL:node.smallImage placeholderImage:[UIImage imageNamed:@"item_default"]];
+                     self.label5.text = node.cateName;
+                 }
              }
              
     
@@ -206,7 +289,7 @@
 
 - (void) loadArticleList:(int)cateId{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
-        [manager GET:[NSString stringWithFormat:@"%@%@?cateId=%d&attrType=0&hasPic=0&pageNumber=0&%@&isSpecial=%d&token=%@&showDescendants=1",GFKDAPI_HTTPS_PREFIX,GFKDAPI_NEWS_LIST,cateId,@"pageSize=4",0,[Config getToken]]
+        [manager GET:[NSString stringWithFormat:@"%@%@?cateId=%d&attrType=0&hasPic=0&pageNumber=0&%@&isSpecial=%d&token=%@&showDescendants=1",GFKDAPI_HTTPS_PREFIX,GFKDAPI_NEWS_LIST,cateId,@"pageSize=5",0,[Config getToken]]
           parameters:nil
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
                  NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
@@ -225,20 +308,50 @@
                      [dataArray_childNode addObject:news];
                      
                      if (i == 0) {
-                         [self.image1 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         if (news.images.count>0){
+                              [self.image1 sd_setImageWithURL:news.images[0][@"image"] placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         }else{
+                            [self.image1 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         }
                          self.label1.text = news.title;
+                         self.label_subTitle_1.text = news.dataDict[@"description"];
+                         self.label_author_1.text = news.author;
                      }
                      if (i == 1) {
-                         [self.image2 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         if (news.images.count>0){
+                             [self.image2 sd_setImageWithURL:news.images[0][@"image"] placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         }else{
+                             [self.image2 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         }
                          self.label2.text = news.title;
+                         self.label_subTitle_2.text = news.dataDict[@"description"];
+                         self.label_author_2.text = news.author;
                      }
                      if (i == 2) {
-                         [self.image3 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         if (news.images.count>0){
+                             [self.image3 sd_setImageWithURL:news.images[0][@"image"] placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         }else{
+                             [self.image3 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         }
                          self.label3.text = news.title;
+                         self.label_subTitle_3.text = news.dataDict[@"description"];
+                         self.label_author_3.text = news.author;
                      }
                      if (i == 3) {
-                         [self.image4 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         if (news.images.count>0){
+                             [self.image4 sd_setImageWithURL:news.images[0][@"image"] placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         }else{
+                             [self.image4 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         }
                          self.label4.text = news.title;
+                       //   self.label_date_4.text = news.dates;
+                         self.label_author_4.text = news.author;
+                     }
+                     if (i == 4) {
+//                         [self.image5 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         self.label5.text = news.title;
+                         //self.label_date_5.text = news.dates;
+                         self.label_author_5.text = news.author;
                      }
                  }
     
@@ -297,6 +410,17 @@
         }
     }
 }
+- (void) Click_5{
+    if (dataArray_childNode.count > 4){
+        if ([dataArray_childNode[4] isKindOfClass:[GFKDTopNodes class]]) {
+            GFKDTopNodes *node = dataArray_childNode[4];
+            [self pushNodeDetail:node];
+        }else if ([dataArray_childNode[4] isKindOfClass:[GFKDNews class]]){
+            GFKDNews *news = dataArray_childNode[4];
+            [self pushArticleDetail:news];
+        }
+    }
+}
 
 - (void) pushNodeDetail:(GFKDTopNodes *)node{
     NewsViewController *newsVC = [[NewsViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[node.cateId intValue] isSpecial:0];
@@ -328,8 +452,9 @@
             NewsImagesViewController *vc = [[NewsImagesViewController alloc] initWithNibName:@"NewsImagesViewController"   bundle:nil];
             vc.hidesBottomBarWhenPushed = YES;
             vc.newsID = [news.articleId intValue];
-            [_parentVC.navigationController pushViewController:vc animated:YES];
-            _parentVC.navigationController.navigationBarHidden = YES;
+            vc.parentVC = _parentVC;
+            [_parentVC presentViewController:vc animated:YES completion:nil];
+            
         }else if ([news.hasVideo intValue] == 1 || [news.hasAudio intValue] == 1 ) {
             VideoDetailBarViewController *newsDetailVC = [[VideoDetailBarViewController alloc] initWithNewsID:[news.articleId intValue]];
             [_parentVC.navigationController pushViewController:newsDetailVC animated:YES];

@@ -551,7 +551,8 @@
     
     NSString *cacheFilePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
     [fileManager removeItemAtPath:cacheFilePath error:nil];
-    [[SDImageCache sharedImageCache] cleanDisk];
+    //[[SDImageCache sharedImageCache] cleanDisk];
+    [[SDImageCache sharedImageCache] clearMemory];
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:1];
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     

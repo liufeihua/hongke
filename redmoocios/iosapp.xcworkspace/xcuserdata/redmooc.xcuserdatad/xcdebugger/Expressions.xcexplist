@@ -17,6 +17,14 @@
          contextName = "-[RATreeView(Private) expandCellForTreeNode:expandChildren:withRowAnimation:]:RATreeView+Private.m">
       </ContextState>
       <ContextState
+         contextName = "-[NewsImagesViewController replyBtnAction:]:NewsImagesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.parentVC">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[NewsImagesViewController viewWillAppear:]:NewsImagesViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -58,10 +66,10 @@
          contextName = "-[NewsImagesViewController setImgWithIndex:]:NewsImagesViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.photoScrollView">
+               value = "photoImgView.image">
             </PersistentString>
             <PersistentString
-               value = "photoImgView.image">
+               value = "self.photoScrollView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -311,10 +319,24 @@
          contextName = "-[GFKDContentViewController pushMsgShow:]:GFKDContentViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "_newsVc.viewPager.currentIndex">
+               value = "_newsVc.viewPager.controllers">
             </PersistentString>
             <PersistentString
-               value = "_newsVc.viewPager.controllers">
+               value = "_newsVc.viewPager.currentIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__32-[NodeBaseCell loadArticleList:]_block_invoke:NodeBaseCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "news.images[0]">
+            </PersistentString>
+            <PersistentString
+               value = "news.author">
+            </PersistentString>
+            <PersistentString
+               value = "news.images">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -412,6 +434,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[JKImagePickerController resetFinishFrame]:JKImagePickerController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.selectedAssetArray.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[UITableView(Video) handleScrollingCellOutScreen]:UITableView+Video.m">
          <PersistentStrings>
             <PersistentString
@@ -424,6 +454,9 @@
          <PersistentStrings>
             <PersistentString
                value = "playingCell">
+            </PersistentString>
+            <PersistentString
+               value = "cell.NewsModel.hasVideo">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -480,18 +513,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[PointsRuleViewController tableView:heightForRowAtIndexPath:]:PointsRuleViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "raTreeView.subviews">
-            </PersistentString>
-            <PersistentString
-               value = "raTreeView.frame.size.height">
-            </PersistentString>
-            <PersistentString
-               value = "((UITableView *)raTreeView.subviews[0]).contentSize">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "+[NodeBaseCell heightForRow:]:NodeBaseCell.m">
       </ContextState>
       <ContextState
          contextName = "-[NewsDetailViewController fileShowChick:]:NewsDetailViewController.m">
@@ -526,6 +548,20 @@
             </PersistentString>
             <PersistentString
                value = "entity.images[i]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PointsRuleViewController tableView:heightForRowAtIndexPath:]:PointsRuleViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "raTreeView.subviews">
+            </PersistentString>
+            <PersistentString
+               value = "raTreeView.frame.size.height">
+            </PersistentString>
+            <PersistentString
+               value = "((UITableView *)raTreeView.subviews[0]).contentSize">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -681,10 +717,10 @@
          contextName = "-[SXMainViewController setScrollToTopWithTableViewIndex:]:SXMainViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.childViewControllers">
+               value = "self.childViewControllers[index].tableView">
             </PersistentString>
             <PersistentString
-               value = "self.childViewControllers[index].tableView">
+               value = "self.childViewControllers">
             </PersistentString>
             <PersistentString
                value = "self.needScrollToTopPage.tableView">
@@ -792,6 +828,9 @@
          contextName = "-[PointsRuleViewController numberOfSectionsInTableView:]:PointsRuleViewController.m">
       </ContextState>
       <ContextState
+         contextName = "-[NewsImagesViewController backBtnClick:]:NewsImagesViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[RadioViewController viewDidLoad]:RadioViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -806,13 +845,13 @@
          contextName = "-[ColumnViewController deleteItemWithIndexPath:]:ColumnViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.parentView.bigScrollView.subviews[1]">
+               value = "self.parentView.smallScrollView.subviews">
             </PersistentString>
             <PersistentString
                value = "self.parentView.bigScrollView.subviews">
             </PersistentString>
             <PersistentString
-               value = "self.parentView.smallScrollView.subviews">
+               value = "self.parentView.bigScrollView.subviews[1]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -851,6 +890,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[NewsImagesViewController actionSheet:clickedButtonAtIndex:]:NewsImagesViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[SXMainViewController getNotUserNodes]:SXMainViewController.m">
       </ContextState>
       <ContextState
@@ -874,13 +916,13 @@
          contextName = "-[NewsCell videoChick:]:NewsCell.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.imgIcon.frame">
+               value = "self.indexPath">
             </PersistentString>
             <PersistentString
                value = "self.superview">
             </PersistentString>
             <PersistentString
-               value = "self.indexPath">
+               value = "self.imgIcon.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -891,6 +933,9 @@
                value = "CGRectMake(8, 10, cell.contentView.bounds.size.width-16, 40)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__40-[AddPhotoViewController requestAddTake]_block_invoke:AddPhotoViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[SXMenuViewController addMoreButton]:SXMenuViewController.m">
@@ -907,13 +952,16 @@
          contextName = "__35-[GFKDTabBarController loadTOPList]_block_invoke:GFKDTabBarController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[array isEqualToArray:mutableArray]">
-            </PersistentString>
-            <PersistentString
                value = "array[2]">
             </PersistentString>
             <PersistentString
-               value = "mutableArray[2]">
+               value = "[array isEqualToArray:mutableArray]">
+            </PersistentString>
+            <PersistentString
+               value = "topNodes1.count">
+            </PersistentString>
+            <PersistentString
+               value = "[user objectForKey:@&quot;nodeDic&quot;]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -935,13 +983,13 @@
                value = "kNBR_SCREEN_W - (43 + 10 * 3 + 150)">
             </PersistentString>
             <PersistentString
-               value = "entity.longitude">
+               value = "nikeNameLable.frame">
             </PersistentString>
             <PersistentString
                value = "[entity.latitude doubleValue]">
             </PersistentString>
             <PersistentString
-               value = "nikeNameLable.frame">
+               value = "entity.longitude">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -1058,6 +1106,9 @@
                value = "self.view.bounds">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__41-[StudySchoolViewController loadNodeList]_block_invoke:StudySchoolViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[NewsDetailBarViewController initWithNewsID:]:NewsDetailBarViewController.m">

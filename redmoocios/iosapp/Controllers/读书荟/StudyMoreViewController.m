@@ -63,6 +63,12 @@ static int OneSpecialRow = 4;
     _epubParser=[[EPUBParser alloc] init];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    //[self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 - (void) setupRefresh{
     _tableView.mj_header = ({
         MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNodeList)];
@@ -106,7 +112,7 @@ static int OneSpecialRow = 4;
 
 - (void) loadArticleListWithCateId:(int)cateId withCateName:(NSString *)cateName{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
-    [manager GET:[NSString stringWithFormat:@"%@%@?cateId=%d&attrType=0&hasPic=0&pageNumber=0&%@&isSpecial=%d&token=%@&showDescendants=1",GFKDAPI_HTTPS_PREFIX,GFKDAPI_NEWS_LIST,cateId,@"pageSize=4",0,[Config getToken]]
+    [manager GET:[NSString stringWithFormat:@"%@%@?cateId=%d&attrType=0&hasPic=0&pageNumber=0&%@&isSpecial=%d&token=%@&showDescendants=1",GFKDAPI_HTTPS_PREFIX,GFKDAPI_NEWS_LIST,cateId,@"pageSize=5",0,[Config getToken]]
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
@@ -209,8 +215,9 @@ static int OneSpecialRow = 4;
         NewsViewController *specalViewController  = [[NewsViewController alloc] initWithNewsListType:NewsListTypeNews cateId:[news.specialId intValue] isSpecial:1];
         specalViewController.hidesBottomBarWhenPushed = YES;
         specalViewController.title = news.specialName;
-        [self.navigationController pushViewController:specalViewController animated:YES];
-        
+//        [self.navigationController pushViewController:specalViewController animated:YES];
+//        self.navigationController.navigationBarHidden = YES;
+        [self presentViewController:specalViewController animated:YES completion:nil];
     }else{
         if (((NSNull *)news.detailUrl != [NSNull null]) && (![news.detailUrl isEqualToString:@""])) {
             NSString *newUrl = [Utils replaceWithUrl:news.detailUrl];
@@ -226,8 +233,8 @@ static int OneSpecialRow = 4;
             NewsImagesViewController *vc = [[NewsImagesViewController alloc] initWithNibName:@"NewsImagesViewController"   bundle:nil];
             vc.hidesBottomBarWhenPushed = YES;
             vc.newsID = [news.articleId intValue];
-            [self.navigationController pushViewController:vc animated:YES];
-            self.navigationController.navigationBarHidden = YES;
+            vc.parentVC = self;
+            [self presentViewController:vc animated:YES completion:nil];
         }else if ([news.hasVideo intValue] == 1 || [news.hasAudio intValue] == 1 ) {
             NSString *ID = [NewsCell idForRow:news];
             NewsCell *cell = (NewsCell *)[tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];

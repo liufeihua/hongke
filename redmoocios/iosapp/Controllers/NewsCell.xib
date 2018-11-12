@@ -32,7 +32,7 @@
                             <constraint firstAttribute="height" constant="20" id="v3K-wh-9Am"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VU3-jx-Tom">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VU3-jx-Tom">
                         <rect key="frame" x="8" y="8" width="94.5" height="71"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="GUK-Qf-tzK"/>

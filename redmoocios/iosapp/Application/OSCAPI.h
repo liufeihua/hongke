@@ -9,11 +9,11 @@
 #ifndef iosapp_OSCAPI_h
 #define iosapp_OSCAPI_h
 
-#define GFKDAPI_HTTPS_PREFIX             @"https://mapi.nudt.edu.cn"
-#define GFKDAPI_PREFIX                   @"http://mapi.nudt.edu.cn"
+//#define GFKDAPI_HTTPS_PREFIX             @"https://mapi.nudt.edu.cn"
+//#define GFKDAPI_PREFIX                   @"http://mapi.nudt.edu.cn"
 
-//#define GFKDAPI_HTTPS_PREFIX             @"http://192.168.1.200:8080"
-//#define GFKDAPI_PREFIX                   @"http://192.168.1.200:8080"
+#define GFKDAPI_HTTPS_PREFIX             @"http://172.20.201.103:8080/app.center"
+#define GFKDAPI_PREFIX                   @"http://172.20.201.103:8080/app.center"
 
 //#define GFKDAPI_HTTPS_PREFIX             @"http://172.16.128.83:8080/"
 //#define GFKDAPI_PREFIX                   @"http://172.16.128.83:8080/"
@@ -94,6 +94,10 @@
 #define GFKDAPI_LISTAD                   @"/m-listAd.htx"  //轮播图
 
 #define GFKDAPI_MESSAGEPAGE              @"/m-message-page.htx"  //消息中心
+
+#define GFKDAPI_PHOTOVIEW                @"/m-photoView.htx"   //预览时光相册
+#define GFKDAPI_UPLOADPREVIEW            @"/m-uploadPreview.htx"  //上传时光相册图片
+#define GFKDAPI_PUBLISHTIMEPHOTO         @"/m-publishTimePhoto.htx"  //发布时光相册图片
 
 
 #define HTML_ERWEIMA                     @"https://mapp.nudt.edu.cn/widget/getQrcode"

@@ -22,7 +22,7 @@ WMPlayer *wmPlayer;
 #pragma public method
 - (void)handleScrollingCellOutScreen{
     if (self.playingCell  && [self playingCellIsOutScreen]) {
-        //NSLog(@"移动到屏幕外，停止播放视频");
+        NSLog(@"移动到屏幕外，停止播放视频");
         NewsCell *videoCell = self.playingCell;
         if (wmPlayer) {
             [self releaseWMPlayer];
@@ -56,6 +56,12 @@ WMPlayer *wmPlayer;
                     netType = [[child valueForKeyPath:@"dataNetworkType"]intValue];
                     if (netType == 5){
                         NSLog(@"当前网络状态wifi");
+                        if (wmPlayer) {
+                            if (self.playingCell) {
+                                 ((NewsCell *)self.playingCell).VideoImg.hidden = NO;
+                            }
+                            [self releaseWMPlayer];
+                        }
                         
                         wmPlayer = [[WMPlayer alloc]initWithFrame:cell.imgIcon.bounds];
                         wmPlayer.delegate = self;
@@ -69,7 +75,7 @@ WMPlayer *wmPlayer;
                         [wmPlayer play];
                         
                         
-                        //cell.VideoImg.hidden = YES;
+                        cell.VideoImg.hidden = YES;
                         [cell.imgIcon addSubview:wmPlayer];
                         [cell.imgIcon bringSubviewToFront:wmPlayer];
                         [cell.VideoImg bringSubviewToFront:wmPlayer];

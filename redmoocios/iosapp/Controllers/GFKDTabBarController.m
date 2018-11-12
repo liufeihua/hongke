@@ -55,6 +55,8 @@
 
 #import "UIView+HAMUtils.h"
 
+#import "StudySchoolViewController.h"
+
 //#import "StudyHomeViewController.h"
 
 
@@ -100,14 +102,43 @@
                  return;
                  
              }
+             
+             NSArray * array = [NSArray arrayWithArray:responseObject[@"result"]];
+             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+             [userDefaults setObject:array forKey:@"nodeDic"];
+             
+             [self showTopNodes:responseObject[@"result"]];
+  
+             /*
              NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
              NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:[user objectForKey:@"nodeDic"]];
-             NSArray * array = [NSArray arrayWithArray:responseObject[@"result"]];
+             //[user objectForKey:@"nodeDic"];
+             
+             
+             NSArray * array = responseObject[@"result"];
+             
+             if (array.count != mutableArray.count){
+                 [user setObject:array forKey:@"nodeDic"];
+                 [self showTopNodes:responseObject[@"result"]];
+                 return;
+             }else{
+                 for (int i=0;i<array.count;i++){
+                     GFKDTopNodes *topNodes1 = [[GFKDTopNodes alloc] initWithDict:array[i]];
+                     GFKDTopNodes *topNodes2 = [[GFKDTopNodes alloc] initWithDict:mutableArray[i]];
+                     
+                     if ([topNodes1 isEqual:topNodes2]) {
+                         
+                         NSLog(@"BHT isEqualToSet work");
+                         
+                     }
+                 }
+             }
+             
              if (!([array hash] == [mutableArray hash])){
              //if (![array isEqualToArray:mutableArray]) {  //isEuqalToArray返回结果有时不对 可能与内存地址有关
                  [user setObject:array forKey:@"nodeDic"];
                  [self showTopNodes:responseObject[@"result"]];
-             }
+             }*/
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              MBProgressHUD *HUD = [Utils createHUD];
@@ -122,7 +153,8 @@
 }
 
 -(void) configVC{
-    ZTC_VC = [[ZTCViewController alloc] init];  //直通车
+    //ZTC_VC = [[ZTCViewController alloc] init];  //直通车
+    takeVC =[[TakesTabViewController alloc] init];//圈子
     myVC = [[MyCenterViewController alloc] initWithMyInformation:[Config getMyInfo]]; //个人中心
     discover = [[DiscoverViewController alloc] init]; //发现
     self.delegate=self;
@@ -130,7 +162,7 @@
     if ((((AppDelegate *)[UIApplication sharedApplication].delegate).uiConfig != nil) && (((AppDelegate *)[UIApplication sharedApplication].delegate).uiConfig.dataDict != nil)) {
         ZGViewController *ZGVC = [[ZGViewController alloc] init];
         self.viewControllers=@[[self addNavigationItemForViewController:segmentVC withRightButtonIndex:0],
-                               [self addNavigationItemForViewController:ZTC_VC withRightButtonIndex:0],
+                               [self addNavigationItemForViewController:takeVC withRightButtonIndex:1],
                                [self addNavigationItemForViewController:ZGVC withRightButtonIndex:3],
                                [self addNavigationItemForViewController:discover withRightButtonIndex:0],
                                [self addNavigationItemForViewController:myVC withRightButtonIndex:0]];
@@ -178,12 +210,14 @@
         
     }else{
         self.viewControllers=@[[self addNavigationItemForViewController:segmentVC withRightButtonIndex:0],
-                               [self addNavigationItemForViewController:ZTC_VC withRightButtonIndex:0],
+                               [self addNavigationItemForViewController:takeVC withRightButtonIndex:1],
                                [UIViewController new],
                                [self addNavigationItemForViewController:discover withRightButtonIndex:0],
                                [self addNavigationItemForViewController:myVC withRightButtonIndex:0]];
-        NSArray *titles = @[@"首页", @"直通车",@"", @"发现", @"我的"];
-        NSArray *images = @[@"tabbar-xw", @"tabbar-ztc",@"", @"tabbar-fx", @"tabbar-my"];
+//        NSArray *titles = @[@"首页", @"直通车",@"", @"发现", @"我的"];
+//        NSArray *images = @[@"tabbar-xw", @"tabbar-ztc",@"", @"tabbar-fx", @"tabbar-my"];
+        NSArray *titles = @[@"首页", @"圈子",@"", @"发现", @"我的"];
+        NSArray *images = @[@"tabbar-xw", @"tabbar-take",@"", @"tabbar-fx", @"tabbar-my"];
         [self.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem *item, NSUInteger idx, BOOL *stop) {
             [item setTitle:titles[idx]];
             [item setImage:[UIImage imageNamed:images[idx]]];
@@ -209,22 +243,29 @@
     for (int i=0; i<array.count ; i++) {
         GFKDTopNodes *topNodes = [[GFKDTopNodes alloc] initWithDict:array[i]];
         [title addObject:topNodes.cateName];
-        [controllers addObject:[[NewsBarViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[topNodes.cateId intValue] isSpecial:0]];
+        if ([topNodes.terminated intValue] == 1){ //没有子栏目了
+            [controllers addObject:[[NewsBarViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[topNodes.cateId intValue] isSpecial:0]];
+        }else{
+            [controllers addObject: [[StudySchoolViewController alloc] initWithParentId:topNodes.cateId]];
+        }
     }
     
         newsMenu = [[SXMenuViewController alloc] initWithTitle:@"" andSubTitles:title andControllers:controllers underTabbar:YES];
         STTabViewController *STVC =[[STTabViewController alloc] init];
     
         //StudyHomeViewController *studyHomeVC = [[StudyHomeViewController alloc] init];
-        takeVC =[[TakesTabViewController alloc] init];
+        //takeVC =[[TakesTabViewController alloc] init];
+        StudySchoolViewController *studySchoolVC = [[StudySchoolViewController alloc] initWithNumber:@"dsh"];
+    
         segmentVC = [[JRSegmentViewController alloc] init];
         segmentVC.segmentBgColor = kNBR_ProjectColor;
         segmentVC.indicatorViewColor = [UIColor whiteColor];
         segmentVC.titleColor = [UIColor whiteColor];
         segmentVC.delegate = self;
-        [segmentVC setViewControllers:@[newsMenu, STVC, takeVC]];
-        [segmentVC setTitles:@[@"红讯",@"视听", @"圈子"]];
-        
+        //[segmentVC setViewControllers:@[newsMenu, STVC, takeVC]];
+        //[segmentVC setTitles:@[@"红讯",@"视听", @"圈子"]];
+        [segmentVC setViewControllers:@[newsMenu, STVC, studySchoolVC]];
+        [segmentVC setTitles:@[@"红讯",@"视听", @"悦读"]];
         
         [self configVC];
     
@@ -266,7 +307,7 @@
     NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
     if([[NSUserDefaults standardUserDefaults] objectForKey:@"nodeDic"]!=nil){
         NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:[user objectForKey:@"nodeDic"]];
-        
+
         [self showTopNodes:mutableArray];
     }
 
@@ -276,31 +317,31 @@
 #pragma mark -JRSegmentViewControllerDelegate
 - (void) didSelectedIndex:(NSInteger)index
 {
-    switch (index) {
-        case 0:
-        {
-            segmentVC.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
-                                                                                                        target:self
-                                                                                                        action:@selector(pushSearchViewController)];
-        }
-            break;
-        case 1:
-        {
-            segmentVC.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
-                                                                                                        target:self
-                                                                                                        action:@selector(pushSearchViewController)];
-        }
-            break;
-        case 2:
-        {
-            [segmentVC.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_take_1"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickAddMenuButton)]];
-//            segmentVC.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_take_1"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickAddMenuButton)];
-        }
-            break;
-            
-        default:
-            break;
-    }
+    segmentVC.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch                                                                                          target:self action:@selector(pushSearchViewController)];
+//    switch (index) {
+//        case 0:
+//        {
+//            segmentVC.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+//                                                                                                        target:self
+//                                                                                                        action:@selector(pushSearchViewController)];
+//        }
+//            break;
+//        case 1:
+//        {
+//            segmentVC.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+//                                                                                                        target:self
+//                                                                                                        action:@selector(pushSearchViewController)];
+//        }
+//            break;
+//        case 2:
+//        {
+//            [segmentVC.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_take_1"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickAddMenuButton)]];
+//        }
+//            break;
+//
+//        default:
+//            break;
+//    }
 }
 
 #pragma mark -
@@ -311,9 +352,6 @@
     if (buttonIndex == 3) {
         viewController.navigationItem.title = @"E政工";
     }else{
-        if (buttonIndex == 2){
-        
-        }else{
         UIImage *logoImage = [UIImage imageNamed:@"red_mooc_logo"];
         CGFloat imageW = logoImage.size.width*36.0/logoImage.size.height;
         CGFloat imageH = 36;
@@ -330,16 +368,23 @@
         viewController.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_sidebar"]
                                                                                             style:UIBarButtonItemStylePlain
                                                                                            target:self action:@selector(onClickMenuButton)];
+        
+        if (buttonIndex == 1){
+            viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_take_1"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickAddMenuButton)];
+        }else{
+            viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+                                                                                                                                                                       target:self
+                                                                                                                                                                         action:@selector(pushSearchViewController)];
       }
     }
     
-    if (buttonIndex == 0) {
-        viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
-                                                                                                         target:self
-                                                                                                         action:@selector(pushSearchViewController)];
-    }else if(buttonIndex == 1){
-        viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_take_1"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickAddMenuButton)];
-    }
+//    if (buttonIndex == 0) {
+//        viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+//                                                                                                         target:self
+//                                                                                                         action:@selector(pushSearchViewController)];
+//    }else if(buttonIndex == 1){
+//        viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_take_1"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickAddMenuButton)];
+//    }
     
     return navigationController;
 }
@@ -502,8 +547,9 @@
             NewsImagesViewController *vc = [[NewsImagesViewController alloc] initWithNibName:@"NewsImagesViewController"   bundle:nil];
             vc.hidesBottomBarWhenPushed = YES;
             vc.newsID = [newsMsg.articleId intValue];
-            [(UINavigationController *)self.selectedViewController pushViewController:vc animated:YES];
-            ((UINavigationController *)self.selectedViewController).navigationBarHidden = YES;
+            vc.parentVC = self;
+            [self presentViewController:vc animated:YES completion:nil];
+            
         }else if ([showtype intValue] == 2) {
             VideoDetailBarViewController *newsDetailVC = [[VideoDetailBarViewController alloc] initWithNewsID:[newsMsg.articleId intValue]];
             [(UINavigationController *)self.selectedViewController pushViewController:newsDetailVC animated:YES];

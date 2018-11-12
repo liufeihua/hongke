@@ -31,6 +31,7 @@
 
 - (IBAction)backBtnClick:(id)sender;
 @property (nonatomic, strong) UIImageView *currentImageView;
+@property (nonatomic, strong) NSString *currentImageViewURL;
 
 @property (nonatomic, strong) GFKDNewsDetail *newsDetailObj;
 
@@ -122,12 +123,17 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-//    self.tabBarController.tabBar.hidden = YES;
-}
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+////    self.tabBarController.tabBar.hidden = YES;
+//}
+//
+//-(void)viewDidDisappear:(BOOL)animated{
+//    self.navigationController.navigationBarHidden = NO;
+//    [super viewDidAppear:animated];
+//}
 
 
 - (void)didReceiveMemoryWarning {
@@ -229,7 +235,7 @@
     
     GFKDImages *imageObj  = [[GFKDImages alloc] initWithDict :_photoSet[i]];
     NSURL *purl = [NSURL URLWithString:imageObj.image];
-    
+    _currentImageViewURL = imageObj.image;
     // 如果这个相框里还没有照片才添加
     if (_currentImageView.image == nil) {
         [_currentImageView sd_setImageWithURL:purl placeholderImage:[UIImage imageNamed:@"item_default"]];
@@ -268,13 +274,12 @@
 }
 
 - (IBAction)backBtnClick:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)replyBtnAction:(id)sender {
     CommentsBottomBarViewController *commentsBVC = [[CommentsBottomBarViewController alloc] initWithCommentType:0 andObjectID:self.newsID];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    [self.navigationController pushViewController:commentsBVC animated:YES];
+     [self dismissViewControllerAnimated:YES completion:nil];
+     [self.parentVC.navigationController pushViewController:commentsBVC animated:YES];
     
 }
 
@@ -390,7 +395,7 @@
 }
 
 - (IBAction)btnShareClick:(id)sender {
-    NSString *title = _newsDetailObj.title;
+    NSString *title = _newsDetailObj.listTitle;
     NSString *URL;
     if ((NSNull *)_newsDetailObj.shareUrl != [NSNull null]) {
         URL = _newsDetailObj.shareUrl == nil?@"":_newsDetailObj.shareUrl;
@@ -463,8 +468,9 @@
             {
                 //查看大图
                 UIImageView *currentImageView = _currentImageView;
-                NSString *currentUrlStr = [_currentImageView.sd_imageURL absoluteString];
+                //NSString *currentUrlStr = [_currentImageView.sd_imageURL absoluteString];
                 
+                NSString *currentUrlStr = _currentImageViewURL;
                 [currentImageView sd_setImageWithURL:[NSURL URLWithString:[Utils getMaxImageNameWithName:currentUrlStr]] placeholderImage:[UIImage imageNamed:@"item_default"]];
             }
                 break;
@@ -559,5 +565,7 @@
     _lastScale = [(UIPinchGestureRecognizer*)sender scale];
     
 }*/
+
+
 
 @end

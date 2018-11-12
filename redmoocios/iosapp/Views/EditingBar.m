@@ -41,6 +41,7 @@
     
     _inputViewButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_inputViewButton setImage:[UIImage imageNamed:@"toolbar-emoji2"] forState:UIControlStateNormal];
+    [_inputViewButton addTarget:self action:@selector(emojiButton:) forControlEvents:UIControlEventTouchUpInside];
     
     _editView = [[GrowingTextView alloc] initWithPlaceholder:@"说点什么"];
     _editView.returnKeyType = UIReturnKeySend;
@@ -103,7 +104,10 @@
                                                                  metrics:nil views:views]];
 }
 
-
+- (void)emojiButton:(id)sender
+{
+    if (_emojiButton) {_emojiButton();}
+}
 
 
 @end

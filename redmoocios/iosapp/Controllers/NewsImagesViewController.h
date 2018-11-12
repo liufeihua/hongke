@@ -13,6 +13,7 @@
 }
 
 @property (nonatomic, assign) int   newsID;
+@property(nonatomic,strong) UIViewController *parentVC;
 
 @property(nonatomic,strong) NSArray *photoSet;
 @property (weak, nonatomic) IBOutlet UIButton *replyBtn;

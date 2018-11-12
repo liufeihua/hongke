@@ -116,8 +116,8 @@ static NSString *kMyCommentCellID = @"MyCommentCell";
             NewsImagesViewController *vc = [[NewsImagesViewController alloc] initWithNibName:@"NewsImagesViewController"   bundle:nil];
             vc.newsID = [comment.infoId intValue];
             vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
-            self.navigationController.navigationBarHidden = YES;
+            vc.parentVC = self;
+            [self presentViewController:vc animated:YES completion:nil];
         }else if ([comment.hasVideo intValue] == 1) {
             VideoDetailBarViewController *newsDetailVC = [[VideoDetailBarViewController alloc] initWithNewsID:[comment.infoId intValue]];
             [self.navigationController pushViewController:newsDetailVC animated:YES];

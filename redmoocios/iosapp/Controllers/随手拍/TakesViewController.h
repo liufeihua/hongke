@@ -21,6 +21,8 @@ typedef NS_ENUM(int, TakesInfoType)
 {
     TakesInfoTypeTake = 1,  //随手拍
     TakesInfoTypeMarket = 2,  //跳蚤市场
+    TakesInfoTypeTimeAlbum = 3, //时光相册
+    
 };
 
 @interface TakesViewController : GFKDObjsViewController

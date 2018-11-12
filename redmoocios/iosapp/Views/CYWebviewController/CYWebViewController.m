@@ -17,8 +17,6 @@
 #import "GFKDDiscover.h"
 
 
-
-
 typedef NS_ENUM(NSInteger, CYWebViewControlMode) {
     /**
      *  微信内置浏览器模式，顶部导航栏带关闭按钮,default value
@@ -344,13 +342,16 @@ UIPopoverControllerDelegate,NJKWebViewProgressDelegate>
 
 -(void)clickedbackBtn:(UIButton*)btn{
     NSLog(@"back");
+//    [self.urlRequest setURL:nil];
     if (self.webView.canGoBack) {
         [self setupLeftNavigationBarBtn];
+        
         [self.webView goBack];
     }else{
         [self.navigationController popViewControllerAnimated:YES];
     }
-    
+    //解决退出界面，音乐会持续播放
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@""]]];
     
 }
 -(void)clickedcloseBtn:(UIButton*)btn{
@@ -702,6 +703,7 @@ UIPopoverControllerDelegate,NJKWebViewProgressDelegate>
     self.context[@"window"] = self;
     self.context[@"hkListner"] = self;   //window.hkListner 改为 window.hk
 }
+
 
 
 @end

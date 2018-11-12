@@ -13,6 +13,8 @@
 #import "XHImageViewer.h"
 #import "TakeDetailsWithBottomBarViewController.h"
 #import "AddTakeViewController.h"
+#import "TimeAlbumTableViewCell.h"
+#import "CYWebViewController.h"
 
 
 @interface TakesViewController ()<TakeTableViewCellDelegate,XHImageViewerDelegate,TakeDetailsWithBottomBarViewControllerDelegate,BMKLocationServiceDelegate,AddTakeViewControllerDelegate>
@@ -93,32 +95,63 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GFKDTakes *entity = self.objects[indexPath.row];
-    TakeTableViewCell *cell = [[TakeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kNBR_TABLEVIEW_CELL_NOIDENTIFIER];
-    cell.delegate = self;
-    cell.isDetailView = NO;
-    [cell setLatitude:locService.userLocation.location.coordinate.latitude];
-    [cell setLongitude:locService.userLocation.location.coordinate.longitude];
+    if (_myTakesInfoType == TakesInfoTypeTimeAlbum) {
+        //时光相册显示不同
+//        static NSString *CellIdentifier = @"TimeAlbumTableViewCell";
+//        TimeAlbumTableViewCell *cell = (TimeAlbumTableViewCell*)[tableView  dequeueReusableCellWithIdentifier:CellIdentifier];
+//        if(cell == nil)
+//        {
+//            cell = [[TimeAlbumTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//        }
+//        [cell setDateEntity:entity];
+//        return cell;
+        
+        NSString *ID =  @"TimeAlbumTableViewCell";
+        UINib *nib = [UINib nibWithNibName:ID bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:ID ];
+        TimeAlbumTableViewCell *cell = (TimeAlbumTableViewCell *)[tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+        [cell setDateEntity:entity];
+        return cell;
+    }else{
+       
+        TakeTableViewCell *cell = [[TakeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kNBR_TABLEVIEW_CELL_NOIDENTIFIER];
+        cell.delegate = self;
+        cell.isDetailView = NO;
+        [cell setLatitude:locService.userLocation.location.coordinate.latitude];
+        [cell setLongitude:locService.userLocation.location.coordinate.longitude];
+        [cell setDateEntity:entity];
+        return cell;
+    }
     
-    [cell setDateEntity:entity];
-   
-    //[cell.avterImageView enableAvatarModeWithUserInfoDict:[entity.userId intValue] pushedView:self];
-    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    GFKDTakes *entity = self.objects[indexPath.row];
-    return [TakeTableViewCell heightWithEntity:entity isDetail:NO];
+    if (_myTakesInfoType == TakesInfoTypeTimeAlbum) {
+        return (kNBR_SCREEN_W-40)*5/12 + 40;
+    }else{
+       GFKDTakes *entity = self.objects[indexPath.row];
+       return [TakeTableViewCell heightWithEntity:entity isDetail:NO];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     updateIndexPath = indexPath;
     GFKDTakes *entity = self.objects[indexPath.row];
-    TakeDetailsWithBottomBarViewController *VC = [[TakeDetailsWithBottomBarViewController alloc] initWithModal:entity];
-    VC.delegate = self;
-    [self.navigationController pushViewController:VC animated:YES];
-    
+    if (_myTakesInfoType == TakesInfoTypeTimeAlbum) {
+        NSInteger photoId = [entity.takeId integerValue];
+        NSString *url = [NSString stringWithFormat:@"%@%@?token=%@&id=%ld",GFKDAPI_HTTPS_PREFIX, GFKDAPI_PHOTOVIEW,[Config getToken],photoId];
+        CYWebViewController *webViewController = [[CYWebViewController alloc] initWithURL:[NSURL URLWithString:url]];
+        webViewController.hidesBottomBarWhenPushed = YES;
+        webViewController.navigationButtonsHidden = YES;
+        webViewController.loadingBarTintColor = [UIColor redColor];
+        [self.navigationController pushViewController:webViewController animated:YES];
+    }else{
+        TakeDetailsWithBottomBarViewController *VC = [[TakeDetailsWithBottomBarViewController alloc] initWithModal:entity];
+        VC.delegate = self;
+        [self.navigationController pushViewController:VC animated:YES];
+    }
 }
 
 

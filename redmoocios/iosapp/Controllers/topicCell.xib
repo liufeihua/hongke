@@ -24,16 +24,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzE-sa-OCk">
-                        <rect key="frame" x="20" y="20" width="335" height="142.5"/>
+                        <rect key="frame" x="8" y="8" width="359" height="151.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_topic_5" translatesAutoresizingMaskIntoConstraints="NO" id="TDl-6P-49c">
-                                <rect key="frame" x="0.0" y="0.0" width="335" height="48"/>
+                                <rect key="frame" x="0.0" y="0.0" width="359" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="t9e-eW-TVt"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dz-ZS-Etr">
-                                <rect key="frame" x="10" y="0.0" width="315" height="48"/>
+                                <rect key="frame" x="10" y="0.0" width="339" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="56r-nB-O83"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wf6-ZE-ibD">
-                                <rect key="frame" x="15" y="58" width="305" height="74.5"/>
+                                <rect key="frame" x="15" y="58" width="329" height="83.5"/>
                                 <fontDescription key="fontDescription" name="HYQiHei-EZJ" family="HYQiHei" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -70,10 +70,10 @@
                 </subviews>
                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 <constraints>
-                    <constraint firstItem="nzE-sa-OCk" firstAttribute="leading" secondItem="bDj-6M-rYS" secondAttribute="leading" constant="20" id="0MT-8e-qLD"/>
-                    <constraint firstAttribute="bottom" secondItem="nzE-sa-OCk" secondAttribute="bottom" constant="5" id="KDy-j8-xt9"/>
-                    <constraint firstAttribute="trailing" secondItem="nzE-sa-OCk" secondAttribute="trailing" constant="20" id="evR-4Y-Npo"/>
-                    <constraint firstItem="nzE-sa-OCk" firstAttribute="top" secondItem="bDj-6M-rYS" secondAttribute="top" constant="20" id="gBh-fc-W9a"/>
+                    <constraint firstItem="nzE-sa-OCk" firstAttribute="leading" secondItem="bDj-6M-rYS" secondAttribute="leading" constant="8" id="0MT-8e-qLD"/>
+                    <constraint firstAttribute="bottom" secondItem="nzE-sa-OCk" secondAttribute="bottom" constant="8" id="KDy-j8-xt9"/>
+                    <constraint firstAttribute="trailing" secondItem="nzE-sa-OCk" secondAttribute="trailing" constant="8" id="evR-4Y-Npo"/>
+                    <constraint firstItem="nzE-sa-OCk" firstAttribute="top" secondItem="bDj-6M-rYS" secondAttribute="top" constant="8" id="gBh-fc-W9a"/>
                 </constraints>
             </tableViewCellContentView>
             <inset key="separatorInset" minX="10000" minY="0.0" maxX="0.0" maxY="0.0"/>

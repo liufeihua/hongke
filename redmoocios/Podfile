@@ -4,7 +4,7 @@ target "iosapp" do
 pod 'AFOnoResponseSerializer'
 pod 'SDWebImage'
 pod 'SSKeychain'
-pod 'ReactiveCocoa'
+pod 'ReactiveCocoa', '~> 2.5'
 pod 'MBProgressHUD'
 pod 'RESideMenu'
 pod 'Reachability'
@@ -18,4 +18,5 @@ pod 'UMengSocial', '~> 4.4'
 pod 'Masonry'
 
 pod 'MobileVLCKit'
+
 end

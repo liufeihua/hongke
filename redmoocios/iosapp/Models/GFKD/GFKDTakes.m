@@ -10,4 +10,8 @@
 
 @implementation GFKDTakes
 
+- (NSNumber *) takeId{
+    return self.dataDict[@"id"];
+}
+
 @end

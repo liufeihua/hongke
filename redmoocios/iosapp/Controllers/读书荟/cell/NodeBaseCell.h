@@ -30,7 +30,19 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *image4;
 @property (weak, nonatomic) IBOutlet UILabel *label4;
+@property (weak, nonatomic) IBOutlet UILabel *label5;
 
+@property (weak, nonatomic) IBOutlet UILabel *label_subTitle_1;
+@property (weak, nonatomic) IBOutlet UILabel *label_subTitle_2;
+@property (weak, nonatomic) IBOutlet UILabel *label_subTitle_3;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *label_author_1;
+
+@property (weak, nonatomic) IBOutlet UILabel *label_author_2;
+@property (weak, nonatomic) IBOutlet UILabel *label_author_3;
+@property (weak, nonatomic) IBOutlet UILabel *label_author_4;
+@property (weak, nonatomic) IBOutlet UILabel *label_author_5;
 
 @property (strong, nonatomic) EPUBParser *epubParser; //epub解析器，成员变量或全局
 

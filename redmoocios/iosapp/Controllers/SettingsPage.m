@@ -120,7 +120,7 @@
     } else {
         [[NSURLCache sharedURLCache] removeAllCachedResponses];
         [[SDImageCache sharedImageCache] clearMemory];
-        [[SDImageCache sharedImageCache] clearDisk];
+       // [[SDImageCache sharedImageCache] clearDisk];
     }
 }
 

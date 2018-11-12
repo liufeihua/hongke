@@ -108,8 +108,8 @@ static NSString* kMyCollectCellID = @"myCollectCell";
             NewsImagesViewController *vc = [[NewsImagesViewController alloc] initWithNibName:@"NewsImagesViewController"   bundle:nil];
             vc.newsID = [collect.articleId intValue];
             vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
-            self.navigationController.navigationBarHidden = YES;
+            vc.parentVC = self;
+            [self presentViewController:vc animated:YES completion:nil];
         }else if ([collect.hasVideo intValue] == 1) {
             VideoDetailBarViewController *newsDetailVC = [[VideoDetailBarViewController alloc] initWithNewsID:[collect.articleId intValue]];
             [self.navigationController pushViewController:newsDetailVC animated:YES];

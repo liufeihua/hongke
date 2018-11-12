@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.9.3</string>
+	<string>3.9.5</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -72,7 +72,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>3.9.3</string>
+	<string>3.9.5</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>wechat</string>
@@ -114,15 +114,15 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>&quot;红客&quot;会在上传头像、发布随手拍等服务中使用您的相机权限</string>
+	<string>"红客"会在上传头像、发布随手拍等服务中使用您的相机权限</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>If allowed, display your current location in the details page of your published text and photos</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>&quot;红客&quot;会在上传头像，发布照片等服务中使用您的媒体资料库权限</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>&quot;红客&quot;会为您添加图片</string>
+	<string>"红客"会为您添加图片</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>"红客"会在上传头像，发布照片等服务中使用您的媒体资料库权限</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>HYQiHei-50J.ttf</string>

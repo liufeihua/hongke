@@ -221,8 +221,8 @@ static int OneSpecialRow = 4;
             NewsImagesViewController *vc = [[NewsImagesViewController alloc] initWithNibName:@"NewsImagesViewController"   bundle:nil];
             vc.hidesBottomBarWhenPushed = YES;
             vc.newsID = [news.articleId intValue];
-            [self.navigationController pushViewController:vc animated:YES];
-            self.navigationController.navigationBarHidden = YES;
+            vc.parentVC = self;
+            [self presentViewController:vc animated:YES completion:nil];
         }else if ([news.hasVideo intValue] == 1 || [news.hasAudio intValue] == 1 ) {
             NSString *ID = [NewsCell idForRow:news];
             NewsCell *cell = (NewsCell *)[tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];

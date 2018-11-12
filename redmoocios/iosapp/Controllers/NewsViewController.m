@@ -69,10 +69,11 @@ static NSString *kNewsCellID = @"NewsCell";
         NSString *token = [Config getToken];
         self.generateURL = ^NSString * (NSUInteger page) {
             if (type == NewsListTypeHomeNews) {//推荐
+                NSLog(@"推荐：%@", [NSString stringWithFormat:@"%@%@?pageNumber=%lu&%@&token=%@&attr=recommend",GFKDAPI_HTTPS_PREFIX,GFKDAPI_HOMENEWS_LIST,(unsigned long)page,GFKDAPI_PAGESIZE,token]);
                 return [NSString stringWithFormat:@"%@%@?pageNumber=%lu&%@&token=%@&attr=recommend",GFKDAPI_HTTPS_PREFIX,GFKDAPI_HOMENEWS_LIST,(unsigned long)page,GFKDAPI_PAGESIZE,token];
                 
             }else if (type == NewsListTypeAuditInfo) {//待审稿件
-                NSLog([NSString stringWithFormat:@"%@%@?pageNumber=%lu&%@&token=%@&type=%d",GFKDAPI_HTTPS_PREFIX,GFKDAPI_NEWS_AUDITINFO,(unsigned long)page,GFKDAPI_PAGESIZE,token,cateId]);
+//                NSLog([NSString stringWithFormat:@"%@%@?pageNumber=%lu&%@&token=%@&type=%d",GFKDAPI_HTTPS_PREFIX,GFKDAPI_NEWS_AUDITINFO,(unsigned long)page,GFKDAPI_PAGESIZE,token,cateId]);
                 return [NSString stringWithFormat:@"%@%@?pageNumber=%lu&%@&token=%@&type=%d",GFKDAPI_HTTPS_PREFIX,GFKDAPI_NEWS_AUDITINFO,(unsigned long)page,GFKDAPI_PAGESIZE,token,cateId];
             }else if (type == NewsListTypeMsg) {//消息中心
                 return [NSString stringWithFormat:@"%@%@?pageNumber=%lu&%@&token=%@&nodeIds=%d",GFKDAPI_HTTPS_PREFIX,GFKDAPI_MSG_PAGE,(unsigned long)page,GFKDAPI_PAGESIZE,token,weakSelf.cateId];
@@ -169,9 +170,9 @@ static NSString *kNewsCellID = @"NewsCell";
     
     if ((_isHasAdv && indexPath.section == 1) || (!_isHasAdv)) {
         GFKDNews *news = self.objects[indexPath.row];
-        if ([news.cateId intValue]== 365) { //思想场  显示样式  showType = 5
-            news.showType = [NSNumber numberWithInt:5];
-        }
+//        if ([news.cateId intValue]== 365) { //思想场  显示样式  showType = 5
+//            news.showType = [NSNumber numberWithInt:5];
+//        }
         NSString *ID = [NewsCell idForRow:news];
         UINib *nib = [UINib nibWithNibName:ID bundle:nil];
         [tableView registerNib:nib forCellReuseIdentifier:ID ];
@@ -210,9 +211,9 @@ static NSString *kNewsCellID = @"NewsCell";
 {
     if ((_isHasAdv && indexPath.section == 1) || (!_isHasAdv)) {
         GFKDNews *news = self.objects[indexPath.row];
-        if ([news.cateId intValue]== 365) { //思想场  显示样式  showType = 5
-            news.showType = [NSNumber numberWithInt:5];
-        }
+//        if ([news.cateId intValue]== 365) { //思想场  显示样式  showType = 5
+//            news.showType = [NSNumber numberWithInt:5];
+//        }
         return [NewsCell heightForRow:news];
     }else{
         return 220*kNBR_SCREEN_W/470;
@@ -267,8 +268,8 @@ static NSString *kNewsCellID = @"NewsCell";
              NewsImagesViewController *vc = [[NewsImagesViewController alloc] initWithNibName:@"NewsImagesViewController"   bundle:nil];
             vc.hidesBottomBarWhenPushed = YES;
             vc.newsID = [news.articleId intValue];
-            [self.navigationController pushViewController:vc animated:YES];
-            self.navigationController.navigationBarHidden = YES; 
+            vc.parentVC = self;
+            [self presentViewController:vc animated:YES completion:nil];
         }else if ([news.hasVideo intValue] == 1 || [news.hasAudio intValue] == 1 ) {
             NSString *ID = [NewsCell idForRow:news];
             NewsCell *cell = (NewsCell *)[tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
@@ -433,25 +434,33 @@ static NSString *kNewsCellID = @"NewsCell";
 
 //视频自动播放
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    [self.tableView handleScrollPlay];
+    //如果是待审稿件，不自动播放
+    if (_myNewsListType != NewsListTypeAuditInfo){
+         [self.tableView handleScrollPlay];
+    }
+   
 
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGFloat offsetY = scrollView.contentOffset.y;
-    CGFloat delaY = offsetY - self.lastOffsetY;
-    self.tableView.scrollDirection = delaY > 0 ? LC_SCROLL_UP : LC_SCROLL_DOWN;
-    if (delaY == 0) {
-        self.tableView.scrollDirection = LC_SCROLL_NONE;
+    if (_myNewsListType != NewsListTypeAuditInfo){
+        CGFloat offsetY = scrollView.contentOffset.y;
+        CGFloat delaY = offsetY - self.lastOffsetY;
+        self.tableView.scrollDirection = delaY > 0 ? LC_SCROLL_UP : LC_SCROLL_DOWN;
+        if (delaY == 0) {
+            self.tableView.scrollDirection = LC_SCROLL_NONE;
+        }
+        self.lastOffsetY = offsetY;
+        //判断快速滑动期间是否移动到屏幕外
+        [self.tableView handleScrollingCellOutScreen];
     }
-    self.lastOffsetY = offsetY;
-    //判断快速滑动期间是否移动到屏幕外
-    [self.tableView handleScrollingCellOutScreen];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     [super scrollViewDidEndDragging:scrollView willDecelerate:decelerate]; //上拉加载更多
-    [self.tableView handleScrollPlay];
+    if (_myNewsListType != NewsListTypeAuditInfo){
+        [self.tableView handleScrollPlay];
+    }
 }
 
 

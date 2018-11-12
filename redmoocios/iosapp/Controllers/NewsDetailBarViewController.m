@@ -185,7 +185,7 @@ NSString * const kSliderSelect = @"sliderSelect";
     
     /********** 分享 ***********/
     self.operationBar.share = ^ {
-        NSString *title = weakSelf.newsDetailsVC.newsDetailObj.title;
+        NSString *title = weakSelf.newsDetailsVC.newsDetailObj.listTitle;
         NSString *URL;
         if ((NSNull *)weakSelf.newsDetailsVC.newsDetailObj.shareUrl != [NSNull null]) {
             URL = weakSelf.newsDetailsVC.newsDetailObj.shareUrl == nil?@"":weakSelf.newsDetailsVC.newsDetailObj.shareUrl;

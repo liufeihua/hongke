@@ -22,6 +22,8 @@
     [super viewDidLoad];
     
     [self loadVideo];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

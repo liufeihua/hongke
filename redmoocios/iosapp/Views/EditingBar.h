@@ -19,4 +19,7 @@
 
 - (instancetype)initWithModeSwitchButton:(BOOL)hasAModeSwitchButton;
 
+
+@property (nonatomic, copy) void (^emojiButton)();
+
 @end

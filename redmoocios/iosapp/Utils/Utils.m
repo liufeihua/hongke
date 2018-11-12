@@ -585,8 +585,8 @@
         NewsImagesViewController *vc = [[NewsImagesViewController alloc] initWithNibName:@"NewsImagesViewController"   bundle:nil];
         vc.hidesBottomBarWhenPushed = YES;
         vc.newsID = [adv.url intValue];
-        [VC.navigationController pushViewController:vc animated:YES];
-        VC.navigationController.navigationBarHidden = YES;
+        vc.parentVC = VC;
+        [VC presentViewController:vc animated:YES completion:nil];
     }
 }
 

@@ -18,19 +18,41 @@
 #import "NodeBaseCell.h"
 #import "StudyMoreViewController.h"
 #import "NewsViewController.h"
+#import "HomeAdCell.h"
 
 static NSString *NodeCellIdentifier = @"NodeBaseCell";
 
-@interface StudySchoolViewController ()<UITableViewDelegate,UITableViewDataSource,TitleViewDelegate>
+@interface StudySchoolViewController ()<UITableViewDelegate,UITableViewDataSource,TitleViewDelegate,HomeAdCellDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
-
+@property (nonatomic, assign) BOOL isHasAdv;  //是否有图片轮播
+@property (nonatomic, copy) NSArray *AdvObjectsDict;
 
 @end
 
 @implementation StudySchoolViewController
 {
     NSMutableArray *dataArray_node;
+    NSString *_number;
+    NSNumber *_parentId;
+}
+
+- (instancetype) initWithNumber:(NSString *)number{
+    self = [super init];
+    _number = number;
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (instancetype) initWithParentId:(NSNumber *)parentId{
+    self = [super init];
+    _parentId = parentId;
+    if (self) {
+        
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -57,11 +79,18 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
 
 - (void) loadNodeList
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
+    NSDictionary *_parameters;
+    if (_number == nil || ([_number isEqualToString:@""])){
+        _parameters = @{@"token":[Config getToken],
+                        @"parentId":_parentId};
+    }else{
+        _parameters = @{@"token":[Config getToken],
+                        @"number":_number};
+    }
     
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
     [manager GET:[NSString stringWithFormat:@"%@/m-nodeList.htx", GFKDAPI_HTTPS_PREFIX]
-      parameters:@{@"token":[Config getToken],
-                   @"number":@"dsh"}
+      parameters:_parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
              NSString *errorMessage = responseObject[@"reason"];
@@ -81,18 +110,21 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
              [dataArray_node removeAllObjects];
              for (int i=0; i<array.count; i++) {
                  GFKDTopNodes *nodes = [[GFKDTopNodes alloc] initWithDict:array[i]];
-                 if (i==0) {
-                     nodes.showType = [NSNumber numberWithInt:1];;
-                 }
-                 if (i==1) {
-                     nodes.showType = [NSNumber numberWithInt:0];;
-                 }
-                 if (i==2) {
-                     nodes.showType = [NSNumber numberWithInt:2];;
-                 }
+//                 if (i == 0){
+//                     nodes.typeId = [NSNumber numberWithInt:6];
+//                 }
+//                 if (i == 1){
+//                     nodes.typeId = [NSNumber numberWithInt:5];
+//                 }
                  [dataArray_node addObject:nodes];
              }
+             
+             _AdvObjectsDict = responseObject[@"result"][@"adv"];
+             _isHasAdv = _AdvObjectsDict.count ==0 ? FALSE:TRUE;
+             
              [self.tableView reloadData];
+             
+             
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              MBProgressHUD *HUD = [Utils createHUD];
@@ -130,37 +162,78 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
 
 #pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return dataArray_node.count;
+    return _isHasAdv?dataArray_node.count+1:dataArray_node.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    if (section == 1) {
-//        return towSmallRow;
-//    }else{
-//        return 1;
-//    }
     return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GFKDTopNodes *node = dataArray_node[indexPath.section];
-//    node.showType = [NSNumber numberWithInt:0];
-    NSString *ID = [NodeBaseCell idForRow:node];
-    UINib *nib = [UINib nibWithNibName:ID bundle:nil];
-    [tableView registerNib:nib forCellReuseIdentifier:ID ];
-    NodeBaseCell *cell = (NodeBaseCell *)[tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
-    [cell setNode:node];
-    [cell setParentVC:self];
-    return cell;    
+    GFKDTopNodes *node;
+    if (_isHasAdv && indexPath.section == 0) {
+        static NSString *CellIdentifier = @"homeAdCell";
+        HomeAdCell *AdCell = (HomeAdCell*)[tableView  dequeueReusableCellWithIdentifier:CellIdentifier];
+        if(AdCell == nil)
+        {
+            AdCell = [[HomeAdCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        AdCell.delegate = self;
+        [AdCell getAds:_AdvObjectsDict];
+        return AdCell;
+        
+    }else{
+        node = _isHasAdv ? dataArray_node[indexPath.section-1] : dataArray_node[indexPath.section];
+        NSString *ID = [NodeBaseCell idForRow:node];
+        UINib *nib = [UINib nibWithNibName:ID bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:ID ];
+        NodeBaseCell *cell = (NodeBaseCell *)[tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+        [cell setNode:node];
+        [cell setParentVC:self];
+        return cell;
+    }
+    
 }
 // 配置分组头视图
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    GFKDTopNodes *node = dataArray_node[section];
-    NSString *titleName = node.cateName;
-    TitleView *moreView = [[TitleView alloc] initWithTitle:titleName hasMore:YES];
-    moreView.hotLb.text = @"HOT";
-    moreView.tag = section;
-    moreView.delegate = self;
-    return moreView;
+    if (_isHasAdv && section == 0) {
+        return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    }
+    GFKDTopNodes *node = _isHasAdv ? dataArray_node[section-1] : dataArray_node[section];
+    if ([node.showTitle intValue]==1){
+        NSString *titleName = node.cateName;
+        TitleView *moreView = [[TitleView alloc] initWithTitle:titleName hasMore:YES];
+        moreView.hotLb.text = @"HOT";
+        moreView.tag = section;
+        moreView.delegate = self;
+        return moreView;
+    }else{
+        return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    }
+    
+    
+}
+
+// 设置头高
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (_isHasAdv && section == 0) {
+        return 0.1f;
+    }
+    GFKDTopNodes *node = _isHasAdv ? dataArray_node[section-1] : dataArray_node[section];
+    if ([node.showTitle intValue]==1){
+        return 35;
+    }else{
+        return 0.1f;
+    }
+    
+}
+
+// 设置行高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_isHasAdv && indexPath.section == 0) {
+        return 220*kNBR_SCREEN_W/470;
+    }
+    GFKDTopNodes *node = _isHasAdv ? dataArray_node[indexPath.section-1] : dataArray_node[indexPath.section];
+    return [NodeBaseCell heightForRow:node];
 }
 
 - (void) loadChildNodeList:(GFKDTopNodes *)node
@@ -169,7 +242,7 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
     
     [manager GET:[NSString stringWithFormat:@"%@/m-nodeList.htx", GFKDAPI_HTTPS_PREFIX]
       parameters:@{@"token":[Config getToken],
-                   @"number":node.number}
+                   @"parentId":@([node.cateId intValue])}
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
              NSString *errorMessage = responseObject[@"reason"];
@@ -207,18 +280,13 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
 
 - (void)titleViewDidClick:(NSInteger)tag{
     [self loadChildNodeList:dataArray_node[tag]];
-    //更多
 }
 
-// 设置头高
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 35;
-}
-
-// 设置行高度
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GFKDTopNodes *node = dataArray_node[indexPath.section];
-    return [NodeBaseCell heightForRow:node];
+#pragma mark - delegate;
+- (void)adClick:(GFKDHomeAd *)adv
+{
+    NSLog(@"homeAdv___click");
+    [Utils showLinkAD:adv WithNowVC:self];
 }
 
 @end

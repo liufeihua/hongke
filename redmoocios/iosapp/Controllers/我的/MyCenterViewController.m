@@ -723,7 +723,8 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *cacheFilePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
     [fileManager removeItemAtPath:cacheFilePath error:nil];
-    [[SDImageCache sharedImageCache] cleanDisk];
+   // [[SDImageCache sharedImageCache] cleanDisk];
+    [[SDImageCache sharedImageCache] clearMemory];
 }
 
 

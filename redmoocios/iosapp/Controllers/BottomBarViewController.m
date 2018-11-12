@@ -82,8 +82,10 @@
     [_editingBar.modeSwitchButton addTarget:self action:@selector(switchMode) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_editingBar];
     
-    
-    
+    _editingBar.emojiButton = ^{
+        //[self switchInputView];
+        NSLog(@"emojiButton");
+    };
     
     if (((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode) {
         _editingBar.editView.keyboardAppearance = UIKeyboardAppearanceDark;

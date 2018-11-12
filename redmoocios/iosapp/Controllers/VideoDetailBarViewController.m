@@ -268,7 +268,7 @@
     /********** 分享 ***********/
     self.operationBar.share = ^ {
         
-        NSString *title = weakSelf.detailViewController.newsDetailObj.title;
+        NSString *title = weakSelf.detailViewController.newsDetailObj.listTitle;
         NSString *URL;
         if ((NSNull *)weakSelf.detailViewController.newsDetailObj.shareUrl != [NSNull null]) {
             URL = weakSelf.detailViewController.newsDetailObj.shareUrl == nil?@"":weakSelf.detailViewController.newsDetailObj.shareUrl;
