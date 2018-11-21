@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.378897"
+            timestampString = "564290828.990031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.378965"
+            timestampString = "564290828.9901"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.379014"
+            timestampString = "564290828.990151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "240"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.37906"
+            timestampString = "564290828.9901969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "236"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.379104"
+            timestampString = "564290828.990242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "168"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.379148"
+            timestampString = "564290828.9902869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "177"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.379239"
+            timestampString = "564290828.9903671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "197"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/JxbAdPageView.m"
-            timestampString = "489382210.686302"
+            timestampString = "564367670.171208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/JxbAdPageView.m"
-            timestampString = "518607880.415711"
+            timestampString = "564367670.1712869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "-Actiondo"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.379337"
+            timestampString = "564290828.9904571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "376"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.379385"
+            timestampString = "564290828.990503"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "390"
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.37945"
+            timestampString = "564290828.990564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "351"
@@ -266,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.379496"
+            timestampString = "564290828.990609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "346"
@@ -298,7 +298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/SwipableViewController.m"
-            timestampString = "557975942.0788209"
+            timestampString = "564026559.658703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
@@ -361,7 +361,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/SwipableViewController.m"
-            timestampString = "557975942.078872"
+            timestampString = "564026559.6587501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -409,7 +409,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/SwipableViewController.m"
-            timestampString = "557975942.07891"
+            timestampString = "564026559.658794"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -441,7 +441,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/SwipableViewController.m"
-            timestampString = "557975942.0789779"
+            timestampString = "564026559.658859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -761,7 +761,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.37989"
+            timestampString = "564290828.990917"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
@@ -1017,7 +1017,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441593.99913"
+            timestampString = "564367670.171818"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "192"
@@ -1049,7 +1049,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441593.999235"
+            timestampString = "564367670.172176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -1065,7 +1065,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441593.999285"
+            timestampString = "564367670.172415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -1563,7 +1563,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.000162"
+            timestampString = "564367670.172985"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "423"
@@ -1579,7 +1579,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.0002069"
+            timestampString = "564367670.173208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "429"
@@ -1595,7 +1595,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.000247"
+            timestampString = "564367670.173427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "406"
@@ -1611,7 +1611,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.000286"
+            timestampString = "564367670.173638"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "402"
@@ -2923,7 +2923,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.381615"
+            timestampString = "564290828.992224"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "242"
@@ -2939,7 +2939,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.002142"
+            timestampString = "564367670.174558"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "396"
@@ -2971,7 +2971,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.002221"
+            timestampString = "564367670.174795"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "345"
@@ -2987,7 +2987,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.002261"
+            timestampString = "564367670.175022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "340"
@@ -3003,7 +3003,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.002299"
+            timestampString = "564367670.1752371"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "350"
@@ -3019,7 +3019,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.002334"
+            timestampString = "564367670.17545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "354"
@@ -3035,7 +3035,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.00237"
+            timestampString = "564367670.175661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "363"
@@ -3051,7 +3051,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.002405"
+            timestampString = "564367670.175871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "395"
@@ -3467,7 +3467,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/SwipableViewController.m"
-            timestampString = "557975942.083979"
+            timestampString = "564026559.662207"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
@@ -3483,7 +3483,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/SwipableViewController.m"
-            timestampString = "557975942.0840321"
+            timestampString = "564026559.66225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -3835,7 +3835,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/VideoDetailBarViewController.m"
-            timestampString = "562237105.9663171"
+            timestampString = "563854401.568976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -4281,7 +4281,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.382592"
+            timestampString = "564290828.992962"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "360"
@@ -4964,11 +4964,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
-            timestampString = "563448197.5917439"
+            timestampString = "563938543.8940001"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "-parseDICT:"
             landmarkType = "7">
          </BreakpointContent>
@@ -4996,11 +4996,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
-            timestampString = "563448197.591864"
+            timestampString = "563938543.8943731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -5012,11 +5012,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
-            timestampString = "563448197.591928"
+            timestampString = "563938543.894599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -5044,11 +5044,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
-            timestampString = "563448197.59202"
+            timestampString = "563938543.894845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -5156,7 +5156,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeDetailsWithBottomBarViewController.m"
-            timestampString = "562837086.1029429"
+            timestampString = "563934696.414206"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -5172,7 +5172,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeDetailsWithBottomBarViewController.m"
-            timestampString = "562837086.103021"
+            timestampString = "563934696.414387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -5284,11 +5284,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.968655"
+            timestampString = "564457132.896239"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
+            startingLineNumber = "421"
+            endingLineNumber = "421"
             landmarkName = "+getMinImageNameWithName:"
             landmarkType = "7">
          </BreakpointContent>
@@ -5572,11 +5572,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
-            timestampString = "563448197.592922"
+            timestampString = "563938543.895533"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "TakesViewController()"
             landmarkType = "2">
          </BreakpointContent>
@@ -5828,11 +5828,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
-            timestampString = "563448197.593365"
+            timestampString = "563938543.895939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "-GiveCommentCount:withZanCount:isDel:"
             landmarkType = "7">
          </BreakpointContent>
@@ -5860,7 +5860,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.384029"
+            timestampString = "564290828.99422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
@@ -5892,7 +5892,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.0065089"
+            timestampString = "564367670.177968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -6105,7 +6105,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "337"
             endingLineNumber = "337"
-            landmarkName = "-didUpdateUserHeading:"
+            landmarkName = "-didUpdateBMKUserLocation:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -6121,7 +6121,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "354"
             endingLineNumber = "354"
-            landmarkName = "-viewWillDisappear:"
+            landmarkName = "-onClickReverseGeocode"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -6212,7 +6212,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeTableViewCell.mm"
-            timestampString = "563448197.5941401"
+            timestampString = "563858789.577633"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -6228,7 +6228,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeTableViewCell.mm"
-            timestampString = "563448197.594198"
+            timestampString = "563858789.577819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "352"
@@ -6260,7 +6260,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeTableViewCell.mm"
-            timestampString = "563448197.594287"
+            timestampString = "563858789.577884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "350"
@@ -6276,7 +6276,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.007139"
+            timestampString = "564367670.1784149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "234"
@@ -6366,7 +6366,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.3845201"
+            timestampString = "564290828.9945281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "180"
@@ -6414,11 +6414,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesTabViewController.m"
-            timestampString = "563448197.5946079"
+            timestampString = "564052281.344429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "-actionSheet:clickedButtonAtIndex:"
             landmarkType = "7">
          </BreakpointContent>
@@ -6446,7 +6446,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeTableViewCell.mm"
-            timestampString = "563448197.594697"
+            timestampString = "563858789.578045"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
@@ -6462,11 +6462,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesTabViewController.m"
-            timestampString = "563448197.594739"
+            timestampString = "564052281.34452"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "-GiveisAdd:"
             landmarkType = "7">
          </BreakpointContent>
@@ -6478,7 +6478,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/SwipableViewController.m"
-            timestampString = "557975942.088832"
+            timestampString = "564026559.665521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "145"
@@ -6542,7 +6542,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/SwipableViewController.m"
-            timestampString = "557975942.088951"
+            timestampString = "564026559.665611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -6606,7 +6606,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.971227"
+            timestampString = "564457132.898283"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "260"
@@ -6622,7 +6622,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.971302"
+            timestampString = "564457132.898338"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
@@ -6766,7 +6766,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/SwipableViewController.m"
-            timestampString = "557975942.089378"
+            timestampString = "564026559.66589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
@@ -6846,55 +6846,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeDetailsWithBottomBarViewController.m"
-            timestampString = "562837086.105476"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "-setUpBlock"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TakeDetailsWithBottomBarViewController setUpBlock]"
-                  moduleName = "iosapp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/redmooc/Documents/Xcode%E9%A1%B9%E7%9B%AE/redmoocios/redmoocios/iosapp/Controllers/%E9%9A%8F%E6%89%8B%E6%8B%8D/TakeDetailsWithBottomBarViewController.m"
-                  timestampString = "489313633.129153"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__52-[TakeDetailsWithBottomBarViewController setUpBlock]_block_invoke"
-                  moduleName = "iosapp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/redmooc/Documents/Xcode%E9%A1%B9%E7%9B%AE/redmoocios/redmoocios/iosapp/Controllers/%E9%9A%8F%E6%89%8B%E6%8B%8D/TakeDetailsWithBottomBarViewController.m"
-                  timestampString = "489313633.129249"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeDetailsWithBottomBarViewController.m"
-            timestampString = "562837086.105533"
+            timestampString = "563934696.416235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
@@ -7077,22 +7029,6 @@
             endingLineNumber = "97"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
-            timestampString = "563448197.595695"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "TakesViewController"
-            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -7662,7 +7598,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.972553"
+            timestampString = "564457132.899647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "257"
@@ -8046,13 +7982,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
-            timestampString = "563448197.597254"
+            timestampString = "563938543.897789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
-            landmarkName = "-GiveisAdd:"
-            landmarkType = "7">
+            startingLineNumber = "316"
+            endingLineNumber = "316"
+            landmarkName = "TakesViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -8158,11 +8094,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.97339"
+            timestampString = "564457132.900466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "431"
-            endingLineNumber = "431"
+            startingLineNumber = "432"
+            endingLineNumber = "432"
             landmarkName = "+getMaxImageNameWithName:"
             landmarkType = "7">
          </BreakpointContent>
@@ -8238,7 +8174,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.973552"
+            timestampString = "564457132.900615"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
@@ -8270,11 +8206,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
-            timestampString = "563448197.597684"
+            timestampString = "563938543.89817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
             landmarkName = "-GiveCommentCount:withZanCount:isDel:"
             landmarkType = "7">
          </BreakpointContent>
@@ -8286,11 +8222,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
-            timestampString = "563448197.597762"
+            timestampString = "563938543.898373"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "-GiveCommentCount:withZanCount:isDel:"
             landmarkType = "7">
          </BreakpointContent>
@@ -8430,7 +8366,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeTableViewCell.mm"
-            timestampString = "563448197.598139"
+            timestampString = "563858789.579896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "484"
@@ -8478,7 +8414,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.386291"
+            timestampString = "564290828.995912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "166"
@@ -8494,7 +8430,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.386331"
+            timestampString = "564290828.9959559"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -8606,7 +8542,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.974696"
+            timestampString = "564457132.9013211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "508"
@@ -8622,7 +8558,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.974813"
+            timestampString = "564457132.901363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "488"
@@ -8926,7 +8862,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.9754111"
+            timestampString = "564457132.9018461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "438"
@@ -9118,7 +9054,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeTableViewCell.mm"
-            timestampString = "563448197.599677"
+            timestampString = "563858789.5804009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
@@ -9134,7 +9070,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeTableViewCell.mm"
-            timestampString = "563448197.599723"
+            timestampString = "563858789.5804451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -9310,7 +9246,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.011609"
+            timestampString = "564367670.180508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "233"
@@ -9358,7 +9294,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.3871109"
+            timestampString = "564290828.996531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "261"
@@ -9374,7 +9310,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.387152"
+            timestampString = "564290828.996573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "245"
@@ -9390,7 +9326,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.38719"
+            timestampString = "564290828.996612"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "235"
@@ -9454,7 +9390,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.0118361"
+            timestampString = "564367670.180851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "398"
@@ -9514,11 +9450,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeDetailsWithBottomBarViewController.m"
-            timestampString = "562837086.10831"
+            timestampString = "563934696.419055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "296"
@@ -9530,11 +9466,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeDetailsWithBottomBarViewController.m"
-            timestampString = "562837086.108366"
+            timestampString = "563934696.419101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "284"
@@ -9966,11 +9902,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/E&#x653f;&#x5de5;/ZGViewController.m"
-            timestampString = "561374738.723217"
+            timestampString = "564397949.3302701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -9998,11 +9934,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/E&#x653f;&#x5de5;/ZGViewController.m"
-            timestampString = "561374738.72329"
+            timestampString = "564397949.330439"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
             landmarkName = "ZGViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -10110,7 +10046,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.012846"
+            timestampString = "564367670.181505"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "469"
@@ -10126,7 +10062,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.012886"
+            timestampString = "564367670.181728"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "482"
@@ -10142,7 +10078,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.978102"
+            timestampString = "564457132.903856"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "519"
@@ -10158,7 +10094,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.97817"
+            timestampString = "564457132.9039069"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "526"
@@ -10174,7 +10110,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.978237"
+            timestampString = "564457132.903946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "531"
@@ -10206,11 +10142,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.978333"
+            timestampString = "564457132.904019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "603"
-            endingLineNumber = "603"
+            startingLineNumber = "656"
+            endingLineNumber = "656"
             landmarkName = "+showLinkViewController:WithNowVC:"
             landmarkType = "7">
          </BreakpointContent>
@@ -10414,7 +10350,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.978644"
+            timestampString = "564457132.904353"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "397"
@@ -10574,7 +10510,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.3881201"
+            timestampString = "564290828.997573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "355"
@@ -10606,11 +10542,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/E&#x653f;&#x5de5;/ZGViewController.m"
-            timestampString = "561374738.724099"
+            timestampString = "564397949.331515"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -10622,11 +10558,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/E&#x653f;&#x5de5;/ZGViewController.m"
-            timestampString = "561374738.724142"
+            timestampString = "564397949.331592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "-getZGAD"
             landmarkType = "7">
          </BreakpointContent>
@@ -10638,11 +10574,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/E&#x653f;&#x5de5;/ZGViewController.m"
-            timestampString = "561374738.724182"
+            timestampString = "564397949.3316391"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "-getZGItem"
             landmarkType = "7">
          </BreakpointContent>
@@ -10654,11 +10590,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/E&#x653f;&#x5de5;/ZGViewController.m"
-            timestampString = "561374738.7242219"
+            timestampString = "564397949.331681"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -10718,11 +10654,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.9793921"
+            timestampString = "564457132.904857"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "643"
-            endingLineNumber = "643"
+            startingLineNumber = "696"
+            endingLineNumber = "696"
             landmarkName = "+showLinkViewController:WithNowVC:"
             landmarkType = "7">
          </BreakpointContent>
@@ -10734,11 +10670,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/E&#x653f;&#x5de5;/ZGViewController.m"
-            timestampString = "561374738.724363"
+            timestampString = "564397949.3318321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "ZGViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -10750,11 +10686,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/E&#x653f;&#x5de5;/ZGViewController.m"
-            timestampString = "561374738.7244051"
+            timestampString = "564397949.331877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
             landmarkName = "-cycleScrollView:didSelectItemAtIndex:"
             landmarkType = "7">
          </BreakpointContent>
@@ -10797,24 +10733,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.97953"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "596"
-            endingLineNumber = "596"
-            landmarkName = "+showLinkViewController:WithNowVC:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.388347"
+            timestampString = "564290828.9980299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "276"
@@ -10830,7 +10750,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.388386"
+            timestampString = "564290828.99808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "289"
@@ -10878,11 +10798,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.980168"
+            timestampString = "564457132.905111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "611"
-            endingLineNumber = "611"
+            startingLineNumber = "664"
+            endingLineNumber = "664"
             landmarkName = "+showLinkViewController:WithNowVC:"
             landmarkType = "7">
          </BreakpointContent>
@@ -10894,7 +10814,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.388464"
+            timestampString = "564290828.998395"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "282"
@@ -10942,11 +10862,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.980485"
+            timestampString = "564457132.905179"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "489"
-            endingLineNumber = "489"
+            startingLineNumber = "490"
+            endingLineNumber = "490"
             landmarkName = "+replaceWithUrl:"
             landmarkType = "7">
          </BreakpointContent>
@@ -10974,7 +10894,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.38853"
+            timestampString = "564290828.998714"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "300"
@@ -11006,11 +10926,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/E&#x653f;&#x5de5;/ZGViewController.m"
-            timestampString = "561374738.724674"
+            timestampString = "564397949.3322181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "ZGViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -11054,7 +10974,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.388623"
+            timestampString = "564290828.998826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -11070,7 +10990,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.388662"
+            timestampString = "564290828.998877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -11374,7 +11294,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.3889461"
+            timestampString = "564290828.999177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "228"
@@ -11486,7 +11406,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.014876"
+            timestampString = "564367670.182934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "298"
@@ -11550,7 +11470,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.014995"
+            timestampString = "564367670.183192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -11566,7 +11486,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.015035"
+            timestampString = "564367670.183406"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "225"
@@ -11614,7 +11534,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.389148"
+            timestampString = "564290828.999387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -11630,7 +11550,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.389187"
+            timestampString = "564290828.999437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -11646,7 +11566,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.389223"
+            timestampString = "564290828.9994839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -11694,7 +11614,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.3892601"
+            timestampString = "564290828.999532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -11822,11 +11742,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.983857"
+            timestampString = "564457132.906513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "432"
-            endingLineNumber = "432"
+            startingLineNumber = "433"
+            endingLineNumber = "433"
             landmarkName = "+getMaxImageNameWithName:"
             landmarkType = "7">
          </BreakpointContent>
@@ -11982,7 +11902,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.389511"
+            timestampString = "564290828.9999501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "372"
@@ -11998,7 +11918,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.38955"
+            timestampString = "564290828.999994"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "374"
@@ -12094,7 +12014,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeTableViewCell.mm"
-            timestampString = "563448197.604364"
+            timestampString = "563858789.582467"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
@@ -12110,7 +12030,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeTableViewCell.mm"
-            timestampString = "563448197.604423"
+            timestampString = "563858789.582522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "205"
@@ -12206,11 +12126,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.9849499"
+            timestampString = "564457132.907133"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "630"
-            endingLineNumber = "630"
+            startingLineNumber = "683"
+            endingLineNumber = "683"
             landmarkName = "+showLinkViewController:WithNowVC:"
             landmarkType = "7">
          </BreakpointContent>
@@ -12444,7 +12364,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.016238"
+            timestampString = "564367670.184199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "295"
@@ -12460,7 +12380,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.016278"
+            timestampString = "564367670.184413"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "308"
@@ -12556,7 +12476,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.9854341"
+            timestampString = "564457132.90767"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "304"
@@ -12572,11 +12492,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.985507"
+            timestampString = "564457132.907714"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "729"
-            endingLineNumber = "729"
+            startingLineNumber = "782"
+            endingLineNumber = "782"
             landmarkName = "+showLinkViewController:WithNowVC:"
             landmarkType = "7">
          </BreakpointContent>
@@ -12604,7 +12524,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.985575"
+            timestampString = "564457132.907807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "319"
@@ -12620,7 +12540,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.016543"
+            timestampString = "564367670.184913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "307"
@@ -12732,7 +12652,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.985827"
+            timestampString = "564457132.908018"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "389"
@@ -12748,7 +12668,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.985896"
+            timestampString = "564457132.908059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
@@ -12924,7 +12844,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.986165"
+            timestampString = "564457132.908342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "213"
@@ -12940,7 +12860,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.986235"
+            timestampString = "564457132.908381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
@@ -12956,11 +12876,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Views/CYWebviewController/CYWebViewController.m"
-            timestampString = "563448197.605678"
+            timestampString = "564457132.908421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "635"
-            endingLineNumber = "635"
+            startingLineNumber = "637"
+            endingLineNumber = "637"
             landmarkName = "-showTitlebarWithStr:"
             landmarkType = "7">
          </BreakpointContent>
@@ -13020,7 +12940,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeStudyViewController.m"
-            timestampString = "561431994.79015"
+            timestampString = "564052281.353532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "228"
@@ -13036,7 +12956,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeBookViewController.m"
-            timestampString = "562237105.986533"
+            timestampString = "564025320.3029521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "142"
@@ -13052,7 +12972,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeBookViewController.m"
-            timestampString = "562237105.986576"
+            timestampString = "564025320.302994"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -13068,11 +12988,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeClassroomViewController.m"
-            timestampString = "562237105.986617"
+            timestampString = "564052281.353647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -13084,11 +13004,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeClassroomViewController.m"
-            timestampString = "562237105.986657"
+            timestampString = "564052281.353693"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -13132,7 +13052,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeStudyViewController.m"
-            timestampString = "561431994.790383"
+            timestampString = "564052281.353784"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "203"
@@ -13148,7 +13068,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeBookViewController.m"
-            timestampString = "562237105.986796"
+            timestampString = "564025320.30321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "291"
@@ -13164,7 +13084,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeBookViewController.m"
-            timestampString = "562237105.986838"
+            timestampString = "564025320.303248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "209"
@@ -13180,7 +13100,7 @@
                   moduleName = "iosapp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/redmooc/Documents/GitHub/hongke/redmoocios/iosapp/Controllers/%E7%88%B1%E5%AD%A6%E4%B9%A0/Controller/LikeBookViewController.m"
-                  timestampString = "563448198.307242"
+                  timestampString = "564459064.585642"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "209"
@@ -13195,7 +13115,7 @@
                   moduleName = "iosapp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/redmooc/Documents/GitHub/hongke/redmoocios/iosapp/Controllers/%E7%88%B1%E5%AD%A6%E4%B9%A0/Controller/LikeBookViewController.m"
-                  timestampString = "563448198.308925"
+                  timestampString = "564459064.587326"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "209"
@@ -13212,11 +13132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeClassroomViewController.m"
-            timestampString = "562237105.986877"
+            timestampString = "564052281.353881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
             landmarkName = "-tableView:viewForHeaderInSection:"
             landmarkType = "7">
          </BreakpointContent>
@@ -13292,11 +13212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeClassroomViewController.m"
-            timestampString = "562237105.987049"
+            timestampString = "564052281.354015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "-loadClassroomNewsWithCateId:withCateName:"
             landmarkType = "7">
          </BreakpointContent>
@@ -13308,11 +13228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeClassroomViewController.m"
-            timestampString = "562237105.987089"
+            timestampString = "564052281.354058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "391"
-            endingLineNumber = "391"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
             landmarkName = "-titleViewDidClick:"
             landmarkType = "7">
          </BreakpointContent>
@@ -13324,11 +13244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeClassroomViewController.m"
-            timestampString = "562237105.987129"
+            timestampString = "564052281.354098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "400"
-            endingLineNumber = "400"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
             landmarkName = "-ThreeCellImageViewDidChick:cellTag:"
             landmarkType = "7">
          </BreakpointContent>
@@ -13340,7 +13260,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeStudyViewController.m"
-            timestampString = "561431994.790697"
+            timestampString = "564052281.354139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
@@ -13356,7 +13276,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeStudyViewController.m"
-            timestampString = "561431994.79074"
+            timestampString = "564052281.354178"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "246"
@@ -13372,7 +13292,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeStudyViewController.m"
-            timestampString = "561431994.7907799"
+            timestampString = "564052281.354214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -13388,11 +13308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeClassroomViewController.m"
-            timestampString = "562237105.987237"
+            timestampString = "564052281.3542531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "-loadClassroomNode"
             landmarkType = "7">
          </BreakpointContent>
@@ -13404,11 +13324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x7231;&#x5b66;&#x4e60;/Controller/LikeClassroomViewController.m"
-            timestampString = "562237105.987276"
+            timestampString = "564052281.354291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-loadNodeMsg"
             landmarkType = "7">
          </BreakpointContent>
@@ -14104,11 +14024,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.988542"
+            timestampString = "564457132.910316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "771"
-            endingLineNumber = "771"
+            startingLineNumber = "824"
+            endingLineNumber = "824"
             landmarkName = "+getImageSizeWithURL:"
             landmarkType = "7">
          </BreakpointContent>
@@ -14120,11 +14040,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.988582"
+            timestampString = "564457132.910359"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "851"
-            endingLineNumber = "851"
+            startingLineNumber = "904"
+            endingLineNumber = "904"
             landmarkName = "+getJPGImageSizeWithRequest:"
             landmarkType = "7">
          </BreakpointContent>
@@ -14136,11 +14056,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.988619"
+            timestampString = "564457132.9103971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "793"
-            endingLineNumber = "793"
+            startingLineNumber = "846"
+            endingLineNumber = "846"
             landmarkName = "+getImageSizeWithURL:"
             landmarkType = "7">
          </BreakpointContent>
@@ -14152,11 +14072,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.988655"
+            timestampString = "564457132.910432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "873"
-            endingLineNumber = "873"
+            startingLineNumber = "926"
+            endingLineNumber = "926"
             landmarkName = "+getJPGImageSizeWithRequest:"
             landmarkType = "7">
          </BreakpointContent>
@@ -14168,11 +14088,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.988691"
+            timestampString = "564457132.9104691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "871"
-            endingLineNumber = "871"
+            startingLineNumber = "924"
+            endingLineNumber = "924"
             landmarkName = "+getJPGImageSizeWithRequest:"
             landmarkType = "7">
          </BreakpointContent>
@@ -14296,7 +14216,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.9889981"
+            timestampString = "564457132.910702"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "242"
@@ -14312,7 +14232,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.9890651"
+            timestampString = "564457132.910743"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "244"
@@ -14376,7 +14296,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.989198"
+            timestampString = "564457132.910867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
@@ -14392,11 +14312,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/StudySchoolViewController.m"
-            timestampString = "563247766.466881"
+            timestampString = "564459063.887246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "-loadNodeList"
             landmarkType = "7">
          </BreakpointContent>
@@ -14408,11 +14328,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/cell/NodeBaseCell.m"
-            timestampString = "563249658.375826"
+            timestampString = "564367670.18653"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "-setNode:"
             landmarkType = "7">
          </BreakpointContent>
@@ -14424,27 +14344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/StudySchoolViewController.m"
-            timestampString = "563247766.46694"
+            timestampString = "564459063.887657"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-setupRefresh"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/StudySchoolViewController.m"
-            timestampString = "563247766.466979"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "-tableView"
             landmarkType = "7">
          </BreakpointContent>
@@ -14456,11 +14360,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/cell/NodeBaseCell.m"
-            timestampString = "563249658.375905"
+            timestampString = "564367670.186658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
+            startingLineNumber = "404"
+            endingLineNumber = "404"
             landmarkName = "-Click_1"
             landmarkType = "7">
          </BreakpointContent>
@@ -14472,11 +14376,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/cell/NodeBaseCell.m"
-            timestampString = "563249658.375946"
+            timestampString = "564367670.1867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "381"
-            endingLineNumber = "381"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
             landmarkName = "-Click_2"
             landmarkType = "7">
          </BreakpointContent>
@@ -14488,11 +14392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/cell/NodeBaseCell.m"
-            timestampString = "563249658.375984"
+            timestampString = "564367670.186739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "392"
-            endingLineNumber = "392"
+            startingLineNumber = "426"
+            endingLineNumber = "426"
             landmarkName = "-Click_3"
             landmarkType = "7">
          </BreakpointContent>
@@ -14504,11 +14408,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/cell/NodeBaseCell.m"
-            timestampString = "563249658.376021"
+            timestampString = "564367670.1867779"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "403"
-            endingLineNumber = "403"
+            startingLineNumber = "437"
+            endingLineNumber = "437"
             landmarkName = "-Click_4"
             landmarkType = "7">
          </BreakpointContent>
@@ -14520,11 +14424,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/cell/NodeBaseCell.m"
-            timestampString = "563249658.376058"
+            timestampString = "564367670.186818"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "-loadChildNodeList:"
             landmarkType = "7">
          </BreakpointContent>
@@ -14536,11 +14440,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/cell/NodeBaseCell.m"
-            timestampString = "563249658.376094"
+            timestampString = "564367670.186857"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "371"
-            endingLineNumber = "371"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
             landmarkName = "-Click_1"
             landmarkType = "7">
          </BreakpointContent>
@@ -14631,40 +14535,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.990144"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "597"
-            endingLineNumber = "597"
-            landmarkName = "+showLinkViewController:WithNowVC:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iosapp/Utils/Utils.m"
-            timestampString = "562237105.990181"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "598"
-            endingLineNumber = "598"
-            landmarkName = "+showLinkViewController:WithNowVC:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.990217"
+            timestampString = "564457132.911872"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "351"
@@ -14776,7 +14648,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Application/AppDelegate.m"
-            timestampString = "563441594.019781"
+            timestampString = "564367670.18703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
@@ -14792,11 +14664,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/AddPhotoViewController.m"
-            timestampString = "563448197.608574"
+            timestampString = "564052281.3572299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
+            startingLineNumber = "334"
+            endingLineNumber = "334"
             landmarkName = "-photoView:imageChangeComplete:"
             landmarkType = "7">
          </BreakpointContent>
@@ -14807,24 +14679,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/AddPhotoViewController.m"
-            timestampString = "563448197.6086299"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
-            landmarkName = "-requestAddTake"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.990597"
+            timestampString = "564457132.91212"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "249"
@@ -14840,7 +14696,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.99066"
+            timestampString = "564457132.9121619"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
@@ -14856,7 +14712,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.990724"
+            timestampString = "564457132.9122"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "309"
@@ -14872,11 +14728,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/StudySchoolViewController.m"
-            timestampString = "563247766.4674259"
+            timestampString = "564459063.88853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "-loadNodeList"
             landmarkType = "7">
          </BreakpointContent>
@@ -14888,27 +14744,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/StudySchoolViewController.m"
-            timestampString = "563247766.467463"
+            timestampString = "564459063.888782"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-loadNodeList"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/StudySchoolViewController.m"
-            timestampString = "563247766.4675"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "StudySchoolViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -14920,11 +14760,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/cell/NodeBaseCell.m"
-            timestampString = "563249658.376541"
+            timestampString = "564367670.1874861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "314"
-            endingLineNumber = "314"
+            startingLineNumber = "347"
+            endingLineNumber = "347"
             landmarkName = "-loadArticleList:"
             landmarkType = "7">
          </BreakpointContent>
@@ -14936,11 +14776,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/cell/NodeBaseCell.m"
-            timestampString = "563249658.376581"
+            timestampString = "564367670.1875269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
             landmarkName = "-loadArticleList:"
             landmarkType = "7">
          </BreakpointContent>
@@ -14952,11 +14792,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/cell/NodeBaseCell.m"
-            timestampString = "563249658.376617"
+            timestampString = "564367670.187566"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
             landmarkName = "-loadArticleList:"
             landmarkType = "7">
          </BreakpointContent>
@@ -15000,11 +14840,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/cell/NodeBaseCell.m"
-            timestampString = "563249658.376683"
+            timestampString = "564367670.1876349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "456"
-            endingLineNumber = "456"
+            startingLineNumber = "490"
+            endingLineNumber = "490"
             landmarkName = "-pushArticleDetail:"
             landmarkType = "7">
          </BreakpointContent>
@@ -15048,7 +14888,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/GFKDTabBarController.m"
-            timestampString = "562237105.991545"
+            timestampString = "564457132.912932"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "571"
@@ -15096,11 +14936,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.392669"
+            timestampString = "564290829.003829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "438"
-            endingLineNumber = "438"
+            startingLineNumber = "440"
+            endingLineNumber = "440"
             landmarkName = "-scrollViewDidEndDecelerating:"
             landmarkType = "7">
          </BreakpointContent>
@@ -15128,11 +14968,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/NewsViewController.m"
-            timestampString = "563250061.3927439"
+            timestampString = "564290829.0038821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "439"
-            endingLineNumber = "439"
+            startingLineNumber = "441"
+            endingLineNumber = "441"
             landmarkName = "-scrollViewDidEndDecelerating:"
             landmarkType = "7">
          </BreakpointContent>
@@ -15176,23 +15016,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeDetailsWithBottomBarViewController.m"
-            timestampString = "562837086.115985"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "-setUpBlock"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakeDetailsWithBottomBarViewController.m"
-            timestampString = "562837086.11603"
+            timestampString = "563934696.425786"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
@@ -15236,7 +15060,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/BottomBarViewController.m"
@@ -15287,28 +15111,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/AddPhotoViewController.m"
-            timestampString = "563448197.609411"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
-            landmarkName = "-requestAddTake"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TimeAlbumTableViewCell.m"
-            timestampString = "563448197.609464"
+            timestampString = "563934696.4259191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "-setDateEntity:"
             landmarkType = "7">
          </BreakpointContent>
@@ -15320,11 +15128,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
-            timestampString = "563448197.609508"
+            timestampString = "563938543.904341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -15336,11 +15144,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Views/CYWebviewController/CYWebViewController.m"
-            timestampString = "563448197.6095541"
+            timestampString = "564457132.91337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "344"
-            endingLineNumber = "344"
+            startingLineNumber = "346"
+            endingLineNumber = "346"
             landmarkName = "-clickedbackBtn:"
             landmarkType = "7">
          </BreakpointContent>
@@ -15352,11 +15160,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/AddPhotoViewController.m"
-            timestampString = "563448197.609596"
+            timestampString = "564052281.358705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "-requestUploadView"
             landmarkType = "7">
          </BreakpointContent>
@@ -15368,11 +15176,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TemplateChooseViewController.m"
-            timestampString = "563448197.609641"
+            timestampString = "563853706.0867701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "-loadTemplate"
             landmarkType = "7">
          </BreakpointContent>
@@ -15400,12 +15208,460 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TemplateChooseViewController.m"
-            timestampString = "563448197.609737"
+            timestampString = "563853706.086833"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TemplateChooseViewController.m"
+            timestampString = "563853706.086874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TemplateChooseViewController.m"
+            timestampString = "563853706.086915"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "-commentContent"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TemplateChooseViewController.m"
+            timestampString = "563853706.086955"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "-commentContent"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Views/CYWebviewController/CYWebViewController.m"
+            timestampString = "564457132.913615"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "605"
+            endingLineNumber = "605"
+            landmarkName = "-doneBtnClicked:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Views/CYWebviewController/CYWebViewController.m"
+            timestampString = "564457132.913654"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "563"
+            endingLineNumber = "563"
+            landmarkName = "-actionBtnClicked:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Views/CYWebviewController/CYWebViewController.m"
+            timestampString = "564457132.913689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "650"
+            endingLineNumber = "650"
+            landmarkName = "-closeContentWithStr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Views/CYWebviewController/CYWebViewController.m"
+            timestampString = "564457132.913723"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "521"
+            endingLineNumber = "521"
+            landmarkName = "-refreshButtonsStatus"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
+            timestampString = "563938543.90475"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
+            landmarkName = "-GiveisAdd:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
+            timestampString = "563938543.9049619"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "-actionSheet:clickedButtonAtIndex:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Views/CYWebviewController/CYWebViewController.m"
+            timestampString = "564457132.913821"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Views/CYWebviewController/CYWebViewController.m"
+            timestampString = "564457132.913862"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "-viewWillDisappear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Controllers/&#x968f;&#x624b;&#x62cd;/TakesViewController.m"
+            timestampString = "563938549.445187"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "-shareTake"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Controllers/NewsViewController.m"
+            timestampString = "564290829.004185"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "397"
+            endingLineNumber = "397"
+            landmarkName = "-adClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Utils/JxbAdPageView.m"
+            timestampString = "564367670.1880701"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "-setAds:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Controllers/&#x56fe;&#x7247;&#x8f6e;&#x64ad;/SDCycleScrollView/SDCycleScrollView.m"
+            timestampString = "564052281.359152"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
+            landmarkName = "-layoutSubviews"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Controllers/&#x56fe;&#x7247;&#x8f6e;&#x64ad;/SDCycleScrollView/SDCycleScrollView.m"
+            timestampString = "564052281.3591959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
             endingLineNumber = "140"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            landmarkName = "-setShowPageControl:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Utils/Utils.m"
+            timestampString = "564457132.914044"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "444"
+            endingLineNumber = "444"
+            landmarkName = "+showHttpErrorWithCode:withMessage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Utils/Utils.m"
+            timestampString = "564457132.914084"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "647"
+            endingLineNumber = "647"
+            landmarkName = "+showLinkViewController:WithNowVC:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Utils/Utils.m"
+            timestampString = "564457132.914122"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "557"
+            endingLineNumber = "557"
+            landmarkName = "+showLinkAD:WithNowVC:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Application/AppDelegate.m"
+            timestampString = "564367670.188351"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "-application:didFinishLaunchingWithOptions:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Application/AppDelegate.m"
+            timestampString = "564367670.1886261"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "-application:didFinishLaunchingWithOptions:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__57-[AppDelegate application:didFinishLaunchingWithOptions:]_block_invoke_2"
+                  moduleName = "iosapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/redmooc/Documents/GitHub/hongke/redmoocios/iosapp/Application/AppDelegate.m"
+                  timestampString = "564395784.068125"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "209"
+                  endingLineNumber = "209"
+                  offsetFromSymbolStart = "125">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__57-[AppDelegate application:didFinishLaunchingWithOptions:]_block_invoke_3"
+                  moduleName = "iosapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/redmooc/Documents/GitHub/hongke/redmoocios/iosapp/Application/AppDelegate.m"
+                  timestampString = "564395784.0702471"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "83">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Application/AppDelegate.m"
+            timestampString = "564367689.3848979"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "-application:didFinishLaunchingWithOptions:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__57-[AppDelegate application:didFinishLaunchingWithOptions:]_block_invoke_2"
+                  moduleName = "iosapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/redmooc/Documents/GitHub/hongke/redmoocios/iosapp/Application/AppDelegate.m"
+                  timestampString = "564395784.074754"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "145">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__57-[AppDelegate application:didFinishLaunchingWithOptions:]_block_invoke_3"
+                  moduleName = "iosapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/redmooc/Documents/GitHub/hongke/redmoocios/iosapp/Application/AppDelegate.m"
+                  timestampString = "564395784.076492"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "83">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/StudySchoolViewController.m"
+            timestampString = "564459063.890564"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "395"
+            endingLineNumber = "395"
+            landmarkName = "-scrollViewDidScroll:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/Controllers/&#x8bfb;&#x4e66;&#x835f;/StudySchoolViewController.m"
+            timestampString = "564459063.890811"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "-viewWillDisappear:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

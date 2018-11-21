@@ -12,7 +12,10 @@
 @interface TimeAlbumTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *label_title;
+@property (weak, nonatomic) IBOutlet UIImageView *image_photo;
+@property (weak, nonatomic) IBOutlet UILabel *label_userName;
 
+@property (weak, nonatomic) IBOutlet UILabel *label_time;
 
 - (void) setDateEntity : (GFKDTakes*) _dateEntity;
 

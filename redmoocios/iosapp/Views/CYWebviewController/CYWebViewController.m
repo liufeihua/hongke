@@ -264,6 +264,8 @@ UIPopoverControllerDelegate,NJKWebViewProgressDelegate>
         [self.navigationController setToolbarHidden:YES animated:NO];
     }
     
+    //解决退出界面，音乐会持续播放
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@""]]];
 }
 
 
@@ -343,6 +345,7 @@ UIPopoverControllerDelegate,NJKWebViewProgressDelegate>
 -(void)clickedbackBtn:(UIButton*)btn{
     NSLog(@"back");
 //    [self.urlRequest setURL:nil];
+    
     if (self.webView.canGoBack) {
         [self setupLeftNavigationBarBtn];
         
@@ -350,8 +353,7 @@ UIPopoverControllerDelegate,NJKWebViewProgressDelegate>
     }else{
         [self.navigationController popViewControllerAnimated:YES];
     }
-    //解决退出界面，音乐会持续播放
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@""]]];
+    
     
 }
 -(void)clickedcloseBtn:(UIButton*)btn{

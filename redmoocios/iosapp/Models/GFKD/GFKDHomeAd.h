@@ -19,4 +19,5 @@
 
 @property (nonatomic, assign) NSNumber *imgWRatio;
 
+
 @end

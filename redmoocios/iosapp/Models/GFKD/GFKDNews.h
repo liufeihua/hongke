@@ -107,4 +107,5 @@
 
 @property (nonatomic, assign) NSString *author;
 
+@property (nonatomic, assign) NSString *subtitle;
 @end

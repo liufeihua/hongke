@@ -34,6 +34,21 @@
 }
 
 
+// 解决 iOS 11  键盘点击无响应的问题。
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    NSArray *subViewArray = [self subviews];
+    
+    for (id view in subViewArray) {
+        if ([view isKindOfClass:(NSClassFromString(@"_UIToolbarContentView"))]) {
+            UIView *testView = view;
+            testView.userInteractionEnabled = NO;
+        }
+    }
+    
+}
+
 - (void)setLayoutWithModeSwitchButton:(BOOL)hasAModeSwitchButton
 {
     _modeSwitchButton = [UIButton buttonWithType:UIButtonTypeCustom];

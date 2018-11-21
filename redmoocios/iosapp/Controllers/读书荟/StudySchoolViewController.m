@@ -21,12 +21,19 @@
 #import "HomeAdCell.h"
 
 static NSString *NodeCellIdentifier = @"NodeBaseCell";
+#define kNavHeight 64
 
 @interface StudySchoolViewController ()<UITableViewDelegate,UITableViewDataSource,TitleViewDelegate,HomeAdCellDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic, assign) BOOL isHasAdv;  //是否有图片轮播
 @property (nonatomic, copy) NSArray *AdvObjectsDict;
+/** 导航条的背景view */
+@property (nonatomic, strong) UIView                     *naviView;
+/** 返回按钮 */
+@property (nonatomic, strong) UIButton                   *backBtn;
+/** 导航条的title */
+@property (nonatomic, strong) UILabel                    *titleLabel;
 
 @end
 
@@ -35,32 +42,112 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
     NSMutableArray *dataArray_node;
     NSString *_number;
     NSNumber *_parentId;
+    NSMutableArray*_imageArray;
+    BOOL showNav;
 }
 
-- (instancetype) initWithNumber:(NSString *)number{
+- (instancetype)initWithNumber:(NSString *)number WithNav:(BOOL) isShowNav{
     self = [super init];
     _number = number;
+    showNav = isShowNav;
     if (self) {
         
     }
     return self;
 }
 
-- (instancetype) initWithParentId:(NSNumber *)parentId{
+- (instancetype) initWithParentId:(NSNumber *)parentId  WithNav:(BOOL) isShowNav{
     self = [super init];
     _parentId = parentId;
+    showNav = isShowNav;
     if (self) {
         
     }
     return self;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     dataArray_node = [[NSMutableArray alloc] init];
+    _imageArray = [[NSMutableArray alloc] init];
     [self tableView];
+    if (!showNav) {
+        [self setUI];
+        //初始化导航条上的内容
+        [self setUpNavigtionBar];
+    }
     [self loadNodeList];
     [self setupRefresh];
+}
+
+- (void)setUI
+{
+    //隐藏系统的导航条，由于需要自定义的动画，自定义一个view来代替导航条
+    //[self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    //将view的自动添加scroll的内容偏移关闭
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    //设置背景色
+    self.view.backgroundColor = [UIColor whiteColor];
+
+    //给顶部的图片view和选择view留出距离
+     CGRect tableViewFrame = self.view.frame;
+     tableViewFrame.origin.y = 20;
+     tableViewFrame.size.height -=20;
+     [self.tableView setFrame:tableViewFrame];
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+}
+
+- (void)setUpNavigtionBar
+{
+    //初始化山寨导航条
+    self.naviView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kNBR_SCREEN_W, kNavHeight)];
+    self.naviView.backgroundColor = kNBR_ProjectColor;
+    self.naviView.alpha = 0.0;
+    [self.view addSubview:self.naviView];
+    
+    //添加返回按钮
+    self.backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.backBtn.frame = CGRectMake(5, 30, 25, 25);
+    [self.backBtn addTarget:self action:@selector(backButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.backBtn setImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+    [self.view addSubview:self.backBtn];
+    
+    //添加导航条上的大文字
+    self.titleLabel = [[UILabel alloc] init];
+    [self.titleLabel setFrame:CGRectMake(30, 32, kNBR_SCREEN_W - 60, 25)];
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:17];
+    self.titleLabel.textColor = [UIColor whiteColor];
+    [self.view addSubview:self.titleLabel];
+}
+
+- (void) backButtonClick:(id)sender{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (!showNav) {
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+    }
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    if (!showNav) {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -110,8 +197,8 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
              [dataArray_node removeAllObjects];
              for (int i=0; i<array.count; i++) {
                  GFKDTopNodes *nodes = [[GFKDTopNodes alloc] initWithDict:array[i]];
-//                 if (i == 0){
-//                     nodes.typeId = [NSNumber numberWithInt:6];
+//                 if (i == 1){
+//                     nodes.typeId = [NSNumber numberWithInt:8];
 //                 }
 //                 if (i == 1){
 //                     nodes.typeId = [NSNumber numberWithInt:5];
@@ -203,7 +290,7 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
         NSString *titleName = node.cateName;
         TitleView *moreView = [[TitleView alloc] initWithTitle:titleName hasMore:YES];
         moreView.hotLb.text = @"HOT";
-        moreView.tag = section;
+        moreView.tag = _isHasAdv ? section-1 : section;;
         moreView.delegate = self;
         return moreView;
     }else{
@@ -287,6 +374,26 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
 {
     NSLog(@"homeAdv___click");
     [Utils showLinkAD:adv WithNowVC:self];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat offsetY = scrollView.contentOffset.y;
+    if (!showNav) {
+        if (offsetY>=kNavHeight)
+        {
+            offsetY=kNavHeight;
+            [UIView animateWithDuration:0.25 animations:^{
+                self.naviView.frame = CGRectMake(0, 0, self.naviView.bounds.size.width, kNavHeight);
+                self.naviView.alpha = 1;
+                self.titleLabel.text = self.title;
+            }];
+            
+        }else
+        {
+            self.naviView.frame = CGRectMake(0, offsetY, self.naviView.bounds.size.width, -offsetY);
+            self.titleLabel.text = @"";
+        }
+    }
 }
 
 @end

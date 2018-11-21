@@ -22,20 +22,21 @@
 @implementation STTabViewController
 
 - (instancetype)init{
-    
+   
     self = [super initWithTitle:@""
                    andSubTitles:@[@"视频", @"听说"]
 //                   andSubTitles:@[@"视频", @"爱学习"]
 //                     andSubTitles:@[@"视频", @"读书荟"]
                  andControllers:@[
                                   [[AudioViewController alloc] init],
-                                  [[RadioViewController alloc] initWithFrameHeight:self.view.bounds.size.height - 64 - 36 - 49 withNumber:@"audio"],
+//                                  [[RadioViewController alloc] initWithFrameHeight:self.view.bounds.size.height - 64 - 36 - 49 withNumber:@"audio"],
 //                                   [[StudyHomeViewController alloc] init],//爱学习
-//                                  [[StudySchoolViewController alloc] init],//
+                                  [[StudySchoolViewController alloc] initWithNumber:@"audio" WithNav:YES],//
                                   ]
                     underTabbar:YES];
     return self;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

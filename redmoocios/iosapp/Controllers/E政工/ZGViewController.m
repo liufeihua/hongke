@@ -61,7 +61,6 @@
     _headView.pageControlStyle=SDCycleScrollViewPageContolStyleClassic;
     _headView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     _headView.titleLabelTextFont=[UIFont systemFontOfSize:14];
-    
 }
 
 - (void)viewDidLoad {

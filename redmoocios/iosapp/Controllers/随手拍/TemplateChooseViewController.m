@@ -15,6 +15,8 @@
 #import "OSCAPI.h"
 #import <MJRefresh.h>
 #import "GFKDAd.h"
+#import "CYWebViewController.h"
+#import "AddPhotoViewController.h"
 
 //相对iphone6 屏幕比
 #define KWidth_Scale    [UIScreen mainScreen].bounds.size.width/375.0f
@@ -24,6 +26,7 @@
     UICollectionView *_collectionView;
     ZWCollectionViewFlowLayout *_flowLayout;//自定义layout
     NSMutableArray *_dataArray;
+    NSString *typeURL;
 }
 
 @end
@@ -32,6 +35,13 @@ static NSString *cellIdentifier = @"TemplateViewCell";
 
 @implementation TemplateChooseViewController
 
+-(instancetype)initWithImgs:(NSString *)imgs WithTitle:(NSString *)title{
+    if (self=[super init]) {
+        _imgsStr = imgs;
+        _titleStr = title;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -146,7 +156,20 @@ static NSString *cellIdentifier = @"TemplateViewCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"你点击了 %ld--%ld",(long)indexPath.section,indexPath.item);
-
+    GFKDAd *model=_dataArray[indexPath.item];
+    
+    typeURL = model.url;
+    UIBarButtonItem *rightAddItem = [[UIBarButtonItem alloc] initWithTitle:@"发布" style:UIBarButtonItemStylePlain target:self action:@selector(commentContent)];
+   
+    NSString *imgs = _imgsStr;
+    NSString *url = [NSString stringWithFormat:@"%@%@?token=%@&imgs=%@&typeUrl=%@",GFKDAPI_HTTPS_PREFIX, GFKDAPI_PHOTOVIEW,[Config getToken],imgs,typeURL];
+    CYWebViewController *webViewController = [[CYWebViewController alloc] initWithURL:[NSURL URLWithString:url]];
+    webViewController.hidesBottomBarWhenPushed = YES;
+    webViewController.navigationButtonsHidden = YES;
+    webViewController.loadingBarTintColor = [UIColor redColor];
+    webViewController.navigationItem.rightBarButtonItem = rightAddItem;
+    [self.navigationController pushViewController:webViewController animated:YES];
+    
 }
 
 
@@ -156,6 +179,46 @@ static NSString *cellIdentifier = @"TemplateViewCell";
    // return 150;//200*KWidth_Scale;
   //  return (kNBR_SCREEN_W - 60)/2.0+40;
     return (kNBR_SCREEN_W - 80)/3.0+40;
+}
+
+- (void) commentContent{
+    //解决退出界面，音乐会持续播放
+   // [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@""]]];
+    
+    MBProgressHUD *HUD = [Utils createHUD];
+    HUD.labelText = @"正在发布";
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
+    [manager POST:[NSString stringWithFormat:@"%@%@", GFKDAPI_HTTPS_PREFIX, GFKDAPI_PUBLISHTIMEPHOTO]
+       parameters:@{@"token":[Config getToken],
+                    @"title":_titleStr,
+                    @"imgs":_imgsStr,
+                    @"typeUrl":typeURL,
+                    }
+ success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
+    if (errorCode == 1) {
+        [HUD hide:YES];
+        NSString *errorMessage = responseObject[@"reason"];
+        
+        NSInteger invalidToken = [responseObject[@"invalidToken"] integerValue];
+        [Utils showHttpErrorWithCode:(int)invalidToken withMessage:errorMessage];
+        
+        return;
+    }
+   // [locService stopUserLocationService];
+     [self.navigationController popToRootViewControllerAnimated:YES];
+    if ([((AddPhotoViewController *)(self.addPhotoVC)).delegate respondsToSelector:@selector(GiveisAdd:)]) {
+        [((AddPhotoViewController *)(self.addPhotoVC)).delegate GiveisAdd:YES];
+    }
+    [HUD hide:YES afterDelay:1];
+    
+} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    HUD.mode = MBProgressHUDModeCustomView;
+    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
+    HUD.labelText = @"网络异常，发布时光相册失败";
+    
+    [HUD hide:YES afterDelay:1];
+}];
 }
 
 @end

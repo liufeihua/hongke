@@ -15,11 +15,13 @@
 #import "AddTakeViewController.h"
 #import "TimeAlbumTableViewCell.h"
 #import "CYWebViewController.h"
+#import <MBProgressHUD.h>
+#import "UMSocial.h"
 
-
-@interface TakesViewController ()<TakeTableViewCellDelegate,XHImageViewerDelegate,TakeDetailsWithBottomBarViewControllerDelegate,BMKLocationServiceDelegate,AddTakeViewControllerDelegate>
+@interface TakesViewController ()<TakeTableViewCellDelegate,XHImageViewerDelegate,TakeDetailsWithBottomBarViewControllerDelegate,BMKLocationServiceDelegate,AddTakeViewControllerDelegate,UIActionSheetDelegate>
 {
     NSIndexPath    *updateIndexPath;
+    GFKDTakes      *now_take;
 }
 @end
 
@@ -128,7 +130,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_myTakesInfoType == TakesInfoTypeTimeAlbum) {
-        return (kNBR_SCREEN_W-40)*5/12 + 40;
+        return (kNBR_SCREEN_W-30)/2 + 90;
     }else{
        GFKDTakes *entity = self.objects[indexPath.row];
        return [TakeTableViewCell heightWithEntity:entity isDetail:NO];
@@ -139,6 +141,7 @@
 {
     updateIndexPath = indexPath;
     GFKDTakes *entity = self.objects[indexPath.row];
+    now_take = entity;
     if (_myTakesInfoType == TakesInfoTypeTimeAlbum) {
         NSInteger photoId = [entity.takeId integerValue];
         NSString *url = [NSString stringWithFormat:@"%@%@?token=%@&id=%ld",GFKDAPI_HTTPS_PREFIX, GFKDAPI_PHOTOVIEW,[Config getToken],photoId];
@@ -146,6 +149,7 @@
         webViewController.hidesBottomBarWhenPushed = YES;
         webViewController.navigationButtonsHidden = YES;
         webViewController.loadingBarTintColor = [UIColor redColor];
+        webViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_more"] style:UIBarButtonItemStylePlain target:self action:@selector(moreOperateTake)];
         [self.navigationController pushViewController:webViewController animated:YES];
     }else{
         TakeDetailsWithBottomBarViewController *VC = [[TakeDetailsWithBottomBarViewController alloc] initWithModal:entity];
@@ -154,6 +158,102 @@
     }
 }
 
+
+- (void) moreOperateTake{
+    if ([Config getOwnID] == [now_take.userId longLongValue]){
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"分享",@"删除", nil];
+        actionSheet.tag = 1;
+        [actionSheet showInView:self.view];
+    }else{
+       [self shareTake];
+    }
+}
+
+- (void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (actionSheet.tag == 1)
+    {
+        switch (buttonIndex)
+        {
+            case 0:
+            {
+                //分享
+                [self shareTake];
+            }
+                break;
+            case 1:
+            {
+               //删除
+                [self DeleteTake];
+            }
+                break;
+            default:
+                break;
+        }
+        return;
+    }
+}
+
+-(void) DeleteTake{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
+    
+    [manager GET:[NSString stringWithFormat:@"%@%@", GFKDAPI_HTTPS_PREFIX, GFKDAPI_DELREADILYTAKE]
+      parameters:@{@"token":[Config getToken],
+                   @"id":now_take.takeId,
+                   }
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
+             NSString *errorMessage = responseObject[@"reason"];
+             
+             if (errorCode == 1) {
+                 NSInteger invalidToken = [responseObject[@"invalidToken"] integerValue];
+                 [Utils showHttpErrorWithCode:(int)invalidToken withMessage:errorMessage];
+                 return;
+             }
+             [self.navigationController popViewControllerAnimated:YES];
+             [self refresh];
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             MBProgressHUD *HUD = [Utils createHUD];
+             HUD.mode = MBProgressHUDModeCustomView;
+             HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
+             HUD.labelText = @"网络异常，操作失败";
+             
+             [HUD hide:YES afterDelay:1];
+         }
+     ];
+}
+
+- (void) shareTake{
+    NSString *title = now_take.title;
+    NSInteger photoId = [now_take.takeId integerValue];
+//    NSString *URL = [NSString stringWithFormat:@"%@%@?token=%@&id=%ld",GFKDAPI_HTTPS_PREFIX, GFKDAPI_PHOTOVIEW,[Config getToken],photoId];
+    NSString *URL = [NSString stringWithFormat:@"%@%@?id=%ld",GFKDAPI_HTTPS_PREFIX, GFKDAPI_PHOTOVIEW,photoId];
+    
+    // 微信相关设置
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeWeb;
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = URL;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = URL;
+    [UMSocialData defaultData].extConfig.title = title;
+    
+    // 手机QQ相关设置
+    [UMSocialData defaultData].extConfig.qqData.qqMessageType = UMSocialQQMessageTypeDefault;
+    [UMSocialData defaultData].extConfig.qqData.title = title;
+    [UMSocialData defaultData].extConfig.qqData.url = URL;
+    
+    // 新浪微博相关设置
+    [[UMSocialData defaultData].extConfig.sinaData.urlResource setResourceType:UMSocialUrlResourceTypeDefault url:URL];
+    NSData * imageData;
+    if (now_take.images.count>0) {
+        imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:now_take.images[0]]];
+    }
+    // 复制链接
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"5698bd72e0f55a6d460029b8"
+                                      shareText:[NSString stringWithFormat:@"《%@》，分享来自 %@", title, URL]
+                                     shareImage: [UIImage imageWithData:imageData]
+                                shareToSnsNames:@[UMShareToWechatTimeline, UMShareToWechatSession, UMShareToQQ, UMShareToSina]
+                                       delegate:nil];
+}
 
 - (void) takeTableViewCell : (TakeTableViewCell*) _cell tapSubImageViews : (UIImageView*) tapView allSubImageViews : (NSMutableArray *) _allSubImageviews
 {

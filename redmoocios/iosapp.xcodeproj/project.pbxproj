@@ -132,6 +132,9 @@
 		E7006C742133A9BA00302866 /* WMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E7006C6F2133A9BA00302866 /* WMPlayer.m */; };
 		E7006C752133A9BA00302866 /* WMPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7006C702133A9BA00302866 /* WMPlayer.bundle */; };
 		E7006E812133EE9500302866 /* XHYScrollingNavBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7006E7F2133EE9400302866 /* XHYScrollingNavBarViewController.m */; };
+		E70C1061219C0AEC0094E8C4 /* OSCEditingBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E70C1060219C0AEC0094E8C4 /* OSCEditingBar.m */; };
+		E70C1063219E619B0094E8C4 /* NodeOneStar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70C1062219E619B0094E8C4 /* NodeOneStar.xib */; };
+		E70C1065219E6ABD0094E8C4 /* NodeImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70C1064219E6ABD0094E8C4 /* NodeImageCell.xib */; };
 		E70EA9911DD3303200C2A8BA /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = E70EA9901DD3303200C2A8BA /* Entitlements.plist */; };
 		E7132EED1C7EDE9900783309 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7132EEC1C7EDE9900783309 /* Launch Screen.storyboard */; };
 		E7132EFB1C7EE06600783309 /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7132EFA1C7EE06600783309 /* LaunchScreenViewController.m */; };
@@ -732,6 +735,10 @@
 		E7006C702133A9BA00302866 /* WMPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = WMPlayer.bundle; path = WMPlayer/WMPlayer.bundle; sourceTree = "<group>"; };
 		E7006E7F2133EE9400302866 /* XHYScrollingNavBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHYScrollingNavBarViewController.m; sourceTree = "<group>"; };
 		E7006E802133EE9400302866 /* XHYScrollingNavBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHYScrollingNavBarViewController.h; sourceTree = "<group>"; };
+		E70C105F219C0AEB0094E8C4 /* OSCEditingBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCEditingBar.h; sourceTree = "<group>"; };
+		E70C1060219C0AEC0094E8C4 /* OSCEditingBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCEditingBar.m; sourceTree = "<group>"; };
+		E70C1062219E619B0094E8C4 /* NodeOneStar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NodeOneStar.xib; path = "读书荟/cell/NodeOneStar.xib"; sourceTree = "<group>"; };
+		E70C1064219E6ABD0094E8C4 /* NodeImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NodeImageCell.xib; path = "读书荟/cell/NodeImageCell.xib"; sourceTree = "<group>"; };
 		E70EA9901DD3303200C2A8BA /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		E70EA9921DD3307800C2A8BA /* iosapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iosapp.entitlements; sourceTree = "<group>"; };
 		E7132EEC1C7EDE9900783309 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -1818,6 +1825,8 @@
 		3838D1591A6C9C9500CC7913 /* EditingBar */ = {
 			isa = PBXGroup;
 			children = (
+				E70C105F219C0AEB0094E8C4 /* OSCEditingBar.h */,
+				E70C1060219C0AEC0094E8C4 /* OSCEditingBar.m */,
 				3874EC1A1A08DB8E000D2894 /* EditingBar.h */,
 				3874EC1B1A08DB8E000D2894 /* EditingBar.m */,
 				38E067421A19AC4900D41976 /* GrowingTextView.h */,
@@ -2964,6 +2973,8 @@
 				E7B73601217821890002B0C3 /* NodeNCell.xib */,
 				E762A4332181A44100D57717 /* NodeOneCell.xib */,
 				E762A4352181A6B600D57717 /* NodeOneTitleCell.xib */,
+				E70C1062219E619B0094E8C4 /* NodeOneStar.xib */,
+				E70C1064219E6ABD0094E8C4 /* NodeImageCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -3502,6 +3513,7 @@
 				E7453FB11DC0444F00E00E4E /* NewShow.xib in Resources */,
 				E7006C752133A9BA00302866 /* WMPlayer.bundle in Resources */,
 				E74DEB9B1C4C80FD006C8DA5 /* ImagesLeftCell.xib in Resources */,
+				E70C1065219E6ABD0094E8C4 /* NodeImageCell.xib in Resources */,
 				251B9DBF1C0EE5A6004F85D9 /* IQKeyboardManager.bundle in Resources */,
 				E74666C21DD40F5900B8A53B /* re_prduct_pan_toggle@2x.png in Resources */,
 				E7C13FC81DD1C5BF00D857F7 /* reader_more@2x.png in Resources */,
@@ -3544,6 +3556,7 @@
 				E7B73602217821890002B0C3 /* NodeNCell.xib in Resources */,
 				E7666C831DF1143E00837653 /* SearchWebView.js in Resources */,
 				E73535BD1C9FA169003381BF /* play_back_full.png in Resources */,
+				E70C1063219E619B0094E8C4 /* NodeOneStar.xib in Resources */,
 				E7132EED1C7EDE9900783309 /* Launch Screen.storyboard in Resources */,
 				C5B1231C1B316830000B29D2 /* css in Resources */,
 				251E09901BFD8B2D00D3D6AC /* NewsImagesViewController.xib in Resources */,
@@ -3646,6 +3659,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E70C1061219C0AEC0094E8C4 /* OSCEditingBar.m in Sources */,
 				251B9DC01C0EE5A6004F85D9 /* IQKeyboardManager.m in Sources */,
 				C5A89C391B09C34B00798B1C /* UIFont+FontAwesome.m in Sources */,
 				E7B735FE2176CCA60002B0C3 /* StudyMoreViewController.m in Sources */,

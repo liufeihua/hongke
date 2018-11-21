@@ -10,4 +10,11 @@
 
 @interface TemplateChooseViewController : UIViewController
 
+@property (nonatomic, copy) NSString *imgsStr;
+@property (nonatomic, copy) NSString *titleStr;
+
+-(instancetype)initWithImgs:(NSString *)imgs WithTitle:(NSString *)title;
+
+@property (nonatomic, assign) UIViewController *addPhotoVC;
+
 @end

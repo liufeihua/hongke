@@ -44,6 +44,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *label_author_4;
 @property (weak, nonatomic) IBOutlet UILabel *label_author_5;
 
+@property (weak, nonatomic) IBOutlet UILabel *label_job_1;
 @property (strong, nonatomic) EPUBParser *epubParser; //epub解析器，成员变量或全局
+
+@property (weak, nonatomic) IBOutlet UIView *view_dotted_1;
+@property (weak, nonatomic) IBOutlet UIView *view_dotted_2;
+@property (weak, nonatomic) IBOutlet UIView *view_dotted_3;
+
+
 
 @end

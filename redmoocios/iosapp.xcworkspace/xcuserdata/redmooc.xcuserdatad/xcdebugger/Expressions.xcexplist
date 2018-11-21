@@ -255,6 +255,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[SDCycleScrollView layoutSubviews]:SDCycleScrollView.m">
+      </ContextState>
+      <ContextState
          contextName = "-[RadioViewController collectionView:cellForItemAtIndexPath:]:RadioViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -330,13 +333,13 @@
          contextName = "__32-[NodeBaseCell loadArticleList:]_block_invoke:NodeBaseCell.m">
          <PersistentStrings>
             <PersistentString
-               value = "news.images[0]">
+               value = "news.images">
+            </PersistentString>
+            <PersistentString
+               value = "news.title">
             </PersistentString>
             <PersistentString
                value = "news.author">
-            </PersistentString>
-            <PersistentString
-               value = "news.images">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -410,6 +413,9 @@
       </ContextState>
       <ContextState
          contextName = "-[NewsImagesViewController viewForZoomingInScrollView:]:NewsImagesViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[LikeClassroomViewController tableView:viewForHeaderInSection:]:LikeClassroomViewController.m">
       </ContextState>
       <ContextState
          contextName = "__39-[NewsDetailViewController viewDidLoad]_block_invoke:NewsDetailViewController.m">
@@ -617,6 +623,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "__34-[NodeBaseCell loadChildNodeList:]_block_invoke:NodeBaseCell.m">
+      </ContextState>
+      <ContextState
          contextName = "-[ImageViewerController setImageViewWithModel]:ImageViewerController.m">
          <PersistentStrings>
             <PersistentString
@@ -654,6 +663,9 @@
                value = "self.tempSuperView">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[JxbAdPageView setAds:]:JxbAdPageView.m">
       </ContextState>
       <ContextState
          contextName = "-[ReplyCommentCell setContentWithComment:]:ReplyCommentCell.m">
@@ -848,10 +860,10 @@
                value = "self.parentView.smallScrollView.subviews">
             </PersistentString>
             <PersistentString
-               value = "self.parentView.bigScrollView.subviews">
+               value = "self.parentView.bigScrollView.subviews[1]">
             </PersistentString>
             <PersistentString
-               value = "self.parentView.bigScrollView.subviews[1]">
+               value = "self.parentView.bigScrollView.subviews">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -986,10 +998,10 @@
                value = "nikeNameLable.frame">
             </PersistentString>
             <PersistentString
-               value = "[entity.latitude doubleValue]">
+               value = "entity.longitude">
             </PersistentString>
             <PersistentString
-               value = "entity.longitude">
+               value = "[entity.latitude doubleValue]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -1024,6 +1036,9 @@
                value = "[UIScreen mainScreen].bounds.size.width">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SDCycleScrollView setShowPageControl:]:SDCycleScrollView.m">
       </ContextState>
       <ContextState
          contextName = "__40-[UserInfoViewController updatePortrait]_block_invoke.266:UserInfoViewController.m">
@@ -1066,6 +1081,14 @@
          <PersistentStrings>
             <PersistentString
                value = "[UIApplication sharedApplication]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CYWebViewController clickedbackBtn:]:CYWebViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.webView.canGoBack">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

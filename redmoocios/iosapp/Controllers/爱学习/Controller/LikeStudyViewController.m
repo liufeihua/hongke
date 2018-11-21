@@ -77,7 +77,7 @@ static NSString *TwoVedioCellIdentifier = @"TwoVedioCell";
     _footView.pageControlStyle=SDCycleScrollViewPageContolStyleClassic;
     _footView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     _footView.titleLabelTextFont=[UIFont systemFontOfSize:14];
-    
+    _footView.autoScroll = NO;
 }
 
 - (void) addSubViewTableView {

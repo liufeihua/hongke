@@ -86,8 +86,6 @@ static int ThreeRow = 1;
     _headView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     _headView.titleLabelTextFont=[UIFont systemFontOfSize:14];
     _headView.autoScroll = NO;
-    _headView.showPageControl = NO;
-    
 }
 
 - (void) addSubViewTableView{
@@ -351,13 +349,18 @@ static int ThreeRow = 1;
 //    return moreView;
     
     NSString *titleName;
-    GFKDNews *news = dataArray_classroom_vedio[section][0];
-    titleName = news.categroy;
-    TitleView *moreView = [[TitleView alloc] initWithTitle:titleName hasMore:YES];
-    moreView.descriptionLb.text = @"在线学习";
-    moreView.tag = section;
-    moreView.delegate = self;
-    return moreView;
+    if ([dataArray_classroom_vedio[section] count] > 0) {
+        GFKDNews *news = dataArray_classroom_vedio[section][0];
+        titleName = news.categroy;
+        TitleView *moreView = [[TitleView alloc] initWithTitle:titleName hasMore:YES];
+        moreView.descriptionLb.text = @"在线学习";
+        moreView.tag = section;
+        moreView.delegate = self;
+        return moreView;
+    }else{
+        return nil;
+    }
+    
 
 }
 

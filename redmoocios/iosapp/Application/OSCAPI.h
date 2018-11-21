@@ -9,11 +9,11 @@
 #ifndef iosapp_OSCAPI_h
 #define iosapp_OSCAPI_h
 
-//#define GFKDAPI_HTTPS_PREFIX             @"https://mapi.nudt.edu.cn"
-//#define GFKDAPI_PREFIX                   @"http://mapi.nudt.edu.cn"
+#define GFKDAPI_HTTPS_PREFIX             @"https://mapi.nudt.edu.cn"
+#define GFKDAPI_PREFIX                   @"http://mapi.nudt.edu.cn"
 
-#define GFKDAPI_HTTPS_PREFIX             @"http://172.20.201.103:8080/app.center"
-#define GFKDAPI_PREFIX                   @"http://172.20.201.103:8080/app.center"
+//#define GFKDAPI_HTTPS_PREFIX             @"http://172.20.201.103:8080/app.center"
+//#define GFKDAPI_PREFIX                   @"http://172.20.201.103:8080/app.center"
 
 //#define GFKDAPI_HTTPS_PREFIX             @"http://172.16.128.83:8080/"
 //#define GFKDAPI_PREFIX                   @"http://172.16.128.83:8080/"
@@ -79,6 +79,7 @@
 #define GFKDAPI_MYUSERNODES             @"/m-userNodes.htx"  //用户订制的栏目
 #define GFKDAPI_MYNOTUSERNODES             @"/m-notUserNodes.htx" //用户没有订制的栏目
 #define GFKDAPI_UPDATEUSERNODE             @"/m-updateUserNode.htx"   //更新用户订制栏目 token=...&nodeIds=...
+#define GFKDAPI_NODELIST                   @"/m-nodeList.htx"  //子栏目
 
 #define GFKDAPI_DISCOVER                 @"/m-discover.htx"   //发现栏目 token=...
 

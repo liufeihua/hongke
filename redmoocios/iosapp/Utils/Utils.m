@@ -27,6 +27,7 @@
 #import "TakesViewController.h"
 #import "RadioViewController.h"
 #import "CatagoryNewsViewController.h"
+#import "StudySchoolViewController.h"
 
 @implementation Utils
 
@@ -587,7 +588,59 @@
         vc.newsID = [adv.url intValue];
         vc.parentVC = VC;
         [VC presentViewController:vc animated:YES completion:nil];
+    }else if ([adv.linkType intValue] == 6)  // 跳转到栏目 6
+    {
+        //
+        int nodeId = [adv.url intValue];
+        [self showNodeOrNewsWithId:nodeId withTitle:adv.advTitle WithNowVC:VC];
     }
+}
+
+
++ (void) showNodeOrNewsWithId:(int) nodeId withTitle:(NSString *)title WithNowVC:(UIViewController *)VC{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
+    
+    [manager GET:[NSString stringWithFormat:@"%@%@", GFKDAPI_HTTPS_PREFIX,GFKDAPI_NODELIST]
+      parameters:@{@"token":[Config getToken],
+                   @"parentId":@(nodeId)}
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
+             NSString *errorMessage = responseObject[@"reason"];
+             
+             if (errorCode == 1) {
+                 NSInteger invalidToken = [responseObject[@"invalidToken"] integerValue];
+                 [Utils showHttpErrorWithCode:(int)invalidToken withMessage:errorMessage];
+                 return;
+             }
+             
+             NSArray *array = responseObject[@"result"][@"data"];
+             if (array.count == 0) {
+                 NewsViewController *specalViewController  = [[NewsViewController alloc] initWithNewsListType:NewsListTypeNews cateId:nodeId isSpecial:0];
+                 specalViewController.title = title;
+                 specalViewController.hidesBottomBarWhenPushed = YES;
+                 [VC.navigationController pushViewController:specalViewController animated:YES];
+             }else{
+                 StudySchoolViewController *studuSchoolVC = [[StudySchoolViewController alloc] initWithParentId:[NSNumber numberWithInt:nodeId] WithNav:NO];
+                 studuSchoolVC.title = title;
+                 studuSchoolVC.hidesBottomBarWhenPushed = YES;
+                 [VC.navigationController pushViewController:studuSchoolVC animated:YES];
+             }
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             MBProgressHUD *HUD = [Utils createHUD];
+             HUD.mode = MBProgressHUDModeCustomView;
+             HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
+             HUD.labelText = @"网络异常，操作失败";
+             
+             [HUD hide:YES afterDelay:1];
+         }
+     ];
+    
+//    if ([topNodes.terminated intValue] == 1){ //没有子栏目了
+//        [controllers addObject:[[NewsBarViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[topNodes.cateId intValue] isSpecial:0]];
+//    }else{
+//        [controllers addObject: [[StudySchoolViewController alloc] initWithParentId:topNodes.cateId]];
+//    }
 }
 
 + (void) showLinkViewController:(GFKDDiscover *)model WithNowVC:(UIViewController *)VC{

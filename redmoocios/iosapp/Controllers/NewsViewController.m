@@ -392,6 +392,8 @@ static NSString *kNewsCellID = @"NewsCell";
 {
     NSLog(@"homeAdv___click");
     updateIndexPath = nil;
+//    adv.linkType = @"5";
+//    adv.url = @"152";
     [Utils showLinkAD:adv WithNowVC:self];
 }
 

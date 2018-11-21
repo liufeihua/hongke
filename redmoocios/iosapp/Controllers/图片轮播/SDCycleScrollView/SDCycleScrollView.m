@@ -358,7 +358,9 @@ NSString * const ID = @"cycleCell";
     
     _pageControl.frame = CGRectMake(x, y, size.width, size.height);
     _pageControl.hidden = !_showPageControl;
-    
+    if (_imagesGroup.count == 1) {
+        _pageControl.hidden = YES;
+    }
 }
 
 //解决当父View释放时，当前视图因为被Timer强引用而不能释放的问题
@@ -399,7 +401,7 @@ NSString * const ID = @"cycleCell";
         image = self.placeholderImage;
     }
     cell.imageView.image = image;
-    if (_titlesGroup.count) {
+    if (_titlesGroup.count > 1) {  //图片个数大于1时才显示标题
         cell.title = _titlesGroup[itemIndex];
     }
     

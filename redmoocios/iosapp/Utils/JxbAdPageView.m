@@ -104,6 +104,8 @@
         //[tmp addObject:name];
         UIImageView* img = [[UIImageView alloc] initWithFrame:CGRectMake(i * mainWidth, 0, mainWidth, self.bounds.size.height)];
         img.userInteractionEnabled = YES;
+        img.contentMode = UIViewContentModeScaleToFill;
+        img.clipsToBounds = YES;
         UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Actiondo)];
         [img addGestureRecognizer:tap];
         
@@ -111,22 +113,24 @@
 
         [scView addSubview:img];
         
-        //加透明蒙版
-        UIView *coverView = [[UIView alloc] initWithFrame:CGRectMake(i*mainWidth, self.bounds.size.height-30, mainWidth, 30)];
-        coverView.alpha = 0.4;
-        coverView.backgroundColor = [UIColor blackColor];
-        [scView addSubview:coverView];
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(i*mainWidth+10, self.bounds.size.height-30, mainWidth-100, 30)];
-        label.userInteractionEnabled = YES;
-       // [label addGestureRecognizer:tap];
-        label.font = [UIFont systemFontOfSize:13];
-        label.textColor = [UIColor whiteColor];
-        
-        NSString *title = adv.dataDict[@"description"];
-        label.text = title;
-        
-        [scView addSubview:label];
+        if (imgNameArr.count > 1) {  //只有一张图片时不显示标题
+            //加透明蒙版
+            UIView *coverView = [[UIView alloc] initWithFrame:CGRectMake(i*mainWidth, self.bounds.size.height-30, mainWidth, 30)];
+            coverView.alpha = 0.4;
+            coverView.backgroundColor = [UIColor blackColor];
+            [scView addSubview:coverView];
+            
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(i*mainWidth+10, self.bounds.size.height-30, mainWidth-100, 30)];
+            label.userInteractionEnabled = YES;
+            // [label addGestureRecognizer:tap];
+            label.font = [UIFont systemFontOfSize:13];
+            label.textColor = [UIColor whiteColor];
+            
+            NSString *title = adv.dataDict[@"description"];
+            label.text = title;
+            
+            [scView addSubview:label];
+        }
     }
     scView.contentOffset = CGPointMake(((adCount>1)?mainWidth*addBeyond:0), 0);
     
@@ -140,9 +144,11 @@
         CGSize pointSize = [pcView sizeForNumberOfPages:imgNameArr.count];
         CGFloat page_x = -(pcView.bounds.size.width - pointSize.width) / 2 ;
         [pcView setBounds:CGRectMake(page_x, pcView.bounds.origin.y, pcView.bounds.size.width, pcView.bounds.size.height)];
+        
     }
-    [self addSubview:pcView];
-    
+    if (imgNameArr.count > 1) {  //只有一张图片时不显示标题
+      [self addSubview:pcView];
+    }
     pcView.numberOfPages = imgNameArr.count;
     
     if (_autoInterval == 0)

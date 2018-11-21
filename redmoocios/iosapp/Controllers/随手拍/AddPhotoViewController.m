@@ -211,9 +211,9 @@ static const CGFloat kPhotoViewMargin = 12.0;
     UIBarButtonItem *rightAddItem = [[UIBarButtonItem alloc] initWithTitle:@"提交" style:UIBarButtonItemStylePlain target:self action:@selector(commentNewContent)];
     self.navigationItem.rightBarButtonItem = rightAddItem;
     
-    RAC(self.navigationItem.rightBarButtonItem, enabled) = [commentInpuTextView.rac_textSignal map:^(NSString *content) {
-        return @(content.length > 0);
-    }];
+//    RAC(self.navigationItem.rightBarButtonItem, enabled) = [commentInpuTextView.rac_textSignal map:^(NSString *content) {
+//        return @(content.length > 0);
+//    }];
     
     [self.view addSubview:self.bottomView];
 }
@@ -222,6 +222,11 @@ static const CGFloat kPhotoViewMargin = 12.0;
 - (void) commentNewContent
 {
     if (_infoType == 3) {
+        if (currentSelectImageViews.count<2) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请用2-9张照片制作时光相册" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"好的", nil];
+            [alert show];
+            return;
+        }
         [self requestUploadView];
     }else{
         [self requestAddTake];
@@ -229,6 +234,8 @@ static const CGFloat kPhotoViewMargin = 12.0;
 }
 
 - (void) requestUploadView{
+    MBProgressHUD *HUD = [Utils createHUD];
+    HUD.labelText = @"正在上传照片";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
     
     [manager POST:[NSString stringWithFormat:@"%@%@", GFKDAPI_HTTPS_PREFIX, GFKDAPI_UPLOADPREVIEW]
@@ -244,11 +251,14 @@ static const CGFloat kPhotoViewMargin = 12.0;
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
               NSString *errorMessage = responseObject[@"reason"];
+              [HUD hide:YES];
               if (errorCode == 0) {
                   imgsToken = responseObject[@"result"][@"imgs"];
                   //进入模板选择列表
-                  TemplateChooseViewController *templateVC  = [[TemplateChooseViewController alloc] init];
+                  TemplateChooseViewController *templateVC  = [[TemplateChooseViewController alloc] initWithImgs:imgsToken WithTitle:[Utils convertRichTextToRawText:commentInpuTextView]];
+                  templateVC.addPhotoVC = self;
                   [self.navigationController pushViewController:templateVC animated:YES];
+                  
               } else {
                   NSInteger invalidToken = [responseObject[@"invalidToken"] integerValue];
                   [Utils showHttpErrorWithCode:(int)invalidToken withMessage:errorMessage];
@@ -294,22 +304,10 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         return;
     }
     [locService stopUserLocationService];
-    if (_infoType == 3) {
-        //如果是时光相册
-        NSInteger photoId = [responseObject[@"result"] integerValue];
-        NSString *url = [NSString stringWithFormat:@"%@%@?token=%@&id=%ld",GFKDAPI_HTTPS_PREFIX, GFKDAPI_PHOTOVIEW,[Config getToken],photoId];
-        CYWebViewController *webViewController = [[CYWebViewController alloc] initWithURL:[NSURL URLWithString:url]];
-        webViewController.hidesBottomBarWhenPushed = YES;
-        webViewController.navigationButtonsHidden = YES;
-        webViewController.loadingBarTintColor = [UIColor redColor];
-        [self.navigationController pushViewController:webViewController animated:YES];
-        
-        //http://172.20.201.103:8080/app.center/m-photoView.htx?token=&id=
-    }else{
-        [self.navigationController popViewControllerAnimated:YES];
-        if ([self.delegate respondsToSelector:@selector(GiveisAdd:)]) {
-            [self.delegate GiveisAdd:YES];
-        }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    if ([self.delegate respondsToSelector:@selector(GiveisAdd:)]) {
+        [self.delegate GiveisAdd:YES];
     }
     [HUD hide:YES afterDelay:1];
     
@@ -320,6 +318,7 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
     
     [HUD hide:YES afterDelay:1];
 }];
+    
 }
 
 - (void)dealloc {

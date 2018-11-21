@@ -10,8 +10,10 @@
 
 @interface StudySchoolViewController : UIViewController
 
-- (instancetype)initWithNumber:(NSString *)number;
+- (instancetype)initWithNumber:(NSString *)number WithNav:(BOOL) isShowNav;
 
-- (instancetype)initWithParentId:(NSNumber *)parentId;
+- (instancetype)initWithParentId:(NSNumber *)parentId WithNav:(BOOL) isShowNav;
+
+//- (instancetype)initWithArray:(NSArray *)array;
 
 @end

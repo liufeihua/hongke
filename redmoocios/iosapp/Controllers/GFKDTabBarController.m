@@ -246,7 +246,7 @@
         if ([topNodes.terminated intValue] == 1){ //没有子栏目了
             [controllers addObject:[[NewsBarViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[topNodes.cateId intValue] isSpecial:0]];
         }else{
-            [controllers addObject: [[StudySchoolViewController alloc] initWithParentId:topNodes.cateId]];
+            [controllers addObject: [[StudySchoolViewController alloc] initWithParentId:topNodes.cateId WithNav:YES]];
         }
     }
     
@@ -255,7 +255,7 @@
     
         //StudyHomeViewController *studyHomeVC = [[StudyHomeViewController alloc] init];
         //takeVC =[[TakesTabViewController alloc] init];
-        StudySchoolViewController *studySchoolVC = [[StudySchoolViewController alloc] initWithNumber:@"dsh"];
+        StudySchoolViewController *studySchoolVC = [[StudySchoolViewController alloc] initWithNumber:@"dsh" WithNav:YES];
     
         segmentVC = [[JRSegmentViewController alloc] init];
         segmentVC.segmentBgColor = kNBR_ProjectColor;

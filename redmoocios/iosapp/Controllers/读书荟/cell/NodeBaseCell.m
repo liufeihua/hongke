@@ -37,6 +37,9 @@
 #define kRectH_one  75
 #define kRectH_oneTitle  25
 
+#define kRectH_oneStar  120
+
+#define kRectH_image (kWindowW/2.0-10)*5/9.0 //W:H=9:5
 //typeId
 //0:两列样式(图片宽高比1:1)
 //1:三列样式(图片宽高比4:3)
@@ -45,6 +48,8 @@
 //4:四列样式(图片宽高比1:1)
 //5:左图右标题(图片宽高比4:3)
 //6:左标题右作者(无图片)
+//7:左图右简介-个人之星(图片宽高比3:4)
+//8:左右左三图片(图片宽高比9:5)
 
 @implementation NodeBaseCell
 {
@@ -54,6 +59,7 @@
 - (void) setNode:(GFKDTopNodes *)node{
     _node = node;
     [self loadChildNodeList:node.cateId];
+    
 }
 
 - (void)awakeFromNib {
@@ -121,6 +127,12 @@
     [_label_author_5 addGestureRecognizer:singleTap_5_author];
 }
 
+- (void) loadVieDottedLine{
+    [self addBorderToLayer:_view_dotted_1];
+    [self addBorderToLayer:_view_dotted_2];
+    [self addBorderToLayer:_view_dotted_3];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
@@ -165,6 +177,16 @@
         case 6:
         {
             return kRectH_oneTitle*5+6*10;
+        }
+            break;
+        case 7:
+        {
+            return kRectH_oneStar + 20;
+        }
+            break;
+        case 8:
+        {
+            return kRectH_image*3+15*2+6*2;
         }
             break;
             
@@ -216,6 +238,16 @@
             return @"NodeOneTitleCell";
         }
             break;
+        case 7:
+        {
+            return @"NodeOneStar";
+        }
+            break;
+        case 8:
+        {
+            return @"NodeImageCell";
+        }
+            break;
             
         default:
         {
@@ -242,6 +274,7 @@
                  [Utils showHttpErrorWithCode:(int)invalidToken withMessage:errorMessage];
                  return;
              }
+             [self loadVieDottedLine]; //画虚线
              
              NSArray *array = responseObject[@"result"][@"data"];
              if (array.count == 0) {
@@ -273,7 +306,7 @@
                      self.label5.text = node.cateName;
                  }
              }
-             
+        
     
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -316,6 +349,7 @@
                          self.label1.text = news.title;
                          self.label_subTitle_1.text = news.dataDict[@"description"];
                          self.label_author_1.text = news.author;
+                         self.label_job_1.text = news.subtitle;
                      }
                      if (i == 1) {
                          if (news.images.count>0){
@@ -512,6 +546,27 @@
             [_parentVC.navigationController pushViewController:newsDetailVC animated:YES];
         }
     }
+}
+
+- (void)addBorderToLayer:(UIView *)view
+{
+    CAShapeLayer *border = [CAShapeLayer layer];
+    
+    border.strokeColor = kNBR_ProjectColor.CGColor;
+    
+    border.fillColor = nil;
+    
+    border.path = [UIBezierPath bezierPathWithRect:view.bounds].CGPath;
+    
+    border.frame = view.bounds;
+    
+    border.lineWidth = 2;
+    
+    border.lineCap = @"square";
+    
+    border.lineDashPattern = @[@2, @6];
+    
+    [view.layer addSublayer:border];
 }
 
 @end
