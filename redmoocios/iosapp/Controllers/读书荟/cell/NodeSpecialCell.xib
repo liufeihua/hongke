@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HYQiHei-50J.ttf">
+            <string>HYQiHei-EZJ</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NodeSpecialCell" rowHeight="200" id="S4D-ud-FOI" customClass="NodeBaseCell">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S4D-ud-FOI" id="oec-Dp-h1h">
+                <rect key="frame" x="0.0" y="0.0" width="382" height="199.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG7-hV-PZH">
+                        <rect key="frame" x="10" y="10" width="362" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="8Z0-Um-BdJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HYQiHei-EZJ" family="HYQiHei" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8Z0-Um-BdJ"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ru1-iy-5Zt">
+                        <rect key="frame" x="10" y="37" width="362" height="151"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="152" id="ghh-Zg-OdK"/>
+                            <constraint firstAttribute="width" secondItem="ru1-iy-5Zt" secondAttribute="height" multiplier="360:150" id="hhI-UR-1nP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ghh-Zg-OdK"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="nG7-hV-PZH" firstAttribute="top" secondItem="oec-Dp-h1h" secondAttribute="top" constant="10" id="KCi-8k-mkl"/>
+                    <constraint firstAttribute="trailing" secondItem="nG7-hV-PZH" secondAttribute="trailing" constant="10" id="KID-OO-Qbu"/>
+                    <constraint firstAttribute="trailing" secondItem="ru1-iy-5Zt" secondAttribute="trailing" constant="10" id="NZi-0d-Mjn"/>
+                    <constraint firstItem="nG7-hV-PZH" firstAttribute="leading" secondItem="oec-Dp-h1h" secondAttribute="leading" constant="10" id="hEm-LI-u0y"/>
+                    <constraint firstItem="ru1-iy-5Zt" firstAttribute="leading" secondItem="oec-Dp-h1h" secondAttribute="leading" constant="10" id="sW4-N7-RAV"/>
+                    <constraint firstItem="ru1-iy-5Zt" firstAttribute="top" secondItem="nG7-hV-PZH" secondAttribute="bottom" constant="8" id="uxQ-ga-K8g"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="image1" destination="ru1-iy-5Zt" id="pgJ-Nc-rjS"/>
+                <outlet property="label1" destination="nG7-hV-PZH" id="15D-bd-ss9"/>
+            </connections>
+            <point key="canvasLocation" x="10" y="87"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,667 @@
+//
+//  FYMainPlayController.m
+//  music
+//
+//
+
+#import "FYMainPlayController.h"
+#import "MusicSlider.h"
+#import <AVFoundation/AVFoundation.h>
+
+//#import "NSString+FYString.h"
+#import "UIView+FYAnimations.h"
+
+#import "FYPlayManager.h"
+#import <MBProgressHUD.h>
+#import "UIImageView+WebCache.h"
+#import "OSCAPI.h"
+#import "Utils.h"
+#import "Config.h"
+#import "NSString+Util.h"
+#import "GFKDNewsDetail.h"
+#import "CommentsBottomBarViewController.h"
+
+@import AVFoundation;
+@interface FYMainPlayController ()<FYPlayManagerDelegate,UIWebViewDelegate>
+
+/*背景*/
+@property (weak, nonatomic) IBOutlet UIImageView *backgroudImageView;
+@property (weak, nonatomic) IBOutlet UIView *backgroudView;
+
+/*最上行*/
+@property (weak, nonatomic) IBOutlet UILabel *musicTitleLabel;
+@property (weak, nonatomic) IBOutlet UIButton *menuButton;
+
+/*中心图片*/
+@property (weak, nonatomic) IBOutlet UIImageView *albumImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *albumImageLeftConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *albumImageRightConstraint;
+@property (weak, nonatomic) IBOutlet UIImageView *needleView;
+
+/*收藏行*/
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
+@property (weak, nonatomic) IBOutlet UILabel *musicNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *singerLabel;
+@property (weak, nonatomic) IBOutlet UIButton *changeButton;
+
+
+/*进度条*/
+@property (weak, nonatomic) IBOutlet UILabel *beginTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
+@property (weak, nonatomic) IBOutlet MusicSlider *musicSlider;
+
+/*最下行按钮*/
+@property (weak, nonatomic) IBOutlet UIButton *musicCycleButton;
+@property (weak, nonatomic) IBOutlet UIButton *previousMusicButton;
+@property (weak, nonatomic) IBOutlet UIButton *musicToggleButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextMusicButton;
+@property (weak, nonatomic) IBOutlet UIButton *otherButton;
+
+@property (weak, nonatomic) IBOutlet UIView *imageView;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
+@property (strong, nonatomic) UIVisualEffectView *visualEffectView;
+//@property (nonatomic) NSTimer *musicDurationTimer;
+@property (nonatomic) BOOL musicIsPlaying;
+@property (nonatomic) BOOL musicIsChange;
+@property (nonatomic) BOOL musicIsCan;
+@property (nonatomic) BOOL newItem;
+
+@property (nonatomic) FYPlayerCycle  cycle;
+@property (nonatomic) NSInteger currentIndex;
+@property (nonatomic) NSTimeInterval total;
+
+@property (nonatomic,strong) FYPlayManager *playmanager;
+
+
+/** 定时器 */
+@property (nonatomic, strong) CADisplayLink *displayLink;
+/** 是否正在动画 */
+@property (nonatomic, assign) BOOL isAnimation;
+
+@end
+
+@implementation FYMainPlayController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    [self addPanRecognizer];
+
+    self.webView.delegate = self;
+   // self.webView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+    [self.webView setBackgroundColor:[UIColor clearColor]];
+    [self.webView setOpaque:NO];
+    
+    _imageView.hidden = NO;
+    _webView.hidden = YES;
+    
+    _albumImageView.layer.cornerRadius = _albumImageView.frame.size.width/2.0;
+    _albumImageView.layer.masksToBounds = YES;
+    
+    self.isAnimation = NO;
+//    _albumImageView.userInteractionEnabled = YES;
+//    UITapGestureRecognizer *singleTap_imageView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_imageView)];
+//    [_albumImageView addGestureRecognizer:singleTap_imageView];
+//
+//    _webView.userInteractionEnabled = YES;
+//    UITapGestureRecognizer *singleTap_webView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_webView)];
+//    [_imageView addGestureRecognizer:singleTap_webView];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - 入出 设置
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    //初始化UI
+    _playmanager = [FYPlayManager sharedInstance];
+    _playmanager.delegate = self;
+    //_playmanager.player = _player;
+    _cycle = [_playmanager FYPlayerCycle];
+    switch (_cycle) {
+        case theSong:
+            [_musicCycleButton setImage:[UIImage imageNamed:@"loop_single_icon"] forState:UIControlStateNormal];
+            break;
+        case nextSong:
+            [_musicCycleButton setImage:[UIImage imageNamed:@"loop_all_icon"] forState:UIControlStateNormal];
+            break;
+        case isRandom:
+            [_musicCycleButton setImage:[UIImage imageNamed:@"shuffle_icon"] forState:UIControlStateNormal];
+            break;
+            
+        default:
+            break;
+    }
+    
+    //判断
+    _musicNameLabel.text = [_playmanager playMusicName];
+    _musicTitleLabel.text = [_playmanager playMusicTitle];
+    _singerLabel.text = [_playmanager playSinger];
+    [self setupBackgroudImage:[_playmanager playCoverLarge]];
+    
+    [self updateProgressLabelCurrentTime:CMTimeGetSeconds([_playmanager.player.currentItem currentTime]) duration:CMTimeGetSeconds([_playmanager.player.currentItem duration])];
+    [self addObserverToPlayer:_playmanager.player];
+    
+    if (_playmanager.player.rate) {
+        self.musicIsPlaying = YES;
+    } else {
+        self.musicIsPlaying = NO;
+    }
+    
+    
+    [self getArticle];
+    
+    
+    if ([_playmanager hasBeenFavoriteMusic]) {
+        [_favoriteButton setImage:[UIImage imageNamed:@"red_heart"] forState:UIControlStateNormal];
+    } else {
+        [_favoriteButton setImage:[UIImage imageNamed:@"empty_heart"] forState:UIControlStateNormal];
+    }
+    
+    _newItem = YES;
+
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.parentVC = nil;
+}
+
+- (void)addPanRecognizer {
+    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(closePlay:)];
+    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:swipeRecognizer];
+}
+
+#pragma mark - KVO
+/** 给AVPlayer添加监控 */
+-(void)addObserverToPlayer:(AVPlayer *)player{
+    
+    //监听时间变化
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(musicTimeInterval:) name:@"musicTimeInterval" object:nil];
+    //[player addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];//状态
+    //[player addObserver:self forKeyPath:@"rate" options:NSKeyValueObservingOptionNew context:nil];//播放速度
+    //[player addObserver:self forKeyPath:@"currentItem" options:NSKeyValueObservingOptionNew context:nil];
+    //[player addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];//缓冲
+}
+
+-(void)removeObserverFromPlayer:(AVPlayer *)player{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    //[_playmanager.player removeObserver:self forKeyPath:@"status"];
+    //[player removeObserver:self forKeyPath:@"rate"];
+    //[player removeObserver:self forKeyPath:@"currentItem"];
+    //[player removeObserver:self forKeyPath:@"loadedTimeRanges"];//缓冲
+}
+
+//放弃kvo 因为切换时会重现创建avplayer
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+    
+    if ([keyPath isEqualToString:@"status"]) {
+        switch (_playmanager.player.status) {
+            case AVPlayerStatusUnknown:
+                [self showMiddleHint:@"未知状态，此时不能播放"];
+                break;
+            case AVPlayerStatusReadyToPlay:
+                [self showMiddleHint:@"准备完毕，可以播放"];
+                break;
+            case AVPlayerStatusFailed:
+                [self showMiddleHint:@"加载失败，网络或者服务器出现问题"];
+                break;
+            default:
+                break;
+        }
+    }
+    if ([keyPath isEqualToString:@"rate"]) {
+        //AVPlayerStatus rate= [[change objectForKey:@"new"] intValue];
+        //判断暂停/播放
+        if ([[FYPlayManager sharedInstance] isPlay]) {
+            self.musicIsPlaying = YES;
+        }else{
+            self.musicIsPlaying = NO;
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"setPausePlayView" object:nil userInfo:nil];
+
+    }
+    if ([keyPath isEqualToString:@"currentItem"]) {
+        
+        FYPlayManager *playmanager = [FYPlayManager sharedInstance];
+
+        _musicNameLabel.text = [playmanager playMusicName];
+        _musicTitleLabel.text = [playmanager playMusicTitle];
+        _singerLabel.text = [playmanager playSinger];
+        [self setupBackgroudImage:[playmanager playCoverLarge]];
+        [playmanager setHistoryMusic];
+        if ([_playmanager hasBeenFavoriteMusic]) {
+            [_favoriteButton setImage:[UIImage imageNamed:@"red_heart"] forState:UIControlStateNormal];
+        } else {
+            [_favoriteButton setImage:[UIImage imageNamed:@"empty_heart"] forState:UIControlStateNormal];
+        }
+        
+        _newItem = YES;
+    }
+    
+    if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
+        AVPlayerItem * songItem = object;
+        NSArray * array = songItem.loadedTimeRanges;
+        CMTimeRange timeRange = [array.firstObject CMTimeRangeValue]; //本次缓冲的时间范围
+        NSTimeInterval totalBuffer = CMTimeGetSeconds(timeRange.start) + CMTimeGetSeconds(timeRange.duration); //缓冲总长度
+        NSLog(@"共缓冲%.2f",totalBuffer);
+    }
+}
+
+//歌曲改变
+-(void)changeMusic{
+    
+    FYPlayManager *playmanager = [FYPlayManager sharedInstance];
+    
+    _musicNameLabel.text = [playmanager playMusicName];
+    _musicTitleLabel.text = [playmanager playMusicTitle];
+    _singerLabel.text = [playmanager playSinger];
+    [self setupBackgroudImage:[playmanager playCoverLarge]];
+    [playmanager setHistoryMusic];
+    if ([_playmanager hasBeenFavoriteMusic]) {
+        [_favoriteButton setImage:[UIImage imageNamed:@"red_heart"] forState:UIControlStateNormal];
+    } else {
+        [_favoriteButton setImage:[UIImage imageNamed:@"empty_heart"] forState:UIControlStateNormal];
+    }
+    
+    _newItem = YES;
+    
+
+    //列表页面进行改变
+    [self.delegate refreshList];
+}
+/** 通知 监听时间变化，设置时间 */
+-(void)musicTimeInterval:(NSNotification *)notification{
+    
+    NSTimeInterval current=CMTimeGetSeconds([_playmanager.player.currentItem currentTime]);
+    
+    if (_newItem == YES) {
+        AVPlayerItem *newItem = self.playmanager.player.currentItem;
+        if (!isnan(CMTimeGetSeconds([newItem duration]) )) {
+            
+            self.total = CMTimeGetSeconds([newItem duration]);
+            
+            _newItem = NO;
+        }
+    }
+    
+    [self updateProgressLabelCurrentTime:current duration:self.total];
+}
+
+#pragma mark - 初始化
+
+- (void)setupBackgroudImage:(NSURL *)imageUrl {
+    [_backgroudImageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"music_placeholder"]];
+    [_albumImageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"music_placeholder"]];
+    
+    if(![_visualEffectView isDescendantOfView:_backgroudView]) {
+        UIVisualEffect *blurEffect;
+        blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        _visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        _visualEffectView.frame = CGRectMake(0, 0, kNBR_SCREEN_W, kNBR_SCREEN_H);
+        [_backgroudView addSubview:_visualEffectView];
+    }
+    
+    [_backgroudImageView startTransitionAnimation];
+    [_albumImageView startTransitionAnimation];
+}
+
+- (void)setMusicIsPlaying:(BOOL)musicIsPlaying {
+    _musicIsPlaying = musicIsPlaying;
+    if (_musicIsPlaying) {
+        [_musicToggleButton setImage:[UIImage imageNamed:@"big_pause_button"] forState:UIControlStateNormal];
+        [self playedWithAnimated:YES];
+    } else {
+        [_musicToggleButton setImage:[UIImage imageNamed:@"big_play_button"] forState:UIControlStateNormal];
+        [self pausedWithAnimated:YES];
+    }
+}
+/** 设置时间数据 */
+- (void)updateProgressLabelCurrentTime:(NSTimeInterval )currentTime duration:(NSTimeInterval )duration {
+    
+    _beginTimeLabel.text = [NSString timeIntervalToMMSSFormat:currentTime];
+    _endTimeLabel.text = [NSString timeIntervalToMMSSFormat:duration];
+    if (_musicIsCan == YES) {
+        
+        CGFloat currentTimef = currentTime;
+        int currentTimei = currentTime;
+        if (currentTimef == currentTimei) {
+            _musicIsCan = NO;
+        }
+    }
+    
+    if (_musicIsChange == NO && _musicIsCan == NO) {
+        
+        [_musicSlider setValue:currentTime / duration animated:YES];
+    }
+}
+
+- (void)checkMusicFavoritedIcon {
+    if ([_playmanager hasBeenFavoriteMusic]) {
+        [_favoriteButton setImage:[UIImage imageNamed:@"red_heart"] forState:UIControlStateNormal];
+    } else {
+        [_favoriteButton setImage:[UIImage imageNamed:@"empty_heart"] forState:UIControlStateNormal];
+    }
+}
+
+#pragma mark - 点击事件
+/** 播放按钮 */
+- (IBAction)didTouchMusicToggleButton:(id)sender {
+
+    if (_playmanager.player.status == 1) {
+        
+        [_playmanager pauseMusic];
+        
+        if ([[FYPlayManager sharedInstance] isPlay]) {
+            self.musicIsPlaying = YES;
+        }else{
+            self.musicIsPlaying = NO;
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"setPausePlayView" object:nil userInfo:nil];
+        
+    }else{
+        [self showMiddleHint:@"当前没有音乐"];
+    }
+
+}
+- (IBAction)didTouchCycle:(id)sender {
+    
+    if (_cycle < 3) {
+        _cycle++;
+    }else{
+        _cycle = 1;
+    }
+    NSNumber *userCycle = [NSNumber numberWithInt:_cycle];
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    [user setObject:userCycle forKey:@"cycle"];
+
+    [_playmanager nextCycle];
+    
+    switch (_cycle) {
+        case theSong:
+            
+            [_musicCycleButton setImage:[UIImage imageNamed:@"loop_single_icon"] forState:UIControlStateNormal];
+            [self showMiddleHint:@"单曲循环"];
+            break;
+        case nextSong:
+            
+            [_musicCycleButton setImage:[UIImage imageNamed:@"loop_all_icon"] forState:UIControlStateNormal];
+            [self showMiddleHint:@"顺序循环"];
+            break;
+        case isRandom:
+            
+            [_musicCycleButton setImage:[UIImage imageNamed:@"shuffle_icon"] forState:UIControlStateNormal];
+            [self showMiddleHint:@"随机循环"];
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+- (IBAction)idiTouchFavorite:(id)sender {
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
+    
+    NSString *API = [_playmanager hasBeenFavoriteMusic] == 1? GFKDAPI_ARTICLE_RECOLLECT: GFKDAPI_ARTICLE_COLLECT;
+    [manager GET:[NSString stringWithFormat:@"%@%@", GFKDAPI_HTTPS_PREFIX, API]
+      parameters:@{
+                   @"token":   [Config getToken],
+                   @"articleId": @([_playmanager playArticleID])
+                   }
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
+             NSString *errorMessage = responseObject[@"reason"];
+             
+             if (errorCode == 0) {
+                 [_favoriteButton startDuangAnimation];
+                 if ([_playmanager hasBeenFavoriteMusic] == 1) {
+                     [_playmanager setFavoriteMusic:0];
+                     //_newsDetailObj.collected = [NSNumber numberWithInt: 0];
+                     [_favoriteButton setImage:[UIImage imageNamed:@"empty_heart"] forState:UIControlStateNormal];
+                 }else
+                 {
+                      [_playmanager setFavoriteMusic:1];
+                     //_newsDetailObj.collected = [NSNumber numberWithInt: 1];
+                     [_favoriteButton setImage:[UIImage imageNamed:@"red_heart"] forState:UIControlStateNormal];
+                 }
+                 
+             } else {
+                 NSInteger invalidToken = [responseObject[@"invalidToken"] integerValue];
+                 [Utils showHttpErrorWithCode:(int)invalidToken withMessage:errorMessage];
+             }
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             MBProgressHUD *HUD = [Utils createHUD];
+             HUD.mode = MBProgressHUDModeCustomView;
+             HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
+             HUD.labelText = @"网络异常，操作失败";
+             
+             [HUD hide:YES afterDelay:1];
+         }];
+    
+    
+//    [_favoriteButton startDuangAnimation];
+//    if ([_playmanager hasBeenFavoriteMusic]) {
+//        [_playmanager delFavoriteMusic];
+//        [_favoriteButton setImage:[UIImage imageNamed:@"empty_heart"] forState:UIControlStateNormal];
+//    } else {
+//
+//        [_playmanager setFavoriteMusic];
+//        [_favoriteButton setImage:[UIImage imageNamed:@"red_heart"] forState:UIControlStateNormal];
+//    }
+}
+/** 更多按钮 --评论界面*/
+- (IBAction)didTouchMoreButton:(id)sender {
+//    NSArray *aa = [[FYPlayManager sharedInstance] favoriteMusicItems];
+//    NSLog(@"%@",aa);
+    CommentsBottomBarViewController *commentsBVC = [[CommentsBottomBarViewController alloc] initWithCommentType:0 andObjectID:[[FYPlayManager sharedInstance] playArticleID]];
+    [self.parentVC.navigationController pushViewController:commentsBVC animated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)playPreviousMusic:(id)sender {
+
+    if (_playmanager.player.status == 1) {
+        [_playmanager previousMusic];
+        
+        if ([[FYPlayManager sharedInstance] isPlay]) {
+            self.musicIsPlaying = YES;
+        }else{
+            self.musicIsPlaying = NO;
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"setPausePlayView" object:nil userInfo:nil];
+      
+    }else{
+        [self showMiddleHint:@"等待加载音乐"];
+    }
+
+}
+
+- (IBAction)playNextMusic:(id)sender {
+    
+    if (_playmanager.player.status == 1) {
+        
+        [_playmanager nextMusic];
+
+        if ([[FYPlayManager sharedInstance] isPlay]) {
+            self.musicIsPlaying = YES;
+        }else{
+            self.musicIsPlaying = NO;
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"setPausePlayView" object:nil userInfo:nil];
+    
+    }else{
+        [self showMiddleHint:@"等待加载音乐"];
+    }
+
+}
+
+- (IBAction)closePlay:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+//拖动条
+- (IBAction)changeMusicTime:(id)sender {
+    
+    _musicIsChange = YES;
+    
+}
+- (IBAction)setMusicTime:(id)sender {
+    
+    CGFloat endTime = CMTimeGetSeconds([_playmanager.player.currentItem duration]);
+    NSInteger dragedSeconds = floorf(self.musicSlider.value * endTime);
+
+    //转换成CMTime才能给player来控制播放进度
+    [_playmanager.player seekToTime:CMTimeMakeWithSeconds(dragedSeconds, 1)];
+    
+    _musicIsChange = NO;
+    _musicIsCan = YES;
+}
+- (IBAction)noChangeMusic:(id)sender {
+    
+    _musicIsChange = NO;
+}
+
+# pragma mark - HUD
+
+- (void)showMiddleHint:(NSString *)hint {
+    UIView *view = [[UIApplication sharedApplication].delegate window];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.userInteractionEnabled = NO;
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = hint;
+    hud.labelFont = [UIFont systemFontOfSize:15];
+    hud.margin = 10.f;
+    hud.yOffset = 0;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hide:YES afterDelay:2];
+}
+
+- (void)dealloc{
+
+    [self removeObserverFromPlayer:_playmanager.player];
+    NSLog(@"main dealloc");
+}
+
+
+- (void) getArticle{
+    int newsID = [_playmanager playArticleID];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
+    
+    [manager GET:[NSString stringWithFormat:@"%@%@?articleId=%d&token=%@", GFKDAPI_HTTPS_PREFIX, GFKDAPI_NEWS_DETAIL,newsID,[Config getToken]]
+      parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
+             NSString *errorMessage = responseObject[@"reason"];
+             if (errorCode == 1) {
+                 NSInteger invalidToken = [responseObject[@"invalidToken"] integerValue];
+                 [Utils showHttpErrorWithCode:(int)invalidToken withMessage:errorMessage];
+                 
+                 return;
+                 
+             }
+             GFKDNewsDetail *newsDetailObj = [[GFKDNewsDetail alloc] initWithDict:responseObject[@"result"]];
+             //[_webView loadHTMLString:newsDetailObj.content  baseURL:nil];
+             [_playmanager setFavoriteMusic:[newsDetailObj.collected intValue]];
+             NSString *html = [Utils HTMLWithData:@{
+                                           @"content": newsDetailObj.content
+                                           }
+                           usingTemplate:@"radio"];
+             
+             if ([newsDetailObj.content isEqualToString:@""]){
+                 _changeButton.hidden = YES;
+             }else{
+                 _changeButton.hidden = NO;
+             }
+             [_webView loadHTMLString:html baseURL:[NSBundle mainBundle].resourceURL];
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             MBProgressHUD *HUD = [Utils createHUD];
+             HUD.mode = MBProgressHUDModeCustomView;
+             HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
+             HUD.labelText = @"网络异常，操作失败";
+             
+             [HUD hide:YES afterDelay:1];
+         }
+     ];
+}
+
+-(void) webViewDidFinishLoad:(UIWebView *)webView{
+    [_webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.background='rgba(0,0,0,0)'"];
+}
+- (IBAction)touchChangeView:(id)sender {
+    _imageView.hidden = !_imageView.hidden;
+    _webView.hidden = !_webView.hidden;
+}
+
+
+// 播放音乐时，指针恢复，图片旋转
+- (void)playedWithAnimated:(BOOL)animated {
+    
+    if (self.isAnimation) return;
+
+    self.isAnimation = YES;
+
+    [self setAnchorPoint:CGPointMake(25.0/97, 25.0/153) forView:self.needleView];
+
+    if (animated) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.needleView.transform = CGAffineTransformIdentity;
+        }];
+    }else {
+        self.needleView.transform = CGAffineTransformIdentity;
+    }
+    
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(animation)];
+    
+    // 加入到主循环中
+    [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+}
+
+// 停止音乐时，指针旋转-30°，图片停止旋转
+- (void)pausedWithAnimated:(BOOL)animated {
+    
+    if (!self.isAnimation) return;
+
+    self.isAnimation = NO;
+
+    [self setAnchorPoint:CGPointMake(25.0/97, 25.0/153) forView:self.needleView];
+
+    if (animated) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.needleView.transform = CGAffineTransformMakeRotation(-M_PI_2 / 3);
+        }];
+    }else {
+        self.needleView.transform = CGAffineTransformMakeRotation(-M_PI_2 / 3);
+    }
+    
+    [self.displayLink invalidate];
+    self.displayLink = nil;
+}
+
+// 图片旋转
+- (void)animation {
+    self.albumImageView.transform = CGAffineTransformRotate(self.albumImageView.transform, M_PI_4 / 100);
+}
+
+- (void)setAnchorPoint:(CGPoint)anchorPoint forView:(UIView *)view
+{
+    CGPoint oldOrigin = view.frame.origin;
+    view.layer.anchorPoint = anchorPoint;
+    CGPoint newOrigin = view.frame.origin;
+    
+    CGPoint transition;
+    transition.x = newOrigin.x - oldOrigin.x;
+    transition.y = newOrigin.y - oldOrigin.y;
+    
+    view.center = CGPointMake (view.center.x - transition.x, view.center.y - transition.y);
+}
+
+@end
