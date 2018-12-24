@@ -169,4 +169,8 @@
     return [UIColor colorWithHex:0x21B04B];
 }
 
++ (UIColor *)newSectionButtonSelectedColor
+{
+    return kNBR_ProjectColor;
+}
 @end

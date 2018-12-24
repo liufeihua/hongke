@@ -19,11 +19,12 @@
 #import "StudyMoreViewController.h"
 #import "NewsViewController.h"
 #import "HomeAdCell.h"
+#import "RadioListViewController.h"
 
 static NSString *NodeCellIdentifier = @"NodeBaseCell";
 #define kNavHeight 64
 
-@interface StudySchoolViewController ()<UITableViewDelegate,UITableViewDataSource,TitleViewDelegate,HomeAdCellDelegate>
+@interface StudySchoolViewController ()<UITableViewDelegate,UITableViewDataSource,TitleViewDelegate,HomeAdCellDelegate,NodeBaseCellDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic, assign) BOOL isHasAdv;  //是否有图片轮播
@@ -44,12 +45,19 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
     NSNumber *_parentId;
     NSMutableArray*_imageArray;
     BOOL showNav;
+    NSMutableArray* _showNodesTag;
+    BOOL showRadioPlay;
 }
 
 - (instancetype)initWithNumber:(NSString *)number WithNav:(BOOL) isShowNav{
     self = [super init];
     _number = number;
     showNav = isShowNav;
+    if ([_number isEqualToString: @"audio"]) {
+        showRadioPlay = YES;
+    }else{
+        showRadioPlay = NO;
+    }
     if (self) {
         
     }
@@ -71,6 +79,7 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
     [super viewDidLoad];
     dataArray_node = [[NSMutableArray alloc] init];
     _imageArray = [[NSMutableArray alloc] init];
+    _showNodesTag = [[NSMutableArray alloc] init];
     [self tableView];
     if (!showNav) {
         [self setUI];
@@ -195,15 +204,30 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
              
              NSArray *array = responseObject[@"result"][@"data"];
              [dataArray_node removeAllObjects];
+             [_showNodesTag removeAllObjects];
              for (int i=0; i<array.count; i++) {
                  GFKDTopNodes *nodes = [[GFKDTopNodes alloc] initWithDict:array[i]];
-//                 if (i == 1){
-//                     nodes.typeId = [NSNumber numberWithInt:8];
+//                 if (i == 0){
+//                     nodes.typeId = [NSNumber numberWithInt:12];
 //                 }
 //                 if (i == 1){
 //                     nodes.typeId = [NSNumber numberWithInt:5];
 //                 }
+//                 if ([nodes.typeId intValue] == 4) {
+//                     nodes.showChildNode = [NSNumber numberWithInt:1];
+//                 }
                  [dataArray_node addObject:nodes];
+                 
+                 //是否显示子栏目
+                 if ([nodes.showChildNode intValue] == 1 && [nodes.terminated intValue] == 0) {
+                     //[dataArray_node addObject:[NSNull null]];
+                     [dataArray_node addObject:nodes];
+                     [self loadChildNodeList:nodes AddArraysByTag:i+1 WithNodeNum:0];
+                     
+                     [_showNodesTag addObject:[NSNumber numberWithInt:i]];
+                 }
+                 
+                 
              }
              
              _AdvObjectsDict = responseObject[@"result"][@"adv"];
@@ -212,6 +236,44 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
              [self.tableView reloadData];
              
              
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             MBProgressHUD *HUD = [Utils createHUD];
+             HUD.mode = MBProgressHUDModeCustomView;
+             HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
+             HUD.labelText = @"网络异常，操作失败";
+             
+             [HUD hide:YES afterDelay:1];
+         }
+     ];
+}
+
+
+- (void) loadChildNodeList:(GFKDTopNodes *)node AddArraysByTag:(int) tag WithNodeNum:(int) num
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
+    
+    [manager GET:[NSString stringWithFormat:@"%@/m-nodeList.htx", GFKDAPI_HTTPS_PREFIX]
+      parameters:@{@"token":[Config getToken],
+                   @"parentId":@([node.cateId intValue])}
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
+             NSString *errorMessage = responseObject[@"reason"];
+             
+             if (errorCode == 1) {
+                 NSInteger invalidToken = [responseObject[@"invalidToken"] integerValue];
+                 [Utils showHttpErrorWithCode:(int)invalidToken withMessage:errorMessage];
+                 return;
+             }
+             NSArray *array = responseObject[@"result"][@"data"];
+
+             GFKDTopNodes *nodes = [[GFKDTopNodes alloc] initWithDict:array[num]];
+             [dataArray_node replaceObjectAtIndex:tag withObject:nodes];
+             
+             NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:tag-1];
+             [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+             indexSet=[[NSIndexSet alloc]initWithIndex:tag];
+             [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              MBProgressHUD *HUD = [Utils createHUD];
@@ -269,11 +331,16 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
         return AdCell;
         
     }else{
+        int sectionNum = _isHasAdv ? (int)indexPath.section-1 : (int)indexPath.section;
         node = _isHasAdv ? dataArray_node[indexPath.section-1] : dataArray_node[indexPath.section];
         NSString *ID = [NodeBaseCell idForRow:node];
         UINib *nib = [UINib nibWithNibName:ID bundle:nil];
         [tableView registerNib:nib forCellReuseIdentifier:ID ];
+        
         NodeBaseCell *cell = (NodeBaseCell *)[tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+        cell.delegate = self;
+        cell.indexTag = sectionNum;
+        cell.showRadioPlay = showRadioPlay;
         [cell setNode:node];
         [cell setParentVC:self];
         return cell;
@@ -314,6 +381,20 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
     
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+     return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+}
+
+// 设置尾高
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    for (NSNumber *tag in _showNodesTag) {
+        if (section == [tag integerValue]) {
+            return 0.0f;
+        }
+    }
+    return 15;
+}
+
 // 设置行高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (_isHasAdv && indexPath.section == 0) {
@@ -342,10 +423,18 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
              
              NSArray *array = responseObject[@"result"][@"data"];
              if (array.count == 0) {
-                 NewsViewController *newsVC = [[NewsViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[node.cateId intValue] isSpecial:0];
-                 newsVC.hidesBottomBarWhenPushed = YES;
-                 newsVC.title = node.cateName;
-                 [self.navigationController pushViewController:newsVC animated:YES];
+                 if (!showRadioPlay){
+                     NewsViewController *newsVC = [[NewsViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[node.cateId intValue] isSpecial:0];
+                     newsVC.hidesBottomBarWhenPushed = YES;
+                     newsVC.title = node.cateName;
+                     [self.navigationController pushViewController:newsVC animated:YES];
+                 
+                 }else{
+                     RadioListViewController *radioVC = [[RadioListViewController alloc] initWithNode:node];
+                     radioVC.hidesBottomBarWhenPushed = YES;
+                     radioVC.newsVC.title = node.cateName;
+                     [self.navigationController pushViewController:radioVC animated:YES];
+                 }
              }else{
                  StudyMoreViewController *moreVC = [[StudyMoreViewController alloc] init];
                  moreVC.hidesBottomBarWhenPushed = YES;
@@ -395,5 +484,13 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
         }
     }
 }
+
+
+- (void)NodeChick:(NSInteger)tag withNode:(GFKDTopNodes *)node{
+    [dataArray_node replaceObjectAtIndex:tag+1 withObject:node];
+     NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:tag+1];
+    [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
 
 @end

@@ -46,6 +46,7 @@ NSString * const kEmail = @"email";
 NSString * const kGender = @"gender";
 NSString * const kMobile = @"mobile";
 NSString * const kNickName = @"nickName";
+NSString * const kBankCard = @"bankCard";
 NSString * const kPhoto = @"photo";
 NSString * const kToken = @"token";
 NSString * const kUserType = @"userType";
@@ -206,6 +207,8 @@ NSString * const kDeviceToken = @"devicetoken";
     user.photo = [userDefaults objectForKey:kPhoto];
     user.nickname = [userDefaults objectForKey:kNickName];
     user.userType = [userDefaults objectForKey:kUserType];
+    
+    user.bankCard = [userDefaults objectForKey:kBankCard];
     return user;
 }
 
@@ -332,6 +335,8 @@ NSString * const kDeviceToken = @"devicetoken";
     [userDefaults setObject:user.nickname forKey:kNickName];
     [userDefaults setObject:user.photo forKey:kPhoto];
     [userDefaults setObject:user.userType forKey:kUserType];
+     [userDefaults setObject:user.bankCard forKey:kBankCard];
+    
     [userDefaults setObject:token forKey:kToken];
 }
 

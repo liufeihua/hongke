@@ -46,4 +46,6 @@ typedef NS_ENUM(int, NewsListType)
 
 @property (strong, nonatomic) EPUBParser *epubParser; //epub解析器，成员变量或全局
 
+@property (nonatomic, assign) BOOL isHasPlay;   //是否有音频播放器
+
 @end

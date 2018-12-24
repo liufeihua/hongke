@@ -68,16 +68,17 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     CGFloat titleBarHeight = 40;
-    _smallScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 40, titleBarHeight)];
+//    _smallScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 40, titleBarHeight)];
+     _smallScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, titleBarHeight)];
     [_smallScrollView setBackgroundColor:[UIColor titleBarColor]];
     [self.view addSubview:_smallScrollView];
     
-    _addColumnBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 40, 0, 40, titleBarHeight)];
-    [_addColumnBtn setBackgroundColor:[UIColor titleBarColor]];
-    [_addColumnBtn setImage:[UIImage imageNamed:@"addMenu"] forState:UIControlStateNormal];
-    [_addColumnBtn addTarget:self action:@selector(showColumnClick) forControlEvents:UIControlEventTouchUpInside];
-   
-    [self.view addSubview:_addColumnBtn];
+//    _addColumnBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 40, 0, 40, titleBarHeight)];
+//    [_addColumnBtn setBackgroundColor:[UIColor titleBarColor]];
+//    [_addColumnBtn setImage:[UIImage imageNamed:@"addMenu"] forState:UIControlStateNormal];
+//    [_addColumnBtn addTarget:self action:@selector(showColumnClick) forControlEvents:UIControlEventTouchUpInside];
+//
+//    [self.view addSubview:_addColumnBtn];
     self.columnShow = NO;
     
     CGFloat height = self.view.bounds.size.height - titleBarHeight - 64 - (_underTabbar ? 49 : 0);
@@ -197,9 +198,9 @@
 
 - (void)setScrollToTopWithTableViewIndex:(NSInteger)index
 {
-    self.needScrollToTopPage.tableView.scrollsToTop = NO;
+    //self.needScrollToTopPage.tableView.scrollsToTop = NO;
     self.needScrollToTopPage = self.childViewControllers[index];
-    self.needScrollToTopPage.tableView.scrollsToTop = YES;
+    //self.needScrollToTopPage.tableView.scrollsToTop = YES;
 }
 
 #pragma mark - ******************** scrollView代理方法

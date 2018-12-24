@@ -219,7 +219,7 @@ UIPopoverControllerDelegate,NJKWebViewProgressDelegate>
     
     
     
-    [self loadURL];
+//    [self loadURL];
     
     
     
@@ -250,6 +250,8 @@ UIPopoverControllerDelegate,NJKWebViewProgressDelegate>
 {
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar addSubview:self.progressView];
+    
+    [self loadURL];
 }
 
 -(void)viewWillDisappear:(BOOL)animated

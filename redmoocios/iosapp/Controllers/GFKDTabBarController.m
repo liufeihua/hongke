@@ -56,6 +56,7 @@
 #import "UIView+HAMUtils.h"
 
 #import "StudySchoolViewController.h"
+#import "RAYNewFunctionGuideVC.h"
 
 //#import "StudyHomeViewController.h"
 
@@ -70,6 +71,7 @@
     MyCenterViewController *myVC;
     NSArray *subButtons;
     NYSegmentedControl *segmentControl;
+    SXMainViewController *newMainMenu;
 }
 
 @property (nonatomic, assign) BOOL isPressed;
@@ -109,6 +111,7 @@
              
              [self showTopNodes:responseObject[@"result"]];
   
+             [self makeFunctionGuide];
              /*
              NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
              NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:[user objectForKey:@"nodeDic"]];
@@ -250,7 +253,10 @@
         }
     }
     
-        newsMenu = [[SXMenuViewController alloc] initWithTitle:@"" andSubTitles:title andControllers:controllers underTabbar:YES];
+//        newsMenu = [[SXMenuViewController alloc] initWithTitle:@"" andSubTitles:title andControllers:controllers underTabbar:YES];
+    
+    newMainMenu = [[SXMainViewController alloc] initWithTitle:@"" andSubTitles:title andControllers:controllers andNodes:array underTabbar:YES];
+    
         STTabViewController *STVC =[[STTabViewController alloc] init];
     
         //StudyHomeViewController *studyHomeVC = [[StudyHomeViewController alloc] init];
@@ -264,7 +270,7 @@
         segmentVC.delegate = self;
         //[segmentVC setViewControllers:@[newsMenu, STVC, takeVC]];
         //[segmentVC setTitles:@[@"红讯",@"视听", @"圈子"]];
-        [segmentVC setViewControllers:@[newsMenu, STVC, studySchoolVC]];
+        [segmentVC setViewControllers:@[newMainMenu, STVC, studySchoolVC]];
         [segmentVC setTitles:@[@"红讯",@"视听", @"悦读"]];
         
         [self configVC];
@@ -282,7 +288,6 @@
 //    [segmentControl addTarget:self action:@selector(segmentSelect:) forControlEvents:UIControlEventValueChanged];
 //    [segmentControl sizeToFit];
 //    self.navigationItem.titleView = segmentControl;
-    
 }
 
 -(void)showTabVC:(UIButton *)sender{
@@ -502,7 +507,6 @@
     [super viewWillAppear:animated];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushMsgShow:) name:@"PUSHMSGSHOW" object:nil];
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -599,6 +603,33 @@
         return nil;
     }
     return dic;
+}
+
+
+- (void)makeFunctionGuide{
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSString *firstComeInTeacherDetail = @"isFirstEnterHere-3.9.8-1";
+    //s[user setBool:NO forKey:firstComeInTeacherDetail];
+    
+    if (![user boolForKey:firstComeInTeacherDetail]) {
+        [user setBool:YES forKey:firstComeInTeacherDetail];
+        [user synchronize];
+        [self makeGuideView];
+    }
+}
+
+- (void)makeGuideView{
+    RAYNewFunctionGuideVC *vc = [[RAYNewFunctionGuideVC alloc]init];
+    vc.titles = @[@"请完善个人信息"];
+
+    CGRect frame = CGRectMake(kNBR_SCREEN_W -70, kNBR_SCREEN_H-50, 60, 50);
+    
+    //@"{{0,  60},{100,80}}
+    vc.frames = @[NSStringFromCGRect(frame),
+                  ];
+    
+    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 

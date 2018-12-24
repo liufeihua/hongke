@@ -41,6 +41,7 @@ static NSString *discoverHead = @"discoverReusableViewhead";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.view setBackgroundColor:[UIColor themeColor]];
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;

@@ -23,17 +23,33 @@
 
 - (instancetype)init{
    
+//    self = [super initWithTitle:@""
+//                   andSubTitles:@[@"视频", @"听说"]
+////                   andSubTitles:@[@"视频", @"爱学习"]
+////                     andSubTitles:@[@"视频", @"读书荟"]
+//                 andControllers:@[
+//                                  [[AudioViewController alloc] init],
+////                                  [[RadioViewController alloc] initWithFrameHeight:self.view.bounds.size.height - 64 - 36 - 49 withNumber:@"audio"],
+////                                   [[StudyHomeViewController alloc] init],//爱学习
+//                                  [[StudySchoolViewController alloc] initWithNumber:@"audio" WithNav:YES],//
+//                                  ]
+//                    underTabbar:YES];
+    
+//   self = [super initWithTitle:@""
+//                  andSubTitles:@[@"视频", @"听说"]
+//                andControllers:@[
+//                                              [[AudioViewController alloc] init],
+//                                              [[StudySchoolViewController alloc] initWithNumber:@"audio" WithNav:YES],//
+//                                              ]
+//                   underTabbar:YES];
     self = [super initWithTitle:@""
                    andSubTitles:@[@"视频", @"听说"]
-//                   andSubTitles:@[@"视频", @"爱学习"]
-//                     andSubTitles:@[@"视频", @"读书荟"]
-                 andControllers:@[
+              andSubControllers:@[
                                   [[AudioViewController alloc] init],
-//                                  [[RadioViewController alloc] initWithFrameHeight:self.view.bounds.size.height - 64 - 36 - 49 withNumber:@"audio"],
-//                                   [[StudyHomeViewController alloc] init],//爱学习
                                   [[StudySchoolViewController alloc] initWithNumber:@"audio" WithNav:YES],//
                                   ]
-                    underTabbar:YES];
+                 andUnderTabbar:YES];
+    
     return self;
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "SXTitleLable.h"
+#import "OSCAPI.h"
 
 @implementation SXTitleLable
 
@@ -27,7 +28,13 @@
 {
     _scale = scale;
     
-    self.textColor = [UIColor colorWithRed:scale green:0.1 blue:0.1 alpha:1];
+    //self.textColor = [UIColor colorWithRed:scale green:0.1 blue:0.1 alpha:1];
+    
+    if (_scale == 0.1) {
+        self.textColor = [UIColor colorWithRed:scale green:0.1 blue:0.1 alpha:1];
+    }else{
+        self.textColor = kNBR_ProjectColor;
+    }
     
     CGFloat minScale = 0.7;
     CGFloat trueScale = minScale + (1-minScale)*scale;

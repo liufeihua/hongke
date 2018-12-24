@@ -19,6 +19,11 @@
 #import "EPUBReadMainViewController.h"
 #import "NewsDetailBarViewController.h"
 #import "LSYReadPageViewController.h"
+#import "RadioListViewController.h"
+#import "CWCarousel.h"
+#import "CWPageControl.h"
+
+static NSString *CarouselCellIdentifier = @"CarouselCell";
 
 #define kWindowH   [UIScreen mainScreen].bounds.size.height //应用程序的屏幕高度
 #define kWindowW    [UIScreen mainScreen].bounds.size.width  //应用程序的屏幕宽度
@@ -40,6 +45,14 @@
 #define kRectH_oneStar  120
 
 #define kRectH_image (kWindowW/2.0-10)*5/9.0 //W:H=9:5
+
+#define kRectH_radio (kWindowW-32)*2/7.0  //W:H=7:2
+
+#define kRectH_carousel_normal kWindowW*9/16.0   //W:H=16:9
+#define kRectH_carousel_H3 (kWindowW - 40 - 18)*9/16.0   //W:H=16:9
+
+#define kRectH_Special (kWindowW-20)*5/12.0  //W:H=12:5
+
 //typeId
 //0:两列样式(图片宽高比1:1)
 //1:三列样式(图片宽高比4:3)
@@ -50,15 +63,57 @@
 //6:左标题右作者(无图片)
 //7:左图右简介-个人之星(图片宽高比3:4)
 //8:左右左三图片(图片宽高比9:5)
+//9:音频样式(图片宽高比7:2)
+//10:普通轮播样式(图片宽高比16:9)
+//11:两边被遮挡轮播样式(图片宽高比16:9)
+//12:专题样式(图片宽高比12:5)
+
+@interface NodeBaseCell ()<CWCarouselDelegate,CWCarouselDatasource>
+
+@end
+
 
 @implementation NodeBaseCell
 {
     NSMutableArray *dataArray_childNode;
+    int selectedNum;
 }
 
 - (void) setNode:(GFKDTopNodes *)node{
     _node = node;
     [self loadChildNodeList:node.cateId];
+    //显示子栏目
+    if ([_node.showChildNode intValue] == 1) {
+        switch (selectedNum) {
+            case 0:
+                {
+                    _label1.textColor = kNBR_ProjectColor;
+                    _view_selected_1.hidden = NO;
+                }
+                break;
+            case 1:
+            {
+                _label2.textColor = kNBR_ProjectColor;
+                _view_selected_2.hidden = NO;
+            }
+                break;
+            case 2:
+            {
+                _label3.textColor = kNBR_ProjectColor;
+                _view_selected_3.hidden = NO;
+            }
+                break;
+            case 3:
+            {
+                _label4.textColor = kNBR_ProjectColor;
+                _view_selected_4.hidden = NO;
+            }
+                break;
+            default:
+                break;
+        }
+        
+    }
     
 }
 
@@ -125,6 +180,8 @@
     _label_author_5.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap_5_author = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Click_5)];
     [_label_author_5 addGestureRecognizer:singleTap_5_author];
+    
+    selectedNum = 0;
 }
 
 - (void) loadVieDottedLine{
@@ -189,10 +246,29 @@
             return kRectH_image*3+15*2+6*2;
         }
             break;
-            
+        case 9:
+        {
+            return kRectH_radio*5+20*5+20;
+        }
+            break;
+        case 10:
+        {
+            return kRectH_carousel_normal;
+        }
+            break;
+        case 11:
+        {
+            return kRectH_carousel_H3 + 10;
+        }
+            break;
+        case 12:
+        {
+            return kRectH_Special + 20 + 8 + 20;
+        }
+            break;
         default:
         {
-            return kRectH_three+10+40+10+10;;
+            return kRectH_one*3+6*10;
         }
             break;
     }
@@ -248,10 +324,29 @@
             return @"NodeImageCell";
         }
             break;
-            
+        case 9:
+        {
+            return @"NodeRadioCell";
+        }
+            break;
+        case 10:
+        {
+            return @"NodeCarouselCell";
+        }
+            break;
+        case 11:
+        {
+            return @"NodeCarouselCell";
+        }
+            break;
+        case 12:
+        {
+            return @"NodeSpecialCell";
+        }
+            break;
         default:
         {
-            return @"NodeThreeCell";
+            return @"NodeOneCell";
         }
             break;
     }
@@ -279,6 +374,7 @@
              NSArray *array = responseObject[@"result"][@"data"];
              if (array.count == 0) {
                  [self loadArticleList:[_node.cateId intValue]];
+                 return;
              }
              [dataArray_childNode removeAllObjects];
              for (int i=0; i<array.count; i++) {
@@ -288,25 +384,32 @@
                  if (i == 0) {
                      [self.image1 sd_setImageWithURL:node.smallImage placeholderImage:[UIImage imageNamed:@"item_default"]];
                      self.label1.text = node.cateName;
+                     self.label_subTitle_1.text = node.dataDict[@"description"];
                  }
                  if (i == 1) {
                      [self.image2 sd_setImageWithURL:node.smallImage placeholderImage:[UIImage imageNamed:@"item_default"]];
                      self.label2.text = node.cateName;
+                     self.label_subTitle_2.text = node.dataDict[@"description"];
                  }
                  if (i == 2) {
                      [self.image3 sd_setImageWithURL:node.smallImage placeholderImage:[UIImage imageNamed:@"item_default"]];
                      self.label3.text = node.cateName;
+                     self.label_subTitle_3.text = node.dataDict[@"description"];
                  }
                  if (i == 3) {
                      [self.image4 sd_setImageWithURL:node.smallImage placeholderImage:[UIImage imageNamed:@"item_default"]];
                      self.label4.text = node.cateName;
+                     self.label_subTitle_4.text = node.dataDict[@"description"];
                  }
-                 if (i == 5) {
-//                     [self.image5 sd_setImageWithURL:node.smallImage placeholderImage:[UIImage imageNamed:@"item_default"]];
+                 if (i == 4) {
+                    [self.image5 sd_setImageWithURL:node.smallImage placeholderImage:[UIImage imageNamed:@"item_default"]];
                      self.label5.text = node.cateName;
+                     self.label_subTitle_5.text = node.dataDict[@"description"];
                  }
              }
-        
+             if ([_node.typeId intValue] == 10 || [_node.typeId intValue] == 11){
+                 [self loadCarouselView];
+             }
     
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -339,14 +442,20 @@
                  for (int i=0; i<array.count; i++) {
                      GFKDNews *news = [[GFKDNews alloc] initWithDict:array[i]];
                      [dataArray_childNode addObject:news];
-                     
+                     NSString *titleStr;
+                     if (news.listTitle == nil||[news.listTitle  isEqual: @""]) {
+                         titleStr = news.title;
+                     }else
+                     {
+                         titleStr = news.listTitle;
+                     }
                      if (i == 0) {
                          if (news.images.count>0){
                               [self.image1 sd_setImageWithURL:news.images[0][@"image"] placeholderImage:[UIImage imageNamed:@"item_default"]];
                          }else{
                             [self.image1 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
                          }
-                         self.label1.text = news.title;
+                         self.label1.text = titleStr;
                          self.label_subTitle_1.text = news.dataDict[@"description"];
                          self.label_author_1.text = news.author;
                          self.label_job_1.text = news.subtitle;
@@ -357,7 +466,7 @@
                          }else{
                              [self.image2 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
                          }
-                         self.label2.text = news.title;
+                         self.label2.text = titleStr;
                          self.label_subTitle_2.text = news.dataDict[@"description"];
                          self.label_author_2.text = news.author;
                      }
@@ -367,7 +476,7 @@
                          }else{
                              [self.image3 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
                          }
-                         self.label3.text = news.title;
+                         self.label3.text = titleStr;
                          self.label_subTitle_3.text = news.dataDict[@"description"];
                          self.label_author_3.text = news.author;
                      }
@@ -377,16 +486,24 @@
                          }else{
                              [self.image4 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
                          }
-                         self.label4.text = news.title;
-                       //   self.label_date_4.text = news.dates;
+                         self.label4.text = titleStr;
+                         self.label_subTitle_4.text = news.dataDict[@"description"];
                          self.label_author_4.text = news.author;
                      }
                      if (i == 4) {
-//                         [self.image5 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
-                         self.label5.text = news.title;
-                         //self.label_date_5.text = news.dates;
+                         if (news.images.count>0){
+                             [self.image5 sd_setImageWithURL:news.images[0][@"image"] placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         }else{
+                             [self.image5 sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
+                         }
+                         self.label5.text = titleStr;
+                         self.label_subTitle_5.text = news.dataDict[@"description"];
                          self.label_author_5.text = news.author;
                      }
+                 }
+                 
+                 if ([_node.typeId intValue] == 10 || [_node.typeId intValue] == 11){
+                     [self loadCarouselView];
                  }
     
              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -404,7 +521,24 @@
     if (dataArray_childNode.count > 0){
         if ([dataArray_childNode[0] isKindOfClass:[GFKDTopNodes class]]) {
             GFKDTopNodes *node = dataArray_childNode[0];
-            [self pushNodeDetail:node];
+            if ([_node.showChildNode intValue] == 1) {
+                _label1.textColor = kNBR_ProjectColor;
+                _view_selected_1.hidden = NO;
+                _label2.textColor = [UIColor titleColor];
+                _view_selected_2.hidden = YES;
+                _label3.textColor = [UIColor titleColor];
+                _view_selected_3.hidden = YES;
+                _label4.textColor = [UIColor titleColor];
+                _view_selected_4.hidden = YES;
+                selectedNum = 0;
+                if (self.delegate)
+                {
+                    [self.delegate NodeChick:_indexTag withNode:node];
+                }
+                
+            }else{
+               [self pushNodeDetail:node];
+            }
         }else if ([dataArray_childNode[0] isKindOfClass:[GFKDNews class]]){
             GFKDNews *news = dataArray_childNode[0];
             [self pushArticleDetail:news];
@@ -415,7 +549,23 @@
     if (dataArray_childNode.count > 1){
         if ([dataArray_childNode[1] isKindOfClass:[GFKDTopNodes class]]) {
             GFKDTopNodes *node = dataArray_childNode[1];
-            [self pushNodeDetail:node];
+            if ([_node.showChildNode intValue] == 1) {
+                _label1.textColor = [UIColor titleColor];
+                _view_selected_1.hidden = YES;
+                _label2.textColor = kNBR_ProjectColor;
+                _view_selected_2.hidden = NO;
+                _label3.textColor = [UIColor titleColor];
+                _view_selected_3.hidden = YES;
+                _label4.textColor = [UIColor titleColor];
+                _view_selected_4.hidden = YES;
+                selectedNum = 1;
+                if (self.delegate)
+                {
+                    [self.delegate NodeChick:_indexTag withNode:node];
+                }
+            }else{
+                [self pushNodeDetail:node];
+            }
         }else if ([dataArray_childNode[1] isKindOfClass:[GFKDNews class]]){
             GFKDNews *news = dataArray_childNode[1];
             [self pushArticleDetail:news];
@@ -426,7 +576,23 @@
     if (dataArray_childNode.count > 2){
         if ([dataArray_childNode[2] isKindOfClass:[GFKDTopNodes class]]) {
             GFKDTopNodes *node = dataArray_childNode[2];
-            [self pushNodeDetail:node];
+            if ([_node.showChildNode intValue] == 1) {
+                _label1.textColor = [UIColor titleColor];
+                _view_selected_1.hidden = YES;
+                _label2.textColor = [UIColor titleColor];
+                _view_selected_2.hidden = YES;
+                _label3.textColor = kNBR_ProjectColor;
+                _view_selected_3.hidden = NO;
+                _label4.textColor = [UIColor titleColor];
+                _view_selected_4.hidden = YES;
+                selectedNum = 2;
+                if (self.delegate)
+                {
+                    [self.delegate NodeChick:_indexTag withNode:node];
+                }
+            }else{
+                [self pushNodeDetail:node];
+            }
         }else if ([dataArray_childNode[2] isKindOfClass:[GFKDNews class]]){
             GFKDNews *news = dataArray_childNode[2];
             [self pushArticleDetail:news];
@@ -437,7 +603,23 @@
     if (dataArray_childNode.count > 3){
         if ([dataArray_childNode[3] isKindOfClass:[GFKDTopNodes class]]) {
             GFKDTopNodes *node = dataArray_childNode[3];
-            [self pushNodeDetail:node];
+            if ([_node.showChildNode intValue] == 1) {
+                _label1.textColor = [UIColor titleColor];
+                _view_selected_1.hidden = YES;
+                _label2.textColor = [UIColor titleColor];
+                _view_selected_2.hidden = YES;
+                _label3.textColor = [UIColor titleColor];
+                _view_selected_3.hidden = YES;
+                _label4.textColor = kNBR_ProjectColor;
+                _view_selected_4.hidden = NO;
+                selectedNum = 3;
+                if (self.delegate)
+                {
+                    [self.delegate NodeChick:_indexTag withNode:node];
+                }
+            }else{
+                [self pushNodeDetail:node];
+            }
         }else if ([dataArray_childNode[3] isKindOfClass:[GFKDNews class]]){
             GFKDNews *news = dataArray_childNode[3];
             [self pushArticleDetail:news];
@@ -457,10 +639,25 @@
 }
 
 - (void) pushNodeDetail:(GFKDTopNodes *)node{
-    NewsViewController *newsVC = [[NewsViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[node.cateId intValue] isSpecial:0];
-    newsVC.hidesBottomBarWhenPushed = YES;
-    newsVC.title = node.cateName;
-    [_parentVC.navigationController pushViewController:newsVC animated:YES];
+    
+    if (!_showRadioPlay){
+        NewsViewController *newsVC = [[NewsViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[node.cateId intValue] isSpecial:0];
+        newsVC.hidesBottomBarWhenPushed = YES;
+        newsVC.title = node.cateName;
+        [_parentVC.navigationController pushViewController:newsVC animated:YES];
+        
+    }else{
+//        RadioListViewController *radioVC = [[RadioListViewController alloc] initWithNewsListType:NewsListTypeNews cateId:[node.cateId intValue] isSpecial:0];
+        RadioListViewController *radioVC = [[RadioListViewController alloc] initWithNode:node];
+        radioVC.hidesBottomBarWhenPushed = YES;
+        radioVC.newsVC.title = node.cateName;
+        [_parentVC.navigationController pushViewController:radioVC animated:YES];
+    }
+    
+//    NewsViewController *newsVC = [[NewsViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[node.cateId intValue] isSpecial:0];
+//    newsVC.hidesBottomBarWhenPushed = YES;
+//    newsVC.title = node.cateName;
+//    [_parentVC.navigationController pushViewController:newsVC animated:YES];
 }
 
 - (void) pushArticleDetail:(GFKDNews *)news{
@@ -567,6 +764,102 @@
     border.lineDashPattern = @[@2, @6];
     
     [view.layer addSublayer:border];
+}
+
+- (void)loadCarouselView{
+//    CATransition *tr = [CATransition animation];
+//    tr.type = @"cube";
+//    tr.subtype = kCATransitionFromRight;
+//    tr.duration = 0.25;
+//    [self.animationView.layer addAnimation:tr forKey:nil];
+//
+//    self.view.backgroundColor = [UIColor whiteColor];
+//    if(self.carousel) {
+//        [self.carousel releaseTimer];
+//        [self.carousel removeFromSuperview];
+//        self.carousel = nil;
+//    }
+//
+    //@[@"正常样式", @"横向滑动两边留白", @"横向滑动两边留白渐变效果", @"两边被遮挡效果"];
+    NSUInteger carouselStyle = 0;
+    if ([self.node.typeId intValue] == 10) {
+        carouselStyle = CWCarouselStyle_Normal;
+    }
+    if ([self.node.typeId intValue] == 11) {
+        carouselStyle = CWCarouselStyle_H_3;
+    }
+    CWFlowLayout *flowLayout = [[CWFlowLayout alloc] initWithStyle:carouselStyle];
+    
+    
+    CWCarousel *carousel = [[CWCarousel alloc] initWithFrame:CGRectZero
+                                                    delegate:self
+                                                  datasource:self
+                                                  flowLayout:flowLayout];
+    carousel.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.carouselView addSubview:carousel];
+    NSDictionary *dic = @{@"view" : carousel};
+    [self.carouselView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view]-0-|"
+                                                                               options:kNilOptions
+                                                                               metrics:nil
+                                                                                 views:dic]];
+    [self.carouselView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|"
+                                                                               options:kNilOptions
+                                                                               metrics:nil
+                                                                                 views:dic]];
+   
+    carousel.isAuto = YES;
+    carousel.autoTimInterval = 3;
+    carousel.endless = YES;
+    carousel.backgroundColor = [UIColor whiteColor];
+    [carousel registerViewClass:[UICollectionViewCell class] identifier:CarouselCellIdentifier];
+    [carousel freshCarousel];
+    
+}
+
+#pragma mark - Delegate
+
+- (NSInteger)numbersForCarousel {
+    return dataArray_childNode.count;
+}
+
+- (UICollectionViewCell *)viewForCarousel:(CWCarousel *)carousel indexPath:(NSIndexPath *)indexPath index:(NSInteger)index{
+    UICollectionViewCell *cell = [carousel.carouselView dequeueReusableCellWithReuseIdentifier:CarouselCellIdentifier forIndexPath:indexPath];
+    cell.contentView.backgroundColor = [UIColor clearColor];
+    UIImageView *imgView = [cell.contentView viewWithTag:666];
+    if(!imgView) {
+        imgView = [[UIImageView alloc] initWithFrame:cell.contentView.bounds];
+        imgView.tag = 666;
+        imgView.backgroundColor = [UIColor clearColor];
+        [cell.contentView addSubview:imgView];
+        imgView.contentMode = UIViewContentModeScaleAspectFill;
+        imgView.layer.masksToBounds = YES;
+        imgView.userInteractionEnabled = YES;
+    }
+    if ([dataArray_childNode[index] isKindOfClass:[GFKDNews class]]) {
+        GFKDNews *news = dataArray_childNode[index];
+        if (news.images.count>0){
+            [imgView sd_setImageWithURL:news.images[0][@"image"] placeholderImage:[UIImage imageNamed:@"item_default"]];
+        }else{
+            [imgView sd_setImageWithURL:news.image placeholderImage:[UIImage imageNamed:@"item_default"]];
+        }
+    }else if ([dataArray_childNode[index] isKindOfClass:[GFKDTopNodes class]]) {
+        GFKDTopNodes *node = dataArray_childNode[index];
+        [imgView sd_setImageWithURL:node.smallImage placeholderImage:[UIImage imageNamed:@"item_default"]];
+    }
+    //imgView.alpha = 0.5;
+    return cell;
+}
+
+- (void)CWCarousel:(CWCarousel *)carousel didSelectedAtIndex:(NSInteger)index {
+    NSLog(@"...%ld...", (long)index);
+    if ([dataArray_childNode[index] isKindOfClass:[GFKDNews class]]) {
+        GFKDNews *news = dataArray_childNode[index];
+        [self pushArticleDetail:news];
+    }else if ([dataArray_childNode[index] isKindOfClass:[GFKDTopNodes class]]) {
+        GFKDTopNodes *node = dataArray_childNode[index];
+        [self pushNodeDetail:node];
+    }
 }
 
 @end

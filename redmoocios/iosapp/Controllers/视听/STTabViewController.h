@@ -6,9 +6,9 @@
 //  Copyright © 2016年 redmooc. All rights reserved.
 //
 
-#import "SwipableViewController.h"
+#import "TitleScrollViewController.h"
 
-@interface STTabViewController : SwipableViewController
+@interface STTabViewController : TitleScrollViewController
 
 - (instancetype)init;
 

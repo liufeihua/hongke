@@ -29,6 +29,7 @@
 #import "AppDelegate.h"
 #import "WebHtmlViewController.h"
 #import "CYWebViewController.h"
+#import "RAYNewFunctionGuideVC.h"
 
 @interface MyCenterViewController ()<UserInfoEditViewControllerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
@@ -94,6 +95,8 @@
     [self getPointsInfo];
     [self setupRefresh];
     
+    [self makeFunctionGuide];
+    
 }
 
 - (void) setupRefresh{
@@ -130,22 +133,35 @@
                       HeaderTitle:@"",
                       RowContent :@[
                               @{
+                                  Title      :@"真实姓名",
+                                  DetailTitle:_myInfo.realName,
+                                  CellAction :@"onTouchRealName",
+                                  ShowAccessory : @(YES)
+                                  },
+                              @{
+                                  Title      :@"工商银行储蓄卡卡号",
+                                  DetailTitle:_myInfo.bankCard== nil?@"":_myInfo.bankCard,
+                                  CellAction :@"onTouchUpdateBankCard",
+                                  ShowAccessory : @(YES)
+                                  },
+                              ],
+                      FooterTitle:@"*请用户完善真实姓名、工商银行储蓄卡卡号信息，以便红客稿酬的统计发放。"
+                      },
+                  @{
+                      HeaderTitle:@"",
+                      RowContent :@[
+                              @{
+                                  Title      :@"账号",
+                                  DetailTitle:_myInfo.userName,
+                                  ShowAccessory : @(NO)
+                                  },
+                              @{
                                   Title      : @"头像",
                                   ExtraInfo  : _myInfo.photo.length ? _myInfo.photo : [NSNull null],
                                   CellClass  : @"SettingPortraitCell",
                                   RowHeight  : @(80),
                                   CellAction : @"onTouchUpdatePhoto",
                                   ShowAccessory : @(YES)
-                                  },
-                              @{
-                                  Title      :@"姓名",
-                                  DetailTitle:_myInfo.realName,
-                                  ShowAccessory : @(NO)
-                                  },
-                              @{
-                                  Title      :@"账号",
-                                  DetailTitle:_myInfo.userName,
-                                  ShowAccessory : @(NO)
                                   },
                               @{
                                   Title      :@"昵称",
@@ -243,13 +259,26 @@
     nVC.delegate = self;
     [nVC setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:nVC animated:YES];
-
 }
 
-- (void) showText:(NSString *)value{
+- (void)onTouchRealName{
+    UserInfoEditViewController *nVC = [[UserInfoEditViewController alloc] initWithMode:USERINFO_EDIT_MODE_REALNAME Text:_myInfo.realName];
+    nVC.delegate = self;
+    [nVC setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:nVC animated:YES];
+}
+
+- (void)onTouchUpdateBankCard{
+    UserInfoEditViewController *nVC = [[UserInfoEditViewController alloc] initWithMode:USERINFO_EDIT_MODE_BANKCARD Text:_myInfo.bankCard];
+    nVC.delegate = self;
+    [nVC setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:nVC animated:YES];
+}
+
+- (void) showText:(NSString *)value withName:(NSString *)name{
     NSDictionary *parameters = @{
                    @"token": [Config getToken],
-                   @"nickname": value,
+                   name: value,
                    };
     [self updateUserInfo:parameters];
 }
@@ -727,5 +756,29 @@
     [[SDImageCache sharedImageCache] clearMemory];
 }
 
+
+- (void)makeFunctionGuide{
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSString *firstComeInTeacherDetail = @"isFirstEnterHere-3.9.8-2";
+   // [user setBool:NO forKey:firstComeInTeacherDetail];
+    
+    if (![user boolForKey:firstComeInTeacherDetail]) {
+        [user setBool:YES forKey:firstComeInTeacherDetail];
+        [user synchronize];
+        [self makeGuideView];
+    }
+}
+
+- (void)makeGuideView{
+    RAYNewFunctionGuideVC *vc = [[RAYNewFunctionGuideVC alloc]init];
+    vc.titles = @[@"请完善真实姓名及工行卡号，方便红客稿酬发放"];
+    
+    CGRect frame = CGRectMake(10, 100 + 64, kNBR_SCREEN_W-20, 150);
+    vc.frames = @[NSStringFromCGRect(frame),
+                  ];
+    
+    [self presentViewController:vc animated:YES completion:nil];
+    
+}
 
 @end

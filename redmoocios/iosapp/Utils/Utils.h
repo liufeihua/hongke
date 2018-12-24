@@ -89,4 +89,9 @@ typedef NS_ENUM(NSUInteger, hudType) {
 +(NSString*)getDeviceString;
 +(NSString *)getIMEI;
 
++ (BOOL) checkCardNo:(NSString*) cardNo;
++ (BOOL)checkGSWithBanknumber:(NSString *)banknumber;
+
++ (UIImage *)imageByApplyingAlpha:(CGFloat)alpha  image:(UIImage*)image;
+
 @end

@@ -74,16 +74,21 @@
    
     nomalTitleArr = @[
                       @[@"头像"],
-                      @[@"姓名",@"账号",@"昵称",@"密码"],
+                      @[@"账号",@"昵称",@"密码"],
+                      @[@"真实姓名",@"工商银行卡号"],
                       ];
     
     FiedArr = @[
                 @[@""],
                 @[
-                   _myInfo.realName ?: @"",
                    _myInfo.userName ?: @"",
                    _myInfo.nickname ?: @"",
-                   @"******"],
+                   @"******",
+                   ],
+                @[
+                    _myInfo.realName ?: @"",
+                    _myInfo.bankCard ?:@"",
+                   ],
                 ];
     
     nomalTextFiedArr = [[NSMutableArray alloc] init];
@@ -94,7 +99,7 @@
         for (int j = 0; j < ((NSArray*)nomalTitleArr[i]).count; j++)
         {
             UITextField *subTextFied;
-            if ((j==0) || (j == 1)) {
+            if (j==0) {
                 subTextFied = [[UITextField alloc] initWithFrame:CGRectMake(40, 0, kNBR_SCREEN_W - 50, 44.0f)];
             }else
             {
@@ -179,7 +184,7 @@
     
     [cell.contentView addSubview:titleLable];
     
-    if ((indexPath.section == 1) && (indexPath.row != 0) && (indexPath.row != 1 )) {
+    if ((indexPath.section == 1) && (indexPath.row != 0)) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
@@ -193,7 +198,7 @@
 {
     if (indexPath.section == 0 && indexPath.row == 0) {
         //[self editPortrait];
-    }else if (indexPath.section == 1 && indexPath.row == 2) {
+    }else if (indexPath.section == 1 && indexPath.row == 1) {
         UserInfoEditViewController *nVC = [[UserInfoEditViewController alloc] initWithMode:USERINFO_EDIT_MODE_NICKNAME Text:((UITextField*)nomalTextFiedArr[indexPath.section][indexPath.row]).text];
         nVC.delegate = self;
         [nVC setHidesBottomBarWhenPushed:YES];
@@ -201,10 +206,26 @@
         
         activeTextField = (UITextField*)nomalTextFiedArr[indexPath.section][indexPath.row];
         
-    }else if (indexPath.section == 1 && indexPath.row == 3) {
+    }else if (indexPath.section == 1 && indexPath.row == 2) {
         UpdatePwdViewController *nVC = [[UpdatePwdViewController alloc] initWithNibName:nil bundle:nil];
         
         [self.navigationController pushViewController:nVC animated:YES];
+        
+    }else if (indexPath.section == 2 && indexPath.row == 0) {
+        UserInfoEditViewController *nVC = [[UserInfoEditViewController alloc] initWithMode:USERINFO_EDIT_MODE_REALNAME Text:((UITextField*)nomalTextFiedArr[indexPath.section][indexPath.row]).text];
+        nVC.delegate = self;
+        [nVC setHidesBottomBarWhenPushed:YES];
+        [self.navigationController pushViewController:nVC animated:YES];
+        
+        activeTextField = (UITextField*)nomalTextFiedArr[indexPath.section][indexPath.row];
+        
+    }else if (indexPath.section == 2 && indexPath.row == 1) {
+        UserInfoEditViewController *nVC = [[UserInfoEditViewController alloc] initWithMode:USERINFO_EDIT_MODE_BANKCARD Text:((UITextField*)nomalTextFiedArr[indexPath.section][indexPath.row]).text];
+        nVC.delegate = self;
+        [nVC setHidesBottomBarWhenPushed:YES];
+        [self.navigationController pushViewController:nVC animated:YES];
+        
+        activeTextField = (UITextField*)nomalTextFiedArr[indexPath.section][indexPath.row];
         
     }
     
@@ -408,21 +429,22 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
     }
 }
 
-- (void) showText:(NSString *)value
+- (void) showText:(NSString *)value withName:(NSString *)name
 {
-    [self updateUserInfo:value];
+     NSDictionary *parameters = @{
+                   @"token": [Config getToken],
+                   name: value,
+                   };
+    [self updateUserInfo:parameters withValue:value];
 }
 
-- (void) updateUserInfo:(NSString *)value{
+- (void) updateUserInfo:(NSDictionary *)par withValue:(NSString *)value{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
     NSString *URL;
     NSDictionary *parameters;
     URL = [NSString stringWithFormat:@"%@%@", GFKDAPI_HTTPS_PREFIX, GFKDAPI_UPDATEUSER];
     
-    parameters = @{
-                   @"token": [Config getToken],
-                   @"nickname": value,
-                   };
+    parameters = par;
    
     [manager POST:URL
        parameters:parameters
@@ -443,9 +465,9 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
               NSString *token = [Config getToken];
               GFKDUser *user = [[GFKDUser alloc] initWithDict:data];
               [Config saveUser:user token:token];
-              activeTextField.text = value;
-              [self.navigationController popViewControllerAnimated:YES];
               
+              [self.navigationController popViewControllerAnimated:YES];
+               activeTextField.text = value;
               if ([self.delegate respondsToSelector:@selector(update)]) {
                   [self.delegate update];
               }

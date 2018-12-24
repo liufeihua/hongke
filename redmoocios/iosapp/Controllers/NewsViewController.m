@@ -38,6 +38,11 @@
 
 #import "UITableView+Video.h"
 
+#import "HRNavigationController.h"
+
+#import "TracksViewModel.h"
+#import "DTracks.h"
+
 static NSString *kNewsCellID = @"NewsCell";
 
 @interface NewsViewController ()<HomeAdCellDelegate,NewsDetailBarViewControllerDelegate,VideoDetailBarViewControllerDelegate,NewsDetailAuditBarViewControllerDelegate>
@@ -82,7 +87,7 @@ static NSString *kNewsCellID = @"NewsCell";
             }else if (type == NewsListTypeRadio) {//电台
                 return [NSString stringWithFormat:@"%@/m-nodeList.htx?pageNumber=%lu&%@&token=%@&number=audio",GFKDAPI_HTTPS_PREFIX,(unsigned long)page,GFKDAPI_PAGESIZE,token];
             }else{//其他
-                NSLog([NSString stringWithFormat:@"%@%@?cateId=%d&attrType=0&hasPic=0&pageNumber=%lu&%@&isSpecial=%d&token=%@",GFKDAPI_HTTPS_PREFIX,GFKDAPI_NEWS_LIST,weakSelf.cateId,(unsigned long)page,GFKDAPI_PAGESIZE,isSpecial,token]);
+                NSLog(@"%@", [NSString stringWithFormat:@"%@%@?cateId=%d&attrType=0&hasPic=0&pageNumber=%lu&%@&isSpecial=%d&token=%@",GFKDAPI_HTTPS_PREFIX,GFKDAPI_NEWS_LIST,weakSelf.cateId,(unsigned long)page,GFKDAPI_PAGESIZE,isSpecial,token]);
                 return [NSString stringWithFormat:@"%@%@?cateId=%d&attrType=0&hasPic=0&pageNumber=%lu&%@&isSpecial=%d&token=%@&showDescendants=%d",GFKDAPI_HTTPS_PREFIX,GFKDAPI_NEWS_LIST,weakSelf.cateId,(unsigned long)page,GFKDAPI_PAGESIZE,isSpecial,token,weakSelf.isShowDescendants];
             }
             
@@ -103,6 +108,41 @@ static NSString *kNewsCellID = @"NewsCell";
         self.needAutoRefresh = YES;
         self.refreshInterval = 21600;
         self.kLastRefreshTime = [NSString stringWithFormat:@"NewsRefreshInterval-%d", type];
+        
+        self.didRefreshSucceed = ^{
+            NSLog(@"count:%ld",weakSelf.objects.count);
+            
+            if (weakSelf.isHasPlay) {
+                for (GFKDNews *obj in weakSelf.objects) {
+                    obj.isPlaying = [NSNumber numberWithInt:0];
+                }
+                GFKDNews *news = weakSelf.objects[0];
+                news.isPlaying = [NSNumber numberWithInt:1];
+                
+                
+                NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+                userInfo[@"coverURL"] = news.image;
+                userInfo[@"musicURL"] = [NSURL URLWithString:news.audio];
+                
+                NSInteger indexPathRow = 0;
+                NSNumber *indexPathRown = [[NSNumber alloc]initWithInteger:indexPathRow];
+                userInfo[@"indexPathRow"] = indexPathRown;
+                
+                DTracks *track = [[DTracks alloc] init];
+                track.list = weakSelf.objects;
+                track.pageSize = weakSelf.allCount;
+                track.totalCount = weakSelf.objects.count;
+                
+                TracksViewModel *tracksVM = [[TracksViewModel alloc] initWithCateId:weakSelf.cateId WithCateName:weakSelf.title WithTrack:track];
+                
+                //专辑
+                userInfo[@"theSong"] = tracksVM;
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"BeginPlay" object:nil userInfo:[userInfo copy]];
+                return;
+            }
+            
+            
+        };
     }
     return self;
 }
@@ -170,14 +210,12 @@ static NSString *kNewsCellID = @"NewsCell";
     
     if ((_isHasAdv && indexPath.section == 1) || (!_isHasAdv)) {
         GFKDNews *news = self.objects[indexPath.row];
-//        if ([news.cateId intValue]== 365) { //思想场  显示样式  showType = 5
-//            news.showType = [NSNumber numberWithInt:5];
-//        }
         NSString *ID = [NewsCell idForRow:news];
         UINib *nib = [UINib nibWithNibName:ID bundle:nil];
         [tableView registerNib:nib forCellReuseIdentifier:ID ];
        // NewsCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
         NewsCell *cell = (NewsCell *)[tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+        
         cell.NewsModel = news;
         cell.indexPathRow = (int)indexPath.row;
         cell.indexPathSection = (int)indexPath.section;
@@ -236,8 +274,37 @@ static NSString *kNewsCellID = @"NewsCell";
 //        [self.videoViewController.view removeFromSuperview];
 //        self.videoViewController=nil;
 //    }
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     GFKDNews *news = self.objects[indexPath.row];
+    
+    if (_isHasPlay) {
+        for (GFKDNews *obj in self.objects) {
+            obj.isPlaying = [NSNumber numberWithInt:0];
+        }
+        news.isPlaying = [NSNumber numberWithInt:1];
+        [self.tableView reloadData];
+        
+        NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+        userInfo[@"coverURL"] = news.image;
+        userInfo[@"musicURL"] = [NSURL URLWithString:news.audio];
+        
+        NSInteger indexPathRow = indexPath.row;
+        NSNumber *indexPathRown = [[NSNumber alloc]initWithInteger:indexPathRow];
+        userInfo[@"indexPathRow"] = indexPathRown;
+    
+        DTracks *track = [[DTracks alloc] init];
+        track.list = self.objects;
+        track.pageSize = self.allCount;
+        track.totalCount = self.objects.count;
+        
+        TracksViewModel *tracksVM = [[TracksViewModel alloc] initWithCateId:_cateId WithCateName:self.title WithTrack:track];
+        
+        //专辑
+        userInfo[@"theSong"] = tracksVM;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"BeginPlay" object:nil userInfo:[userInfo copy]];
+        return;
+    }
     
     if (([news.isSpecial intValue] == 1) && ([news.isToDetail intValue] != 1) && (_myNewsListType != NewsListTypeAuditInfo)) {
 

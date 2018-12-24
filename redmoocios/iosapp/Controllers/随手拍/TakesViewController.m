@@ -17,6 +17,7 @@
 #import "CYWebViewController.h"
 #import <MBProgressHUD.h>
 #import "UMSocial.h"
+#import "CommentsBottomBarViewController.h"
 
 @interface TakesViewController ()<TakeTableViewCellDelegate,XHImageViewerDelegate,TakeDetailsWithBottomBarViewControllerDelegate,BMKLocationServiceDelegate,AddTakeViewControllerDelegate,UIActionSheetDelegate>
 {
@@ -161,11 +162,12 @@
 
 - (void) moreOperateTake{
     if ([Config getOwnID] == [now_take.userId longLongValue]){
-        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"分享",@"删除", nil];
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"评论",@"删除", nil];
         actionSheet.tag = 1;
         [actionSheet showInView:self.view];
     }else{
-       [self shareTake];
+//       [self shareTake];
+        [self commentTake];
     }
 }
 
@@ -178,7 +180,8 @@
             case 0:
             {
                 //分享
-                [self shareTake];
+//                [self shareTake];
+                [self commentTake];
             }
                 break;
             case 1:
@@ -221,6 +224,11 @@
              [HUD hide:YES afterDelay:1];
          }
      ];
+}
+
+- (void) commentTake{
+    CommentsBottomBarViewController *commentsBVC = [[CommentsBottomBarViewController alloc] initWithCommentType:0 andObjectID:[now_take.takeId integerValue]];
+    [self.navigationController pushViewController:commentsBVC animated:YES];
 }
 
 - (void) shareTake{

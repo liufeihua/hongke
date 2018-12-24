@@ -108,4 +108,9 @@
 @property (nonatomic, assign) NSString *author;
 
 @property (nonatomic, assign) NSString *subtitle;
+
+@property (nonatomic, assign) NSNumber *isPlaying;  //音频是否正在播放  （后台不给数据，方便NewsCell调用）
+
+
+
 @end

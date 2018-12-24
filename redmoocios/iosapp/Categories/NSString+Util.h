@@ -13,4 +13,6 @@
 - (NSString *)escapeHTML;
 - (NSString *)deleteHTMLTag;
 
+
++ (NSString *)timeIntervalToMMSSFormat:(NSTimeInterval)interval;
 @end

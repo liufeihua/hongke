@@ -10,9 +10,20 @@
 #import "GFKDTopNodes.h"
 #import "EPUBParser.h"
 
+@protocol NodeBaseCellDelegate <NSObject>
+
+- (void) NodeChick:(NSInteger)tag withNode:(GFKDTopNodes*)node;
+
+@end
+
 @interface NodeBaseCell : UITableViewCell
 
+@property (nonatomic, weak) id<NodeBaseCellDelegate> delegate;
+
+@property (nonatomic, assign) int indexTag;
 @property(nonatomic,strong) GFKDTopNodes *node;
+
+@property (nonatomic, assign) BOOL showRadioPlay;
 
 + (CGFloat)heightForRow:(GFKDTopNodes *)node;
 + (NSString *)idForRow:(GFKDTopNodes *)node;
@@ -30,11 +41,14 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *image4;
 @property (weak, nonatomic) IBOutlet UILabel *label4;
+@property (weak, nonatomic) IBOutlet UIImageView *image5;
 @property (weak, nonatomic) IBOutlet UILabel *label5;
 
 @property (weak, nonatomic) IBOutlet UILabel *label_subTitle_1;
 @property (weak, nonatomic) IBOutlet UILabel *label_subTitle_2;
 @property (weak, nonatomic) IBOutlet UILabel *label_subTitle_3;
+@property (weak, nonatomic) IBOutlet UILabel *label_subTitle_4;
+@property (weak, nonatomic) IBOutlet UILabel *label_subTitle_5;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *label_author_1;
@@ -51,6 +65,12 @@
 @property (weak, nonatomic) IBOutlet UIView *view_dotted_2;
 @property (weak, nonatomic) IBOutlet UIView *view_dotted_3;
 
+@property (weak, nonatomic) IBOutlet UIView *view_selected_1;
+@property (weak, nonatomic) IBOutlet UIView *view_selected_2;
+@property (weak, nonatomic) IBOutlet UIView *view_selected_3;
+@property (weak, nonatomic) IBOutlet UIView *view_selected_4;
+
+@property (weak, nonatomic) IBOutlet UIView *carouselView;
 
 
 @end

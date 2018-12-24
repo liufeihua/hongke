@@ -34,4 +34,6 @@
 + (UIColor *)refreshControlColor;
 
 
++ (UIColor *)newSectionButtonSelectedColor;
+
 @end

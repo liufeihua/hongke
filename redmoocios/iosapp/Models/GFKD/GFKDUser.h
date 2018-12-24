@@ -22,4 +22,5 @@
 @property (nonatomic, readwrite ,copy) NSString *origphoto; //原图
 @property (nonatomic, assign) NSNumber *userType;  ///** 0-9 校外   10以上  校内
 
+@property (nonatomic, readwrite ,copy) NSString *bankCard;
 @end

@@ -34,9 +34,9 @@
     contentLabel.textColor = [UIColor darkGrayColor];
     NSString *content = [@"        " stringByAppendingString:@"红客是国防科技大学党委着眼过好网络关时代关，适应移动信息网络发展趋势，面向全校官兵和校友推出的一款思想政治教育APP，具有学习、教育、新闻、服务、交流等功能，致力于打造学校思想教育新阵地、工作指导新平台、学习成才新课堂、信息服务新窗口。\n\n投稿邮箱：hongke_gfkd@163.com；\n"];
     content = [content stringByAppendingString:@"                    "];
-    content = [content stringByAppendingString:@"hongke@gfkd.mtn；\n报料热线：0731-574880\n技术保障: (电话）0731-573008\n"];
-    content = [content stringByAppendingString:@"               "];
-    content = [content stringByAppendingString:@"（邮箱）mapp@nudt.edu.cn"];
+    content = [content stringByAppendingString:@"hongke@gfkd.mtn；\n咨询热线：0731-517430\n"];
+//    content = [content stringByAppendingString:@"               "];
+//    content = [content stringByAppendingString:@"（邮箱）mapp@nudt.edu.cn"];
     
     contentLabel.text = content;
     [self.view addSubview:contentLabel];
@@ -48,7 +48,7 @@
     declarationLabel.textAlignment = NSTextAlignmentCenter;
     declarationLabel.textColor = [UIColor lightGrayColor];
     NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
-    declarationLabel.text = [NSString stringWithFormat:@"ver:%@\n©2016 nudt.edn.cn.All rights reserved.", version];
+    declarationLabel.text = [NSString stringWithFormat:@"ver:%@\n©2019 nudt.edn.cn.All rights reserved.", version];
     [self.view addSubview:declarationLabel];
     
     UILabel *reportLabel = [UILabel new];

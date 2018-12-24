@@ -24,7 +24,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="526" height="145.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgD-W5-Cw4">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgD-W5-Cw4">
                         <rect key="frame" x="108" y="10" width="32" height="19"/>
                         <fontDescription key="fontDescription" name="HYQiHei-EZJ" family="HYQiHei" pointSize="16"/>
                         <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -43,7 +43,7 @@
                         </variation>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3z-I9-v6B">
-                        <rect key="frame" x="155" y="10" width="32" height="19"/>
+                        <rect key="frame" x="155" y="10" width="361" height="19"/>
                         <fontDescription key="fontDescription" name="HYQiHei-EZJ" family="HYQiHei" pointSize="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -56,6 +56,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="k3z-I9-v6B" secondAttribute="trailing" constant="10" id="Eeh-nN-nqf"/>
                     <constraint firstItem="K4L-Hr-ZL4" firstAttribute="width" secondItem="K4L-Hr-ZL4" secondAttribute="height" multiplier="3:4" id="PDh-hu-l6p"/>
                     <constraint firstItem="OgD-W5-Cw4" firstAttribute="leading" secondItem="K4L-Hr-ZL4" secondAttribute="trailing" constant="8" id="Qw7-2x-L3p"/>
                     <constraint firstItem="K4L-Hr-ZL4" firstAttribute="leading" secondItem="Mi8-l9-IUK" secondAttribute="leading" constant="10" id="RHH-ga-nSP"/>

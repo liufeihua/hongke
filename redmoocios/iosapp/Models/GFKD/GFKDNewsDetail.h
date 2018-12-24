@@ -42,7 +42,7 @@
 @property (nonatomic, strong) NSNumber *cateId;
 @property (nonatomic, strong) NSNumber *collected;//是否收藏
 @property (nonatomic, strong) NSNumber *comments;
-@property (nonatomic, strong) NSNumber *content;
+@property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSNumber *digged; //是否点赞
 @property (nonatomic, strong) NSNumber *diggs;//点赞数
 @property (nonatomic, strong) NSNumber *hasImages;

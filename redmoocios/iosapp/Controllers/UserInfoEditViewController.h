@@ -10,16 +10,16 @@
 @protocol UserInfoEditViewControllerDelegate
 
 @optional
-- (void)showText:(NSString*)value;
+- (void)showText:(NSString*)value withName:(NSString *)name;
 @end
 
 
 typedef enum
 {
-    USERINFO_EDIT_MODE_NICKNAME,
-    USERINFO_EDIT_MODE_PHONE,
-    USERINFO_EDIT_MODE_HABIT,
-    USERINFO_EDIT_MODE_SIGNATURE,
+    USERINFO_EDIT_MODE_NICKNAME,  //呢称
+    USERINFO_EDIT_MODE_PHONE,   //手机号码
+    USERINFO_EDIT_MODE_REALNAME,   //姓名
+    USERINFO_EDIT_MODE_BANKCARD,   //工商银行卡号
 } USERINFO_EDIT_MODE;
 
 

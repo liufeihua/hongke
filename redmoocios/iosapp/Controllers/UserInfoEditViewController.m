@@ -17,7 +17,7 @@
 {
     USERINFO_EDIT_MODE viewControllerMode;
     NSString *userInfoText;
-    
+    NSString *userInfoName;
     UITextField *TextFiled;
     BOOL _wasKeyboardManagerEnabled;
 }
@@ -55,21 +55,25 @@
         case USERINFO_EDIT_MODE_NICKNAME:
         {
             self.title = @"昵称修改";
+            userInfoName = @"nickname";
         }
             break;
         case USERINFO_EDIT_MODE_PHONE:
         {
             self.title = @"手机号修改";
+            userInfoName = @"birthday";
         }
             break;
-        case USERINFO_EDIT_MODE_HABIT:
+        case USERINFO_EDIT_MODE_REALNAME:
         {
-            self.title = @"爱好修改";
+            self.title = @"真实姓名修改";
+            userInfoName = @"realName";
         }
             break;
-        case USERINFO_EDIT_MODE_SIGNATURE:
+        case USERINFO_EDIT_MODE_BANKCARD:
         {
-            self.title = @"签名修改";
+            self.title = @"工商银行储蓄卡卡号";
+            userInfoName = @"bankCard";
         }
             break;
         default:
@@ -81,7 +85,6 @@
     boundTabelView.dataSource = self;
     [self.view addSubview:boundTabelView];
 
-    
     //右上角的发布按钮
     UIBarButtonItem *rightAddItem = [[UIBarButtonItem alloc] initWithTitle:@"提交" style:
                                      UIBarButtonItemStylePlain target:self action:@selector(rightBarbuttonAction:)];
@@ -96,7 +99,15 @@
 
 - (void) rightBarbuttonAction : (id) sender
 {
-    [self.delegate showText:TextFiled.text];
+    if (viewControllerMode == USERINFO_EDIT_MODE_BANKCARD){
+        if (!([Utils checkCardNo:TextFiled.text] && [Utils checkGSWithBanknumber:TextFiled.text])) {
+            MBProgressHUD *HUD = [Utils createHUD];
+            HUD.labelText = @"请输入正确的工商银行卡号！";
+            [HUD hide:YES afterDelay:1];
+            return ;
+        }
+    }
+    [self.delegate showText:TextFiled.text withName:userInfoName];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -124,7 +135,16 @@
     TextFiled.text = userInfoText;
     TextFiled.clearButtonMode=UITextFieldViewModeNever;
     TextFiled.textColor = kNBR_ProjectColor_DeepBlack;
-    
+    if (viewControllerMode == USERINFO_EDIT_MODE_BANKCARD) {
+        TextFiled.textContentType = UITextContentTypeCreditCardNumber;
+        TextFiled.placeholder = @"*请勿填写信用卡和公务卡卡号";
+    }else if (viewControllerMode == USERINFO_EDIT_MODE_PHONE){
+        TextFiled.textContentType = UITextContentTypeTelephoneNumber;
+    }else if (viewControllerMode == USERINFO_EDIT_MODE_NICKNAME){
+        TextFiled.textContentType = UITextContentTypeNickname;
+    }else{
+        TextFiled.textContentType = UITextContentTypeName;
+    }
     
     [cell.contentView addSubview:TextFiled];
     

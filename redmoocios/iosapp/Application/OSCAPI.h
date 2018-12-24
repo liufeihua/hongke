@@ -12,8 +12,8 @@
 #define GFKDAPI_HTTPS_PREFIX             @"https://mapi.nudt.edu.cn"
 #define GFKDAPI_PREFIX                   @"http://mapi.nudt.edu.cn"
 
-//#define GFKDAPI_HTTPS_PREFIX             @"http://172.20.201.103:8080/app.center"
-//#define GFKDAPI_PREFIX                   @"http://172.20.201.103:8080/app.center"
+//#define GFKDAPI_HTTPS_PREFIX             @"http://172.20.201.103"
+//#define GFKDAPI_PREFIX                   @"http://172.20.201.103"
 
 //#define GFKDAPI_HTTPS_PREFIX             @"http://172.16.128.83:8080/"
 //#define GFKDAPI_PREFIX                   @"http://172.16.128.83:8080/"

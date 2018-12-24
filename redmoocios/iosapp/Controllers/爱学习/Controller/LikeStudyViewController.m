@@ -70,7 +70,7 @@ static NSString *TwoVedioCellIdentifier = @"TwoVedioCell";
 
 -(void)initFootView
 {
-    _footView=[SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kNBR_SCREEN_W, 160*KWidth_Scale) imagesGroup:_imageArray];
+    _footView=[SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kNBR_SCREEN_W, 160*KWidth_Scale) imageURLStringsGroup:_imageArray];
     //_footView.titlesGroup=_titleArray;
     _footView.placeholderImage=[UIImage imageNamed:@"item_default"];
     _footView.delegate=self;

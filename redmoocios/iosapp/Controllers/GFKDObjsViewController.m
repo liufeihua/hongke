@@ -43,9 +43,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    self.tableView.scrollsToTop = NO;
-//    self.edgesForExtendedLayout = UIRectEdgeNone;
-//    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+//
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dawnAndNightMode:) name:@"dawnAndNight" object:nil];
     
     self.tableView.backgroundColor = [UIColor themeColor];
@@ -206,7 +205,7 @@
                    if (refresh) {
                        _page = 1;
                        [_objects removeAllObjects];
-                       if (_didRefreshSucceed) {_didRefreshSucceed();}
+//                       if (_didRefreshSucceed) {_didRefreshSucceed();}
                    }
                    
                    
@@ -224,7 +223,7 @@
                            [_objects addObject:obj];
                        }
                    }
-                   
+                   if (_didRefreshSucceed) {_didRefreshSucceed();}
                    
                    if (_needAutoRefresh) {
                        [_userDefaults setObject:_lastRefreshTime forKey:_kLastRefreshTime];
@@ -283,7 +282,7 @@
                    if (refresh) {
                        _page = 1;
                        [_objects removeAllObjects];
-                       if (_didRefreshSucceed) {_didRefreshSucceed();}
+//                       if (_didRefreshSucceed) {_didRefreshSucceed();}
                    }
                    
                    
@@ -301,7 +300,7 @@
                            [_objects addObject:obj];
                        }
                    }
-                   
+                   if (_didRefreshSucceed) {_didRefreshSucceed();}
                    
                    if (_needAutoRefresh) {
                        [_userDefaults setObject:_lastRefreshTime forKey:_kLastRefreshTime];

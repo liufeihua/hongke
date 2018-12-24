@@ -45,5 +45,7 @@
 @property (nonatomic, assign) NSNumber *typeId;
 @property (nonatomic, assign) NSNumber *showTitle;
 
+@property (nonatomic, assign) NSNumber *showChildNode;  //是否显示子栏目
+
 
 @end

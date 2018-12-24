@@ -79,7 +79,7 @@ static int ThreeRow = 1;
 
 -(void)initHeadView
 {
-    _headView=[SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kNBR_SCREEN_W, 160*KWidth_Scale) imagesGroup:_imageArray];
+    _headView=[SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kNBR_SCREEN_W, 160*KWidth_Scale) imageURLStringsGroup:_imageArray];
     _headView.placeholderImage=[UIImage imageNamed:@"item_default"];
     _headView.delegate=self;
     _headView.pageControlStyle=SDCycleScrollViewPageContolStyleClassic;
