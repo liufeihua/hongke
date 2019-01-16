@@ -29,7 +29,6 @@
 @property (nonatomic, readonly ,copy) NSString *cateName;
 @property (nonatomic, readonly ,copy) NSString *number;
 //@property (nonatomic, readonly ,copy) NSString *description;
-@property (nonatomic, readonly ,copy) NSString *detailUrl;
 @property (nonatomic, readonly ,copy) NSURL *smallImage;
 @property (nonatomic, assign) NSNumber *articles;
 @property (nonatomic, assign) NSNumber *attentions;
@@ -46,6 +45,11 @@
 @property (nonatomic, assign) NSNumber *showTitle;
 
 @property (nonatomic, assign) NSNumber *showChildNode;  //是否显示子栏目
+
+
+@property (nonatomic, strong) NSString *linkType; //1  网站链接  2文章链接
+@property (nonatomic, readonly ,copy) NSString *detailUrl;
+@property (nonatomic, strong) NSNumber *nodeModelId; //模型ID  后台管理系统定   3:新闻  4.图集   8.视频  20.音频
 
 
 @end

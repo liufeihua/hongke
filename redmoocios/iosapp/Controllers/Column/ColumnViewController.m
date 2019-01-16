@@ -69,17 +69,46 @@ static NSString *headTwo = @"ColumnReusableViewTwo";
         self.animationLabel.layer.borderColor = RGBA(211, 211, 211, 1).CGColor;
         self.animationLabel.layer.borderWidth = 0.45;
         self.isChange = NO;
+        
+        
     }
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"所有栏目";
+    
+    [self setTitleAndCloseBtn];
     [self configCollection];
 }
 
+-(void)setTitleAndCloseBtn{
+    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kNBR_SCREEN_W, 64)];
+    topView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:topView];
+    
+    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    closeButton.frame = CGRectMake(kNBR_SCREEN_W - 35, 30, 25, 25);
+    [closeButton setImage:[UIImage imageNamed:@"close_black"] forState:UIControlStateNormal];
+    [closeButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [topView addSubview:closeButton];
+}
+
 -(void)back:(UIButton *)sender{
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark ----------------- collectionInscance ---------------------
@@ -87,7 +116,7 @@ static NSString *headTwo = @"ColumnReusableViewTwo";
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_SIZE.width, SCREEN_SIZE.height) collectionViewLayout:layout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_SIZE.width, SCREEN_SIZE.height-64) collectionViewLayout:layout];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;

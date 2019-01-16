@@ -111,7 +111,7 @@
              
              [self showTopNodes:responseObject[@"result"]];
   
-             [self makeFunctionGuide];
+             //[self makeFunctionGuide];
              /*
              NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
              NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:[user objectForKey:@"nodeDic"]];
@@ -238,56 +238,22 @@
 
 - (void) showTopNodes:(NSMutableArray *) array
 {
-    //每次启动时从后台读取栏目信息 导致加载界面白屏一段时间
-    NSMutableArray *title = [[NSMutableArray alloc] init];
-    [title addObject:@"推荐"];
-    NSMutableArray *controllers = [[NSMutableArray alloc] init];
-    [controllers addObject:[[NewsBarViewController alloc]  initWithNewsListType:NewsListTypeHomeNews cateId:0  isSpecial:0]];//推荐controller
+//每次启动时从后台读取栏目信息再显示 导致加载界面白屏一段时间 先newMainMenu加载推荐页面，再从后台读取栏目后加到newMainMenu页面上
+    newMainMenu.columSelectedArray = [NSMutableArray arrayWithArray:array];
+    NSDictionary *node_1 = @{@"cateName": @"推荐", @"isfixed":@(1)};
+    [newMainMenu.columSelectedArray insertObject:node_1 atIndex:0];
+    
     for (int i=0; i<array.count ; i++) {
         GFKDTopNodes *topNodes = [[GFKDTopNodes alloc] initWithDict:array[i]];
-        [title addObject:topNodes.cateName];
+        [newMainMenu.titleName addObject:topNodes.cateName];
         if ([topNodes.terminated intValue] == 1){ //没有子栏目了
-            [controllers addObject:[[NewsBarViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[topNodes.cateId intValue] isSpecial:0]];
+            [newMainMenu.controllers addObject:[[NewsBarViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[topNodes.cateId intValue] isSpecial:0]];
         }else{
-            [controllers addObject: [[StudySchoolViewController alloc] initWithParentId:topNodes.cateId WithNav:YES]];
+            [newMainMenu.controllers addObject: [[StudySchoolViewController alloc] initWithParentId:topNodes.cateId WithNav:YES]];
         }
     }
     
-//        newsMenu = [[SXMenuViewController alloc] initWithTitle:@"" andSubTitles:title andControllers:controllers underTabbar:YES];
-    
-    newMainMenu = [[SXMainViewController alloc] initWithTitle:@"" andSubTitles:title andControllers:controllers andNodes:array underTabbar:YES];
-    
-        STTabViewController *STVC =[[STTabViewController alloc] init];
-    
-        //StudyHomeViewController *studyHomeVC = [[StudyHomeViewController alloc] init];
-        //takeVC =[[TakesTabViewController alloc] init];
-        StudySchoolViewController *studySchoolVC = [[StudySchoolViewController alloc] initWithNumber:@"dsh" WithNav:YES];
-    
-        segmentVC = [[JRSegmentViewController alloc] init];
-        segmentVC.segmentBgColor = kNBR_ProjectColor;
-        segmentVC.indicatorViewColor = [UIColor whiteColor];
-        segmentVC.titleColor = [UIColor whiteColor];
-        segmentVC.delegate = self;
-        //[segmentVC setViewControllers:@[newsMenu, STVC, takeVC]];
-        //[segmentVC setTitles:@[@"红讯",@"视听", @"圈子"]];
-        [segmentVC setViewControllers:@[newMainMenu, STVC, studySchoolVC]];
-        [segmentVC setTitles:@[@"红讯",@"视听", @"悦读"]];
-        
-        [self configVC];
-    
-//    segmentControl = [[NYSegmentedControl alloc] initWithItems:@[@"红讯",@"视听", @"圈子"]];
-//    segmentControl.titleTextColor = [UIColor whiteColor];
-//    segmentControl.selectedTitleTextColor = kNBR_ProjectColor;
-//    segmentControl.selectedTitleFont = [UIFont systemFontOfSize:13.0f];
-//    segmentControl.segmentIndicatorBackgroundColor = [UIColor whiteColor];
-//    segmentControl.backgroundColor = kNBR_ProjectColor;
-//    segmentControl.borderWidth = 0.0f;
-//    segmentControl.segmentIndicatorBorderWidth = 0.0f;
-//    segmentControl.segmentIndicatorInset = 1.0f;
-//    segmentControl.segmentIndicatorBorderColor = self.view.backgroundColor;
-//    [segmentControl addTarget:self action:@selector(segmentSelect:) forControlEvents:UIControlEventValueChanged];
-//    [segmentControl sizeToFit];
-//    self.navigationItem.titleView = segmentControl;
+    [newMainMenu viewRefesh];
 }
 
 -(void)showTabVC:(UIButton *)sender{
@@ -306,16 +272,78 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor themeColor];
-    
+//
     [self loadTOPList];
     
-    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    if([[NSUserDefaults standardUserDefaults] objectForKey:@"nodeDic"]!=nil){
-        NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:[user objectForKey:@"nodeDic"]];
+    
+    StudySchoolViewController *studyTJVC = [[StudySchoolViewController alloc] initWithNumber:@"tjjm" WithNav:YES];
+    NSMutableArray *title = [[NSMutableArray alloc] init];
+    [title addObject:@"推荐"];
+    NSMutableArray *controllers = [[NSMutableArray alloc] init];
+    [controllers addObject:studyTJVC];
+    
+//    for (int i=0; i<array.count ; i++) {
+//        GFKDTopNodes *topNodes = [[GFKDTopNodes alloc] initWithDict:array[i]];
+//        [title addObject:topNodes.cateName];
+//        if ([topNodes.terminated intValue] == 1){ //没有子栏目了
+//            [controllers addObject:[[NewsBarViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[topNodes.cateId intValue] isSpecial:0]];
+//        }else{
+//            [controllers addObject: [[StudySchoolViewController alloc] initWithParentId:topNodes.cateId WithNav:YES]];
+//        }
+//    }
+    newMainMenu = [[SXMainViewController alloc] initWithTitle:@"" andSubTitles:title andControllers:controllers andNodes:nil underTabbar:YES];
+    
+    
+    STTabViewController *STVC =[[STTabViewController alloc] init];
+    
+    StudySchoolViewController *studySchoolVC = [[StudySchoolViewController alloc] initWithNumber:@"dsh" WithNav:YES];
+    
+    segmentVC = [[JRSegmentViewController alloc] init];
+    segmentVC.segmentBgColor = kNBR_ProjectColor;
+    segmentVC.indicatorViewColor = [UIColor whiteColor];
+    segmentVC.titleColor = [UIColor whiteColor];
+    segmentVC.delegate = self;
+    [segmentVC setViewControllers:@[newMainMenu, STVC, studySchoolVC]];
+    [segmentVC setTitles:@[@"红讯",@"视听", @"悦读"]];
+    
+    [self configVC];
+    
+    
+//
+//    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+//    if([[NSUserDefaults standardUserDefaults] objectForKey:@"nodeDic"]!=nil){
+//        NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:[user objectForKey:@"nodeDic"]];
+//
+//        [self showTopNodes:mutableArray];
+//    }
+    
+//    [self loadMainTab];
 
-        [self showTopNodes:mutableArray];
-    }
+}
 
+
+//2018-12-29  首页界面大改动
+- (void) loadMainTab{
+    StudySchoolViewController *studyTJVC = [[StudySchoolViewController alloc] initWithNumber:@"tjjm" WithNav:YES];
+    
+    STTabViewController *STVC =[[STTabViewController alloc] init];
+    
+    
+    StudySchoolViewController *studySchoolVC = [[StudySchoolViewController alloc] initWithNumber:@"dsh" WithNav:YES];
+    
+    segmentVC = [[JRSegmentViewController alloc] init];
+    segmentVC.segmentBgColor = kNBR_ProjectColor;
+    segmentVC.indicatorViewColor = [UIColor whiteColor];
+    segmentVC.titleColor = [UIColor whiteColor];
+    segmentVC.delegate = self;
+    //[segmentVC setViewControllers:@[newsMenu, STVC, takeVC]];
+    //[segmentVC setTitles:@[@"红讯",@"视听", @"圈子"]];
+    [segmentVC setViewControllers:@[studyTJVC, STVC, studySchoolVC]];
+    [segmentVC setTitles:@[@"红讯",@"视听", @"悦读"]];
+    
+    [self configVC];
+    
+    
 }
 
 
@@ -507,6 +535,7 @@
     [super viewWillAppear:animated];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushMsgShow:) name:@"PUSHMSGSHOW" object:nil];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -606,31 +635,37 @@
 }
 
 
-- (void)makeFunctionGuide{
-    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    NSString *firstComeInTeacherDetail = @"isFirstEnterHere-3.9.8-1";
-    //s[user setBool:NO forKey:firstComeInTeacherDetail];
-    
-    if (![user boolForKey:firstComeInTeacherDetail]) {
-        [user setBool:YES forKey:firstComeInTeacherDetail];
-        [user synchronize];
-        [self makeGuideView];
-    }
-}
-
-- (void)makeGuideView{
-    RAYNewFunctionGuideVC *vc = [[RAYNewFunctionGuideVC alloc]init];
-    vc.titles = @[@"请完善个人信息"];
-
-    CGRect frame = CGRectMake(kNBR_SCREEN_W -70, kNBR_SCREEN_H-50, 60, 50);
-    
-    //@"{{0,  60},{100,80}}
-    vc.frames = @[NSStringFromCGRect(frame),
-                  ];
-    
-    [self presentViewController:vc animated:YES completion:nil];
-    
-}
+//- (void)makeFunctionGuide{
+//    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+//    NSString *firstComeInTeacherDetail = @"isFirstEnterHere-4.0";
+//    [user setBool:NO forKey:firstComeInTeacherDetail];
+//
+//    if (![user boolForKey:firstComeInTeacherDetail]) {
+//        [user setBool:YES forKey:firstComeInTeacherDetail];
+//        [user synchronize];
+//        [self makeGuideView];
+//    }
+//}
+//
+//- (void)makeGuideView{
+//    RAYNewFunctionGuideVC *vc = [[RAYNewFunctionGuideVC alloc]init];
+//    vc.titles = @[
+//                  //@"要闻、信息港等移到了这了",
+//                  @"请完善个人信息"];
+//
+//    float frame1_y = 64 + 9*kNBR_SCREEN_W/16.0 + 20;
+//    CGRect frame1 = CGRectMake(20, frame1_y, kNBR_SCREEN_W - 20, (kNBR_SCREEN_W - 100)/4.0 + 30) ;
+//    CGRect frame2 = CGRectMake(kNBR_SCREEN_W -70, kNBR_SCREEN_H-50, 60, 50);
+//
+//    //@"{{0,  60},{100,80}}
+//    vc.frames = @[
+//                  //NSStringFromCGRect(frame1),
+//                  NSStringFromCGRect(frame2),
+//                  ];
+//
+//    [self presentViewController:vc animated:YES completion:nil];
+//
+//}
 
 
 @end

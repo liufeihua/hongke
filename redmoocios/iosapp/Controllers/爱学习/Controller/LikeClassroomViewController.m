@@ -382,7 +382,8 @@ static int ThreeRow = 1;
     if (_isHasAdv) {
         num = 1;
         if (indexPath.section == 0) {
-            return 220*kNBR_SCREEN_W/470;
+//            return 220*kNBR_SCREEN_W/470;
+            return 160*KWidth_Scale;
         }
     }
     return _hotCellHeight;

@@ -20,6 +20,8 @@
 #import "NewsViewController.h"
 #import "HomeAdCell.h"
 #import "RadioListViewController.h"
+#import "JRSegmentViewController.h"
+#import "RAYNewFunctionGuideVC.h"
 
 static NSString *NodeCellIdentifier = @"NodeBaseCell";
 #define kNavHeight 64
@@ -46,18 +48,18 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
     NSMutableArray*_imageArray;
     BOOL showNav;
     NSMutableArray* _showNodesTag;
-    BOOL showRadioPlay;
+    //BOOL showRadioPlay;
 }
 
 - (instancetype)initWithNumber:(NSString *)number WithNav:(BOOL) isShowNav{
     self = [super init];
     _number = number;
     showNav = isShowNav;
-    if ([_number isEqualToString: @"audio"]) {
-        showRadioPlay = YES;
-    }else{
-        showRadioPlay = NO;
-    }
+//    if ([_number isEqualToString: @"audio"]) {
+//        showRadioPlay = YES;
+//    }else{
+//        showRadioPlay = NO;
+//    }
     if (self) {
         
     }
@@ -77,6 +79,8 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     dataArray_node = [[NSMutableArray alloc] init];
     _imageArray = [[NSMutableArray alloc] init];
     _showNodesTag = [[NSMutableArray alloc] init];
@@ -88,6 +92,8 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
     }
     [self loadNodeList];
     [self setupRefresh];
+    
+    [self makeFunctionGuide];
 }
 
 - (void)setUI
@@ -208,14 +214,17 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
              for (int i=0; i<array.count; i++) {
                  GFKDTopNodes *nodes = [[GFKDTopNodes alloc] initWithDict:array[i]];
 //                 if (i == 0){
-//                     nodes.typeId = [NSNumber numberWithInt:12];
+//                     nodes.typeId = [NSNumber numberWithInt:10];
 //                 }
 //                 if (i == 1){
-//                     nodes.typeId = [NSNumber numberWithInt:5];
+//                     nodes.typeId = [NSNumber numberWithInt:16];
 //                 }
 //                 if ([nodes.typeId intValue] == 4) {
 //                     nodes.showChildNode = [NSNumber numberWithInt:1];
 //                 }
+                 if ([nodes.linkType intValue] == 6) {
+                     nodes.cateId = [NSNumber numberWithInt:[nodes.detailUrl intValue]];
+                 }
                  [dataArray_node addObject:nodes];
                  
                  //是否显示子栏目
@@ -232,7 +241,13 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
              
              _AdvObjectsDict = responseObject[@"result"][@"adv"];
              _isHasAdv = _AdvObjectsDict.count ==0 ? FALSE:TRUE;
-             
+//             if (_AdvObjectsDict.count == 1 && ![self.parentViewController isKindOfClass:[JRSegmentViewController class]]) {
+//                 showNav = NO;
+//                 [self setUI];
+//                 //初始化导航条上的内容
+//                 [self setUpNavigtionBar];
+//                 [self.navigationController setNavigationBarHidden:YES animated:YES];
+//             }
              [self.tableView reloadData];
              
              
@@ -331,16 +346,17 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
         return AdCell;
         
     }else{
+        
         int sectionNum = _isHasAdv ? (int)indexPath.section-1 : (int)indexPath.section;
         node = _isHasAdv ? dataArray_node[indexPath.section-1] : dataArray_node[indexPath.section];
         NSString *ID = [NodeBaseCell idForRow:node];
-        UINib *nib = [UINib nibWithNibName:ID bundle:nil];
-        [tableView registerNib:nib forCellReuseIdentifier:ID ];
         
-        NodeBaseCell *cell = (NodeBaseCell *)[tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+        NSString *CellIdentifier = [NSString stringWithFormat:@"%@%ld%ld", ID,[indexPath section], [indexPath row]];//以indexPath来唯一确定cell  重用机制会导致界面一些问题  重用机制是根据相同的标识符来重用cell的，标识符不同的cell不能彼此重用
+        [tableView registerNib:[UINib nibWithNibName:ID bundle:nil] forCellReuseIdentifier:CellIdentifier];
+        NodeBaseCell *cell = (NodeBaseCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         cell.delegate = self;
         cell.indexTag = sectionNum;
-        cell.showRadioPlay = showRadioPlay;
+        //cell.showRadioPlay = showRadioPlay;
         [cell setNode:node];
         [cell setParentVC:self];
         return cell;
@@ -398,7 +414,8 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
 // 设置行高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (_isHasAdv && indexPath.section == 0) {
-        return 220*kNBR_SCREEN_W/470;
+        return 9*kNBR_SCREEN_W/16;
+        //return 160*KWidth_Scale;
     }
     GFKDTopNodes *node = _isHasAdv ? dataArray_node[indexPath.section-1] : dataArray_node[indexPath.section];
     return [NodeBaseCell heightForRow:node];
@@ -423,7 +440,8 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
              
              NSArray *array = responseObject[@"result"][@"data"];
              if (array.count == 0) {
-                 if (!showRadioPlay){
+                 if ([node.nodeModelId intValue] != 20) {
+//                 if (!showRadioPlay){
                      NewsViewController *newsVC = [[NewsViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[node.cateId intValue] isSpecial:0];
                      newsVC.hidesBottomBarWhenPushed = YES;
                      newsVC.title = node.cateName;
@@ -455,7 +473,13 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
 }
 
 - (void)titleViewDidClick:(NSInteger)tag{
-    [self loadChildNodeList:dataArray_node[tag]];
+//    GFKDTopNodes *nodes = dataArray_node[tag];
+//    if ([nodes.linkType intValue] == 6) {  //栏目链接
+//        
+//    }else{
+//        [self loadChildNodeList:dataArray_node[tag]];
+//    }
+     [self loadChildNodeList:dataArray_node[tag]];
 }
 
 #pragma mark - delegate;
@@ -492,5 +516,37 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
     [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
+
+- (void)makeFunctionGuide{
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSString *firstComeInTeacherDetail = @"isFirstEnterHere-4.0";
+    //[user setBool:NO forKey:firstComeInTeacherDetail];
+    
+    if (![user boolForKey:firstComeInTeacherDetail]) {
+        [user setBool:YES forKey:firstComeInTeacherDetail];
+        [user synchronize];
+        [self makeGuideView];
+    }
+}
+
+- (void)makeGuideView{
+    RAYNewFunctionGuideVC *vc = [[RAYNewFunctionGuideVC alloc]init];
+    vc.titles = @[
+                 // @"要闻、信息港等移到了这了",
+                  @"请完善个人信息"];
+    
+//    float frame1_y = 64 + 9*kNBR_SCREEN_W/16.0 + 20;
+//    CGRect frame1 = CGRectMake(20, frame1_y, kNBR_SCREEN_W - 20, (kNBR_SCREEN_W - 100)/4.0 + 30) ;
+    CGRect frame2 = CGRectMake(kNBR_SCREEN_W -70, kNBR_SCREEN_H-50, 60, 50);
+    
+    //@"{{0,  60},{100,80}}
+    vc.frames = @[
+                 // NSStringFromCGRect(frame1),
+                  NSStringFromCGRect(frame2),
+                  ];
+    
+    [self presentViewController:vc animated:YES completion:nil];
+    
+}
 
 @end

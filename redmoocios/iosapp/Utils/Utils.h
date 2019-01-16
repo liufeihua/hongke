@@ -77,8 +77,9 @@ typedef NS_ENUM(NSUInteger, hudType) {
 
 + (void) showLinkViewController:(GFKDDiscover *)model WithNowVC:(UIViewController *)VC;
 + (void) showLinkAD:(GFKDHomeAd *)adv WithNowVC:(UIViewController *)VC;
++ (void) showNodeDetail:(int) nodeId WithNowVC:(UIViewController *)VC;
++ (void) showLinkLinkType:(NSString *)linkType WithUrl:(NSString *)url  WithNowVC:(UIViewController *)VC;
 
-+ (void) showNodeOrNewsWithId:(int) nodeId withTitle:(NSString *)title WithNowVC:(UIViewController *)VC;
 
 + (void) reNewUserWithDict:(NSDictionary *)dict token:(NSString *)token;
 

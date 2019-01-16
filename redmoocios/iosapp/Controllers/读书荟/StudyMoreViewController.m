@@ -27,6 +27,7 @@
 #import "EPUBReadMainViewController.h"
 #import "NewsDetailBarViewController.h"
 #import "LSYReadPageViewController.h"
+#import "RadioListViewController.h"
 
 @interface StudyMoreViewController ()<UITableViewDataSource,UITableViewDelegate,TitleViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
@@ -50,6 +51,8 @@ static int OneSpecialRow = 4;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     dataArray_childList = [[NSMutableArray alloc] init];
     dataArray_nodes = [[NSMutableArray alloc] init];
     dataArray_cateNames = [[NSMutableArray alloc] init];
@@ -79,10 +82,20 @@ static int OneSpecialRow = 4;
 }
 
 - (void) loadNodeList{
+    [dataArray_nodes removeAllObjects];
+    current_loadCount = 0;
+    [dataArray_childList removeAllObjects];
+    [dataArray_cateNames removeAllObjects];
+    
     for (int i=0; i<_nodeList.count; i++) {
         GFKDTopNodes *node = [[GFKDTopNodes alloc] initWithDict:_nodeList[i]];
+        if ([node.linkType intValue] == 6)  // 跳转到栏目 6
+        {
+            int nodeId = [node.detailUrl intValue];
+            node.cateId = [NSNumber numberWithInt:nodeId];
+        }
         [dataArray_nodes addObject:node];
-        [self loadArticleListWithCateId:[node.cateId intValue] withCateName:node.cateName];
+         [self loadArticleListWithCateId:[node.cateId intValue] withCateName:node.cateName];
     }
 }
 
@@ -112,7 +125,7 @@ static int OneSpecialRow = 4;
 
 - (void) loadArticleListWithCateId:(int)cateId withCateName:(NSString *)cateName{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
-    [manager GET:[NSString stringWithFormat:@"%@%@?cateId=%d&attrType=0&hasPic=0&pageNumber=0&%@&isSpecial=%d&token=%@&showDescendants=1",GFKDAPI_HTTPS_PREFIX,GFKDAPI_NEWS_LIST,cateId,@"pageSize=5",0,[Config getToken]]
+    [manager GET:[NSString stringWithFormat:@"%@%@?cateId=%d&attrType=0&hasPic=0&pageNumber=0&%@&isSpecial=%d&token=%@&showDescendants=0",GFKDAPI_HTTPS_PREFIX,GFKDAPI_NEWS_LIST,cateId,@"pageSize=5",0,[Config getToken]]
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
@@ -300,10 +313,27 @@ static int OneSpecialRow = 4;
 
 
 - (void) titleViewDidClick:(NSInteger)tag{
+//    GFKDTopNodes *node = dataArray_nodes[tag];
+//    
+//    if ([node.nodeModelId intValue] != 20) {
+//        NewsViewController *newsVC = [[NewsViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[node.cateId intValue] isSpecial:0];
+//        newsVC.hidesBottomBarWhenPushed = YES;
+//        newsVC.title = node.cateName;
+//        [self.navigationController pushViewController:newsVC animated:YES];
+//        
+//    }else{
+//        RadioListViewController *radioVC = [[RadioListViewController alloc] initWithNode:node];
+//        radioVC.hidesBottomBarWhenPushed = YES;
+//        radioVC.newsVC.title = node.cateName;
+//        [self.navigationController pushViewController:radioVC animated:YES];
+//    }
+    
+    
     if ([dataArray_childList[tag] count] == 0) {
         
         return;
     }
+    
     GFKDNews *news = dataArray_childList[tag][0];
     NewsViewController *newsVC = [[NewsViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[news.cateId intValue] isSpecial:0];
     newsVC.hidesBottomBarWhenPushed = YES;

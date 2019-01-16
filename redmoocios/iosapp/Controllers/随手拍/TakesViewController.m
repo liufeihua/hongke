@@ -145,7 +145,7 @@
     now_take = entity;
     if (_myTakesInfoType == TakesInfoTypeTimeAlbum) {
         NSInteger photoId = [entity.takeId integerValue];
-        NSString *url = [NSString stringWithFormat:@"%@%@?token=%@&id=%ld",GFKDAPI_HTTPS_PREFIX, GFKDAPI_PHOTOVIEW,[Config getToken],photoId];
+        NSString *url = [NSString stringWithFormat:@"%@%@?token=%@&id=%lld",GFKDAPI_HTTPS_PREFIX, GFKDAPI_PHOTOVIEW,[Config getToken],photoId];
         CYWebViewController *webViewController = [[CYWebViewController alloc] initWithURL:[NSURL URLWithString:url]];
         webViewController.hidesBottomBarWhenPushed = YES;
         webViewController.navigationButtonsHidden = YES;

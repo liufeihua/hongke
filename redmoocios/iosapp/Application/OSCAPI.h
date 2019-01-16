@@ -75,6 +75,7 @@
 
 #define GFKDAPI_GETUSERINFO             @"/m-personInfo.htx"  //得到用户信息 uid=7&token=…
 
+#define GFKDAPI_NODEDETAIL             @"/m-node.htx"   //cateId=36
 #define GFKDAPI_MYALLNODES             @"/m-allNodes.htx"    //所有栏目 包括已订制和未订制的 改为 用户订制的栏目
 #define GFKDAPI_MYUSERNODES             @"/m-userNodes.htx"  //用户订制的栏目
 #define GFKDAPI_MYNOTUSERNODES             @"/m-notUserNodes.htx" //用户没有订制的栏目

@@ -104,7 +104,7 @@
         //[tmp addObject:name];
         UIImageView* img = [[UIImageView alloc] initWithFrame:CGRectMake(i * mainWidth, 0, mainWidth, self.bounds.size.height)];
         img.userInteractionEnabled = YES;
-        img.contentMode = UIViewContentModeScaleToFill;
+        img.contentMode = UIViewContentModeScaleAspectFill;
         img.clipsToBounds = YES;
         UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Actiondo)];
         [img addGestureRecognizer:tap];

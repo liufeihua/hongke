@@ -30,7 +30,8 @@
     {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        adPage = [[JxbAdPageView alloc] initWithFrame:CGRectMake(0, 0, kNBR_SCREEN_W, 220*kNBR_SCREEN_W/470)];
+        adPage = [[JxbAdPageView alloc] initWithFrame:CGRectMake(0, 0, kNBR_SCREEN_W, 9*kNBR_SCREEN_W/16)];
+      // adPage = [[JxbAdPageView alloc] initWithFrame:CGRectMake(0, 0, kNBR_SCREEN_W, 160*KWidth_Scale)];
         adPage.delegate = self;
         [self addSubview:adPage];
 

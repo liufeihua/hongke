@@ -759,8 +759,8 @@
 
 - (void)makeFunctionGuide{
     NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    NSString *firstComeInTeacherDetail = @"isFirstEnterHere-3.9.8-2";
-   // [user setBool:NO forKey:firstComeInTeacherDetail];
+    NSString *firstComeInTeacherDetail = @"isFirstEnterHere-4.0";
+    //[user setBool:NO forKey:firstComeInTeacherDetail];
     
     if (![user boolForKey:firstComeInTeacherDetail]) {
         [user setBool:YES forKey:firstComeInTeacherDetail];

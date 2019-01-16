@@ -137,7 +137,6 @@
 		E71B79481E1F8DA700E1C11A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E71B79471E1F8DA700E1C11A /* libz.tbd */; };
 		E71B794A1E1F8DB200E1C11A /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E71B79491E1F8DB200E1C11A /* libbz2.tbd */; };
 		E71B794C1E1F8DBB00E1C11A /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E71B794B1E1F8DBB00E1C11A /* libiconv.tbd */; };
-		E71B794E1E1F8DC500E1C11A /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E71B794D1E1F8DC500E1C11A /* libstdc++.6.0.9.tbd */; };
 		E72028F51EE6872F0012BB29 /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = E72028F41EE6872F0012BB29 /* TitleView.m */; };
 		E72028F81EE68AB10012BB29 /* MoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E72028F71EE68AB10012BB29 /* MoreButton.m */; };
 		E72028FC1EE68D360012BB29 /* FourBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E72028FB1EE68D360012BB29 /* FourBookCell.m */; };
@@ -358,6 +357,12 @@
 		E7B736002176DBF50002B0C3 /* NodeFourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B735FF2176DBF50002B0C3 /* NodeFourCell.xib */; };
 		E7B73602217821890002B0C3 /* NodeNCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B73601217821890002B0C3 /* NodeNCell.xib */; };
 		E7B736052178387F0002B0C3 /* CALayer+MZXibConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B736042178387F0002B0C3 /* CALayer+MZXibConfig.m */; };
+		E7BEB98921E6EB38001BA852 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BEB98821E6EB38001BA852 /* libstdc++.tbd */; };
+		E7BEDDFB21D1BE30005F3ACE /* NodeFour_2row.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7BEDDFA21D1BE30005F3ACE /* NodeFour_2row.xib */; };
+		E7BEDDFD21D1C3F4005F3ACE /* NodeOne_bigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7BEDDFC21D1C3F4005F3ACE /* NodeOne_bigCell.xib */; };
+		E7BEDDFF21D1D53F005F3ACE /* NodeVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7BEDDFE21D1D53F005F3ACE /* NodeVideoCell.xib */; };
+		E7BEDE0121D312B7005F3ACE /* NodeQiangjunCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7BEDE0021D312B7005F3ACE /* NodeQiangjunCell.xib */; };
+		E7BEDE0321D5CF15005F3ACE /* NodeImageAddTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7BEDE0221D5CF15005F3ACE /* NodeImageAddTitleCell.xib */; };
 		E7BEE2D81DEE8C5800BBAF4A /* LSYChapterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BEE2D71DEE8C5800BBAF4A /* LSYChapterModel.m */; };
 		E7C08E9F217D7C4600101875 /* HXCustomCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C08E4C217D7C4500101875 /* HXCustomCameraViewController.m */; };
 		E7C08EA0217D7C4600101875 /* UIViewController+HXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C08E4D217D7C4500101875 /* UIViewController+HXExtension.m */; };
@@ -1153,6 +1158,8 @@
 		E7A5C1AC1CEF004C009ECC9A /* GroupFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupFriend.m; path = "积分规则/GroupFriend.m"; sourceTree = "<group>"; };
 		E7A5C1B21CEF0258009ECC9A /* DetailButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailButton.h; path = "积分规则/DetailButton.h"; sourceTree = "<group>"; };
 		E7A5C1B31CEF0258009ECC9A /* DetailButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailButton.m; path = "积分规则/DetailButton.m"; sourceTree = "<group>"; };
+		E7A7E0E521E6E8A400513AE9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		E7A7E0E721E6EF6900513AE9 /* Xcode_10.1.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Xcode_10.1.app; path = ../../../../../../Applications/Xcode_10.1.app; sourceTree = "<group>"; };
 		E7A9EC0B1CA3DBF100DFB2BE /* GFKDMyCollect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GFKDMyCollect.h; path = GFKD/GFKDMyCollect.h; sourceTree = "<group>"; };
 		E7A9EC0C1CA3DBF100DFB2BE /* GFKDMyCollect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GFKDMyCollect.m; path = GFKD/GFKDMyCollect.m; sourceTree = "<group>"; };
 		E7A9EC0E1CA3DCA100DFB2BE /* MyCollectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectsViewController.h; sourceTree = "<group>"; };
@@ -1168,6 +1175,12 @@
 		E7B73601217821890002B0C3 /* NodeNCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NodeNCell.xib; path = "读书荟/cell/NodeNCell.xib"; sourceTree = "<group>"; };
 		E7B736032178387F0002B0C3 /* CALayer+MZXibConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+MZXibConfig.h"; sourceTree = "<group>"; };
 		E7B736042178387F0002B0C3 /* CALayer+MZXibConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+MZXibConfig.m"; sourceTree = "<group>"; };
+		E7BEB98821E6EB38001BA852 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		E7BEDDFA21D1BE30005F3ACE /* NodeFour_2row.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NodeFour_2row.xib; path = "读书荟/cell/NodeFour_2row.xib"; sourceTree = "<group>"; };
+		E7BEDDFC21D1C3F4005F3ACE /* NodeOne_bigCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NodeOne_bigCell.xib; path = "读书荟/cell/NodeOne_bigCell.xib"; sourceTree = "<group>"; };
+		E7BEDDFE21D1D53F005F3ACE /* NodeVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NodeVideoCell.xib; path = "读书荟/cell/NodeVideoCell.xib"; sourceTree = "<group>"; };
+		E7BEDE0021D312B7005F3ACE /* NodeQiangjunCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NodeQiangjunCell.xib; path = "读书荟/cell/NodeQiangjunCell.xib"; sourceTree = "<group>"; };
+		E7BEDE0221D5CF15005F3ACE /* NodeImageAddTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NodeImageAddTitleCell.xib; path = "读书荟/cell/NodeImageAddTitleCell.xib"; sourceTree = "<group>"; };
 		E7BEE2D71DEE8C5800BBAF4A /* LSYChapterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYChapterModel.m; sourceTree = "<group>"; };
 		E7C08E4C217D7C4500101875 /* HXCustomCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCustomCameraViewController.m; sourceTree = "<group>"; };
 		E7C08E4D217D7C4500101875 /* UIViewController+HXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HXExtension.m"; sourceTree = "<group>"; };
@@ -1491,8 +1504,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7BEB98921E6EB38001BA852 /* libstdc++.tbd in Frameworks */,
 				E71514AE1E655EF600CA1D99 /* JavaScriptCore.framework in Frameworks */,
-				E71B794E1E1F8DC500E1C11A /* libstdc++.6.0.9.tbd in Frameworks */,
 				E71B794C1E1F8DBB00E1C11A /* libiconv.tbd in Frameworks */,
 				E71B794A1E1F8DB200E1C11A /* libbz2.tbd in Frameworks */,
 				E71B79481E1F8DA700E1C11A /* libz.tbd in Frameworks */,
@@ -1646,6 +1659,9 @@
 		1BB5019F31BE469F592E0B67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7A7E0E721E6EF6900513AE9 /* Xcode_10.1.app */,
+				E7BEB98821E6EB38001BA852 /* libstdc++.tbd */,
+				E7A7E0E521E6E8A400513AE9 /* libc++.tbd */,
 				E71514AD1E655EF600CA1D99 /* JavaScriptCore.framework */,
 				E71B794D1E1F8DC500E1C11A /* libstdc++.6.0.9.tbd */,
 				E71B794B1E1F8DBB00E1C11A /* libiconv.tbd */,
@@ -3038,6 +3054,11 @@
 		E7B735F6217587620002B0C3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				E7BEDE0221D5CF15005F3ACE /* NodeImageAddTitleCell.xib */,
+				E7BEDE0021D312B7005F3ACE /* NodeQiangjunCell.xib */,
+				E7BEDDFE21D1D53F005F3ACE /* NodeVideoCell.xib */,
+				E7BEDDFC21D1C3F4005F3ACE /* NodeOne_bigCell.xib */,
+				E7BEDDFA21D1BE30005F3ACE /* NodeFour_2row.xib */,
 				E74D77D221CA4540003AE333 /* NodeSpecialCell.xib */,
 				E7E1FA1921B50C2400D3D8AE /* NodeOneTitleCell.xib */,
 				E762A42F217ECDFC00D57717 /* NodeFour_1ratio1Cell.xib */,
@@ -3677,9 +3698,11 @@
 				E7666C741DF1143E00837653 /* epub.bundle in Resources */,
 				E7666C821DF1143E00837653 /* DFPShaoNvW5.ttf in Resources */,
 				E7E1FA2721B50DF200D3D8AE /* NewsOneStar.xib in Resources */,
+				E7BEDDFD21D1C3F4005F3ACE /* NodeOne_bigCell.xib in Resources */,
 				E7E1FA5321B91E7C00D3D8AE /* WawaSC-Regular.otf in Resources */,
 				E7E1FA2521B50DF200D3D8AE /* ImagesCell.xib in Resources */,
 				E7132EFF1C7EED9600783309 /* Images.xcassets in Resources */,
+				E7BEDDFF21D1D53F005F3ACE /* NodeVideoCell.xib in Resources */,
 				38DB5E8F1A496FFD0092C966 /* emoji.plist in Resources */,
 				E7C13FC41DD1C5BF00D857F7 /* bg_back_white@2x.png in Resources */,
 				E7453FB11DC0444F00E00E4E /* NewShow.xib in Resources */,
@@ -3691,6 +3714,7 @@
 				251B2E651C05ACC700E3DAAB /* VideoDetailViewController.xib in Resources */,
 				E73535BA1C9FA169003381BF /* LSPlayerMaskView.xib in Resources */,
 				E7C9E0A72191965B00B352EB /* TimeAlbumTableViewCell.xib in Resources */,
+				E7BEDDFB21D1BE30005F3ACE /* NodeFour_2row.xib in Resources */,
 				38CC81EC1AE6517E00CC4F6F /* emojiToText.plist in Resources */,
 				E734FBEC1D2BA80500FE8325 /* columnDelete.png in Resources */,
 				E762A432217ECDFD00D57717 /* NodeThreeCell.xib in Resources */,
@@ -3733,6 +3757,7 @@
 				E70C1063219E619B0094E8C4 /* NodeOneStar.xib in Resources */,
 				E7E1FA2821B50DF200D3D8AE /* topicCell.xib in Resources */,
 				E7132EED1C7EDE9900783309 /* Launch Screen.storyboard in Resources */,
+				E7BEDE0321D5CF15005F3ACE /* NodeImageAddTitleCell.xib in Resources */,
 				C5B1231C1B316830000B29D2 /* css in Resources */,
 				251E09901BFD8B2D00D3D6AC /* NewsImagesViewController.xib in Resources */,
 				C5E92FDE1B59FAC300EFE47E /* Homepage.storyboard in Resources */,
@@ -3743,6 +3768,7 @@
 				E721EAB01ECBE8140066771A /* backBtn.png in Resources */,
 				E7C13FC61DD1C5BF00D857F7 /* r_drag-dot@2x.png in Resources */,
 				E76AB7011D62D1C5003D8192 /* FourCollectionCell.xib in Resources */,
+				E7BEDE0121D312B7005F3ACE /* NodeQiangjunCell.xib in Resources */,
 				E7C08EC5217D7C4600101875 /* HXPhotoPicker.bundle in Resources */,
 				E7E1FA2921B50DF200D3D8AE /* bigImageCell.xib in Resources */,
 				E7B735F92175CAE20002B0C3 /* NodeTwoCell.xib in Resources */,
@@ -4270,7 +4296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -4316,7 +4342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -4375,6 +4401,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

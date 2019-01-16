@@ -50,6 +50,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *label_subTitle_4;
 @property (weak, nonatomic) IBOutlet UILabel *label_subTitle_5;
 
+@property (weak, nonatomic) IBOutlet UIImageView *image6;
+@property (weak, nonatomic) IBOutlet UIImageView *image7;
+@property (weak, nonatomic) IBOutlet UIImageView *image8;
 
 @property (weak, nonatomic) IBOutlet UILabel *label_author_1;
 
@@ -64,13 +67,20 @@
 @property (weak, nonatomic) IBOutlet UIView *view_dotted_1;
 @property (weak, nonatomic) IBOutlet UIView *view_dotted_2;
 @property (weak, nonatomic) IBOutlet UIView *view_dotted_3;
+@property (weak, nonatomic) IBOutlet UIView *view_dotted_4;
 
 @property (weak, nonatomic) IBOutlet UIView *view_selected_1;
+
 @property (weak, nonatomic) IBOutlet UIView *view_selected_2;
 @property (weak, nonatomic) IBOutlet UIView *view_selected_3;
 @property (weak, nonatomic) IBOutlet UIView *view_selected_4;
 
 @property (weak, nonatomic) IBOutlet UIView *carouselView;
+
+@property (weak, nonatomic) IBOutlet UIButton *btn_viedo_1;
+@property (weak, nonatomic) IBOutlet UIButton *btn_viedo_2;
+@property (weak, nonatomic) IBOutlet UIButton *btn_viedo_3;
+@property (weak, nonatomic) IBOutlet UIButton *btn_viedo_4;
 
 
 @end

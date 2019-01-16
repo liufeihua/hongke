@@ -23,7 +23,11 @@
 @property (nonatomic, strong) NSMutableArray *titleName;
 @property (nonatomic, assign) BOOL underTabbar;
 
+@property (nonatomic, strong) NSMutableArray *columSelectedArray;
+
 - (instancetype)initWithTitle:(NSString *)title andSubTitles:(NSArray *)subTitles andControllers:(NSArray *)controllers  andNodes:(NSArray *)nodes underTabbar:(BOOL)underTabbar;
 - (instancetype)initWithTitle:(NSString *)title andSubTitles:(NSArray *)subTitles andControllers:(NSArray *)controllers andNodes:(NSArray *)nodes;
+
+- (void) viewRefesh;
 
 @end

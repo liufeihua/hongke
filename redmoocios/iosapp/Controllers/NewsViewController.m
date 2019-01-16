@@ -254,7 +254,8 @@ static NSString *kNewsCellID = @"NewsCell";
 //        }
         return [NewsCell heightForRow:news];
     }else{
-        return 220*kNBR_SCREEN_W/470;
+        return 9*kNBR_SCREEN_W/16;
+        //return 160*KWidth_Scale;
     }
     
 }

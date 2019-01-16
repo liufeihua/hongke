@@ -15,13 +15,15 @@
 #import <MBProgressHUD.h>
 #import "GFKDUserNode.h"
 #import "NewsViewController.h"
+#import "StudySchoolViewController.h"
+#import "NewsBarViewcontroller.h"
+#import "GFKDTopNodes.h"
 
 @interface SXMainViewController ()<UIScrollViewDelegate,ColumnViewControllerDelegate>
 {
-    NSMutableArray *columSelectedArray;
+    
     NSArray *columOptionalArray;
 }
-
 
 
 @property(nonatomic,assign,getter=isColumnShow)BOOL columnShow;
@@ -50,16 +52,22 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
         if (title) {self.title = title;}
         _underTabbar = underTabbar;
-        columSelectedArray = [NSMutableArray arrayWithArray:nodes];
+        _columSelectedArray = [NSMutableArray arrayWithArray:nodes];
         _titleName = [NSMutableArray arrayWithArray:subTitles];
         _controllers = [NSMutableArray arrayWithArray:controllers];
         
         NSDictionary *node_1 = @{@"cateName": @"推荐", @"isfixed":@(1)};
-        [columSelectedArray insertObject:node_1 atIndex:0];
+        [_columSelectedArray insertObject:node_1 atIndex:0];
     }
     
     return self;
 }
+
+#pragma mark - ***************  页面刷新
+- (void) viewRefesh {
+    [self loadControllerVC];
+}
+
 
 #pragma mark - ******************** 页面首次加载
 - (void)viewDidLoad {
@@ -68,17 +76,19 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     CGFloat titleBarHeight = 40;
-//    _smallScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 40, titleBarHeight)];
-     _smallScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, titleBarHeight)];
+    _smallScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(60, 0, self.view.bounds.size.width - 60, titleBarHeight)];
+//     _smallScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, titleBarHeight)];
     [_smallScrollView setBackgroundColor:[UIColor titleBarColor]];
     [self.view addSubview:_smallScrollView];
     
-//    _addColumnBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 40, 0, 40, titleBarHeight)];
-//    [_addColumnBtn setBackgroundColor:[UIColor titleBarColor]];
-//    [_addColumnBtn setImage:[UIImage imageNamed:@"addMenu"] forState:UIControlStateNormal];
-//    [_addColumnBtn addTarget:self action:@selector(showColumnClick) forControlEvents:UIControlEventTouchUpInside];
-//
-//    [self.view addSubview:_addColumnBtn];
+    _addColumnBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, titleBarHeight)];
+    [_addColumnBtn setBackgroundColor:[UIColor titleBarColor]];
+    [_addColumnBtn setImage:[UIImage imageNamed:@"gfkd_logo"] forState:UIControlStateNormal];
+    [_addColumnBtn addTarget:self action:@selector(showColumnClick) forControlEvents:UIControlEventTouchUpInside];
+
+    [self.view addSubview:_addColumnBtn];
+    
+    
     self.columnShow = NO;
     
     CGFloat height = self.view.bounds.size.height - titleBarHeight - 64 - (_underTabbar ? 49 : 0);
@@ -93,15 +103,15 @@
     
     [self loadControllerVC];
     
-    // 添加默认控制器
-    UIViewController *vc = [self.childViewControllers firstObject];
-    vc.view.frame = self.bigScrollView.bounds;
-    [self.bigScrollView addSubview:vc.view];
-    SXTitleLable *lable = [self.smallScrollView.subviews firstObject];
-    lable.scale = 1.0;
-    self.bigScrollView.showsHorizontalScrollIndicator = NO;
-    
-    self.needScrollToTopPage = self.childViewControllers[0];
+//    // 添加默认控制器
+//    UIViewController *vc = [self.childViewControllers firstObject];
+//    vc.view.frame = self.bigScrollView.bounds;
+//    [self.bigScrollView addSubview:vc.view];
+//    SXTitleLable *lable = [self.smallScrollView.subviews firstObject];
+//    lable.scale = 1.0;
+//    self.bigScrollView.showsHorizontalScrollIndicator = NO;
+//    
+//    self.needScrollToTopPage = self.childViewControllers[0];
 }
 
 - (void) loadControllerVC{
@@ -305,9 +315,11 @@
             vc.title = @"栏目选择";
             vc.view.frame = self.view.bounds;
             vc.hidesBottomBarWhenPushed = YES;
-            [vc.selectedArray addObjectsFromArray:columSelectedArray];
+            [vc.selectedArray addObjectsFromArray:_columSelectedArray];
             [vc.optionalArray addObjectsFromArray:columOptionalArray];
-            [self.navigationController pushViewController:vc animated:YES];
+             
+            [self presentViewController:vc animated:YES completion:nil];
+            //[self.navigationController pushViewController:vc animated:YES];
              
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -324,17 +336,35 @@
 
 
 - (void)updateNodes:(NSMutableArray *)selectColumns{
+//    NSMutableArray *title = [[NSMutableArray alloc] init];
+//    [title addObject:@"推荐"];
+//    NSMutableArray *controllers = [[NSMutableArray alloc] init];
+//    [controllers addObject:[[NewsViewController alloc]  initWithNewsListType:NewsListTypeHomeNews cateId:0  isSpecial:0]];//推荐controller
+//     for (int i=1; i<selectColumns.count ; i++) {
+//         GFKDUserNode *topNodes = [[GFKDUserNode alloc] initWithDict:selectColumns[i]];
+//        [title addObject:topNodes.cateName];
+//        [controllers addObject:[[NewsViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[topNodes.cateId intValue] isSpecial:0]];
+//    }
+    
+    StudySchoolViewController *studyTJVC = [[StudySchoolViewController alloc] initWithNumber:@"tjjm" WithNav:YES];
+    
     NSMutableArray *title = [[NSMutableArray alloc] init];
     [title addObject:@"推荐"];
     NSMutableArray *controllers = [[NSMutableArray alloc] init];
-    [controllers addObject:[[NewsViewController alloc]  initWithNewsListType:NewsListTypeHomeNews cateId:0  isSpecial:0]];//推荐controller
-     for (int i=1; i<selectColumns.count ; i++) {
-         GFKDUserNode *topNodes = [[GFKDUserNode alloc] initWithDict:selectColumns[i]];
+    [controllers addObject:studyTJVC];
+    
+    for (int i=1; i<selectColumns.count ; i++) {
+        GFKDUserNode *topNodes = [[GFKDUserNode alloc] initWithDict:selectColumns[i]];
         [title addObject:topNodes.cateName];
-        [controllers addObject:[[NewsViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[topNodes.cateId intValue] isSpecial:0]];
+        if ([topNodes.terminated intValue] == 1){ //没有子栏目了
+            [controllers addObject:[[NewsBarViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[topNodes.cateId intValue] isSpecial:0]];
+        }else{
+            [controllers addObject: [[StudySchoolViewController alloc] initWithParentId:topNodes.cateId WithNav:YES]];
+        }
     }
+    
 
-    columSelectedArray = [NSMutableArray arrayWithArray:selectColumns];
+    _columSelectedArray = [NSMutableArray arrayWithArray:selectColumns];
     _titleName = [NSMutableArray arrayWithArray:title];
     _controllers = [NSMutableArray arrayWithArray:controllers];
     
