@@ -165,6 +165,7 @@ static NSString *headTwo = @"ColumnReusableViewTwo";
                 }
             }
             ischange = YES;
+            self.isChange = YES;
             [self.collectionView moveItemAtIndexPath:cellIndexPath toIndexPath:attributes.indexPath];
         }
         else{
@@ -381,6 +382,8 @@ static NSString *headTwo = @"ColumnReusableViewTwo";
 }
 //更新订制的栏目
 -(void) getNotUserNodes{
+    MBProgressHUD *HUD = [Utils createHUD];
+    HUD.labelText = @"栏目更新中";
     NSString *nodeIds = @"";
     for (int i = 1; i<self.selectedArray.count; i++) {
         GFKDUserNode *node = [[GFKDUserNode alloc] initWithDict:self.selectedArray[i]];
@@ -389,6 +392,7 @@ static NSString *headTwo = @"ColumnReusableViewTwo";
             nodeIds = [nodeIds stringByAppendingString:@","];
         }
     }
+    //NSLog(@"nodeIds:%@",nodeIds);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
     
     [manager GET:[NSString stringWithFormat:@"%@%@", GFKDAPI_HTTPS_PREFIX, GFKDAPI_UPDATEUSERNODE]
@@ -406,9 +410,9 @@ static NSString *headTwo = @"ColumnReusableViewTwo";
              }
              [self.delegate updateNodes:self.selectedArray];
              
-             
+             [HUD hide:YES afterDelay:1];
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             MBProgressHUD *HUD = [Utils createHUD];
+            
              HUD.mode = MBProgressHUDModeCustomView;
              HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
              HUD.labelText = @"网络异常，更新用户订制栏目失败！";

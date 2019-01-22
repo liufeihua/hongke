@@ -76,17 +76,23 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     CGFloat titleBarHeight = 40;
-    _smallScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(60, 0, self.view.bounds.size.width - 60, titleBarHeight)];
-//     _smallScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, titleBarHeight)];
+//    _smallScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(60, 0, self.view.bounds.size.width - 60, titleBarHeight)];
+    _smallScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 40, titleBarHeight)];
+     _smallScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, titleBarHeight)];
     [_smallScrollView setBackgroundColor:[UIColor titleBarColor]];
     [self.view addSubview:_smallScrollView];
     
-    _addColumnBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, titleBarHeight)];
-    [_addColumnBtn setBackgroundColor:[UIColor titleBarColor]];
-    [_addColumnBtn setImage:[UIImage imageNamed:@"gfkd_logo"] forState:UIControlStateNormal];
-    [_addColumnBtn addTarget:self action:@selector(showColumnClick) forControlEvents:UIControlEventTouchUpInside];
-
-    [self.view addSubview:_addColumnBtn];
+//    _addColumnBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, titleBarHeight)];
+//    [_addColumnBtn setBackgroundColor:[UIColor titleBarColor]];
+//    [_addColumnBtn setImage:[UIImage imageNamed:@"gfkd_logo"] forState:UIControlStateNormal];
+//    [_addColumnBtn addTarget:self action:@selector(showColumnClick) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:_addColumnBtn];
+    
+//    _addColumnBtn = [[UIButton alloc] initWithFrame:CGRectMake(kNBR_SCREEN_W-40, 0, 40, titleBarHeight)];
+//    [_addColumnBtn setBackgroundColor:[UIColor titleBarColor]];
+//    [_addColumnBtn setImage:[UIImage imageNamed:@"addMenu"] forState:UIControlStateNormal];
+//    [_addColumnBtn addTarget:self action:@selector(showColumnClick) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:_addColumnBtn];
     
     
     self.columnShow = NO;
@@ -293,6 +299,8 @@
 
 //用户未订制的栏目
 -(void) getNotUserNodes{
+    MBProgressHUD *HUD = [Utils createHUD];
+    HUD.labelText = @"加载中";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
     
     [manager GET:[NSString stringWithFormat:@"%@%@", GFKDAPI_HTTPS_PREFIX, GFKDAPI_MYNOTUSERNODES]
@@ -301,7 +309,7 @@
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
              NSString *errorMessage = responseObject[@"reason"];
-             
+              [HUD hide:YES afterDelay:0.1];
              if (errorCode == 1) {
                  NSInteger invalidToken = [responseObject[@"invalidToken"] integerValue];
                  [Utils showHttpErrorWithCode:(int)invalidToken withMessage:errorMessage];
@@ -323,7 +331,6 @@
              
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             MBProgressHUD *HUD = [Utils createHUD];
              HUD.mode = MBProgressHUDModeCustomView;
              HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
              HUD.labelText = @"网络异常，得到用户未订制栏目失败！";

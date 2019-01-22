@@ -37,7 +37,9 @@
         __weak TakesViewController *weakSelf = self;
         NSString *token = [Config getToken];
         self.generateURL = ^NSString * (NSUInteger page) {
+            NSLog(@"%@",[NSString stringWithFormat:@"%@%@?pageNumber=%lu&%@&token=%@&type=%d&infoType=%d",GFKDAPI_HTTPS_PREFIX,GFKDAPI_PAGEREADILYTAKE,(unsigned long)page,GFKDAPI_PAGESIZE,token,type,infoType]);
             return [NSString stringWithFormat:@"%@%@?pageNumber=%lu&%@&token=%@&type=%d&infoType=%d",GFKDAPI_HTTPS_PREFIX,GFKDAPI_PAGEREADILYTAKE,(unsigned long)page,GFKDAPI_PAGESIZE,token,type,infoType];
+            
         };
         self.tableWillReload = ^(NSUInteger responseObjectsCount) {
             responseObjectsCount < GFKD_PAGESIZE? (weakSelf.lastCell.status = LastCellStatusFinished) :
@@ -161,13 +163,28 @@
 
 
 - (void) moreOperateTake{
+    //分享功能完善中。。。
     if ([Config getOwnID] == [now_take.userId longLongValue]){
-        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"评论",@"删除", nil];
-        actionSheet.tag = 1;
-        [actionSheet showInView:self.view];
+//        if ([now_take.infoLevel intValue] == 3){
+//            UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"分享",@"评论",@"删除", nil];
+//            actionSheet.tag = 1;
+//            [actionSheet showInView:self.view];
+//        }else{
+            UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"评论",@"删除", nil];
+            actionSheet.tag = 2;
+            [actionSheet showInView:self.view];
+//        }
+        
     }else{
-//       [self shareTake];
-        [self commentTake];
+//        if ([now_take.infoLevel intValue] == 3){
+//            UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"分享",@"评论", nil];
+//            actionSheet.tag = 3;
+//            [actionSheet showInView:self.view];
+//        }else{
+            UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"评论", nil];
+            actionSheet.tag = 4;
+            [actionSheet showInView:self.view];
+//        }
     }
 }
 
@@ -180,14 +197,72 @@
             case 0:
             {
                 //分享
-//                [self shareTake];
+                [self shareTake];
+            }
+                break;
+            case 1:
+            {
+                [self commentTake];
+            }
+                break;
+            case 2:
+            {
+               //删除
+                [self DeleteTake];
+            }
+                break;
+            default:
+                break;
+        }
+        return;
+    }
+    if (actionSheet.tag == 2)
+    {
+        switch (buttonIndex)
+        {
+            case 0:
+            {
                 [self commentTake];
             }
                 break;
             case 1:
             {
-               //删除
+                //删除
                 [self DeleteTake];
+            }
+                break;
+            default:
+                break;
+        }
+        return;
+    }
+    if (actionSheet.tag == 3)
+    {
+        switch (buttonIndex)
+        {
+            case 0:
+            {
+                //分享
+                [self shareTake];
+            }
+                break;
+            case 1:
+            {
+                [self commentTake];
+            }
+                break;
+            default:
+                break;
+        }
+        return;
+    }
+    if (actionSheet.tag == 4)
+    {
+        switch (buttonIndex)
+        {
+            case 0:
+            {
+                [self commentTake];
             }
                 break;
             default:
@@ -232,6 +307,8 @@
 }
 
 - (void) shareTake{
+    
+    
     NSString *title = now_take.title;
     NSInteger photoId = [now_take.takeId integerValue];
 //    NSString *URL = [NSString stringWithFormat:@"%@%@?token=%@&id=%ld",GFKDAPI_HTTPS_PREFIX, GFKDAPI_PHOTOVIEW,[Config getToken],photoId];
@@ -251,8 +328,11 @@
     // 新浪微博相关设置
     [[UMSocialData defaultData].extConfig.sinaData.urlResource setResourceType:UMSocialUrlResourceTypeDefault url:URL];
     NSData * imageData;
-    if (now_take.images.count>0) {
-        imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:now_take.images[0]]];
+//    if (now_take.images.count > 0) {
+//        imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:now_take.images[0]]];
+//    }
+    if (now_take.photo != nil) {
+         imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:now_take.photo]];
     }
     // 复制链接
     [UMSocialSnsService presentSnsIconSheetView:self

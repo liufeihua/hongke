@@ -57,7 +57,7 @@
 
 #import "StudySchoolViewController.h"
 #import "RAYNewFunctionGuideVC.h"
-
+#import "GFKDUserNode.h"
 //#import "StudyHomeViewController.h"
 
 
@@ -91,6 +91,10 @@
                    @"siteId":@(0),
                    @"type":@(1)
                    }
+    //改成用户定制栏目时接口
+//     [manager GET:[NSString stringWithFormat:@"%@%@", GFKDAPI_HTTPS_PREFIX, GFKDAPI_MYALLNODES]
+//      parameters:@{@"token":[Config getToken]}
+     
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSLog(@"%@",responseObject);
              NSInteger errorCode = [responseObject[@"msg_code"] integerValue];
@@ -244,7 +248,7 @@
     [newMainMenu.columSelectedArray insertObject:node_1 atIndex:0];
     
     for (int i=0; i<array.count ; i++) {
-        GFKDTopNodes *topNodes = [[GFKDTopNodes alloc] initWithDict:array[i]];
+        GFKDUserNode *topNodes = [[GFKDUserNode alloc] initWithDict:array[i]];
         [newMainMenu.titleName addObject:topNodes.cateName];
         if ([topNodes.terminated intValue] == 1){ //没有子栏目了
             [newMainMenu.controllers addObject:[[NewsBarViewController alloc]  initWithNewsListType:NewsListTypeNews cateId:[topNodes.cateId intValue] isSpecial:0]];

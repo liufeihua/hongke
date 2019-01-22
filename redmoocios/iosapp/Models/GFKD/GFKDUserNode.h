@@ -15,7 +15,7 @@
 @property (nonatomic, assign) NSNumber *cateId;
 @property (nonatomic, strong) NSString *cateName;
 @property (nonatomic, strong) NSString *number;
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *Description;
 @property (nonatomic, strong) NSString *detailUrl;
 @property (nonatomic, strong) NSString *smallImage;
 @property (nonatomic, assign) NSNumber *articles;

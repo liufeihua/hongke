@@ -10,4 +10,8 @@
 
 @implementation GFKDUserNode
 
+- (NSString *) Description{
+    return self.dataDict[@"description"];
+}
+
 @end

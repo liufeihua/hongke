@@ -25,4 +25,8 @@
 @property (nonatomic, strong) NSNumber *comments; //评论数
 @property (nonatomic, strong) NSString *metaDescription;
 @property (nonatomic, strong) NSArray  *images;
+
+@property (nonatomic, assign) NSNumber *infoLevel; //1. 校内可见  2.校外可见，不可分享  3.校外可见，可分享
+@property (nonatomic, assign) NSString *shareUrl;
+
 @end

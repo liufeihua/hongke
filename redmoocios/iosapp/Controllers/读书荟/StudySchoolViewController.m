@@ -423,6 +423,8 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
 
 - (void) loadChildNodeList:(GFKDTopNodes *)node
 {
+    MBProgressHUD *HUD = [Utils createHUD];
+    HUD.labelText = @"正在加载";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
     
     [manager GET:[NSString stringWithFormat:@"%@/m-nodeList.htx", GFKDAPI_HTTPS_PREFIX]
@@ -433,6 +435,7 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
              NSString *errorMessage = responseObject[@"reason"];
              
              if (errorCode == 1) {
+                 [HUD hide:YES];
                  NSInteger invalidToken = [responseObject[@"invalidToken"] integerValue];
                  [Utils showHttpErrorWithCode:(int)invalidToken withMessage:errorMessage];
                  return;
@@ -460,6 +463,7 @@ static NSString *NodeCellIdentifier = @"NodeBaseCell";
                  moreVC.title = node.cateName;
                  [self.navigationController pushViewController:moreVC animated:YES];
              }
+             [HUD hide:YES];
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              MBProgressHUD *HUD = [Utils createHUD];
